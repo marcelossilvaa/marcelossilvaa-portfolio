@@ -1,9 +1,9 @@
-import Title from "../_components/Title";
+import Title from "../../components/Tittle";
 
 export default function Footer(){
   return(
     <footer id="contact" className="w-full bg-blue-50 py-8">
-      <div className="flex flex-col justify-center items-center gap-1">
+      <div className="flex flex-col justify-center items-center gap-1 text-sm md:text-lg">
         <Title title="Contato" />
         <p>Entre em contato, estou sempre disponível.</p>
         <a href="https://www.instagram.com/marcelossilva1/" target="_blank">

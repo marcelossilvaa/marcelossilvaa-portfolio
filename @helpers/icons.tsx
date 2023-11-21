@@ -1,4 +1,4 @@
 'use client';
-import { Desktop, ArrowUpRight } from '@phosphor-icons/react';
+import { Desktop, ArrowUpRight, List  } from '@phosphor-icons/react';
 
-export { Desktop, ArrowUpRight };
+export { Desktop, ArrowUpRight, List  };

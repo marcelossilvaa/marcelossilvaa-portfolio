@@ -1,6 +1,6 @@
 import { dataProfessional } from "../../../@helpers/data";
-import HistoryCard from "../_components/HistoryCard";
-import Title from "../_components/Title";
+import HistoryCard from "../../components/HistoryCard";
+import Title from "../../components/Tittle";
 
 export default function Professional(){
   return(

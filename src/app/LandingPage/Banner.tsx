@@ -6,22 +6,23 @@ import imageBanner from '../../../public/assets/marceloImage.jpg';
 
 export default function Banner() {
   return (
-    <section className="max-w-6xl w-[95%] py-[32px]">
-      <div className="flex items-center justify-between gap-5">
+    <section id='banner' className=" max-w-6xl w-[95%] py-[32px]">
+      <div className='h-[8vh]'></div>
+      <div className="flex items-start justify-between gap-5 flex-col-reverse md:items-center md:flex-row">
         <div className="flex flex-col gap-2">
-          <h1 className="text-5xl font-bold">
+          <h1 className="text-3xl md:text-5xl font-bold">
             Olá, me chamo Marcelo e sou Desenvolvedor Front-End
           </h1>
           <p>
             Baiano, 23 anos, graduando em Ciência da Computação e especialista como desenvolvedor
             Front-End.
           </p>
-          <div className="flex gap-4">
+          <div className="flex gap-2 md:gap-4">
             {dataBanner.map(item => (
               <Link
                 key={item.id}
                 href={item.link}
-                className={`flex items-center font-bold hover:shadow-md ${
+                className={`flex items-center font-bold text-base md:text-lg hover:shadow-md ${
                   item.id === 1 ? 'text-blue-300' : ''
                 }`}
               >
@@ -35,7 +36,7 @@ export default function Banner() {
             ))}
           </div>
         </div>
-        <Image className="flex w-[25vw] rounded-full max-w-[370px] shadow-xl" src={imageBanner} alt="" />
+        <Image className="flex  rounded-full w-[250px] md:w-[370px] shadow-xl" src={imageBanner} alt="" />
       </div>
     </section>
   );

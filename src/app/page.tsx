@@ -1,11 +1,11 @@
-import Banner from '@/components/Banner';
-import Header from '@/components/Header';
-import AboutMe from '@/components/AboutMe';
-import Skills from '@/components/Skills';
-import AcademicEducation from '@/components/AcademicEducation';
-import Professional from '@/components/Professional';
-import Projects from '@/components/Projects';
-import Footer from '@/components/Footer';
+import Banner from '@/app/LandingPage/Banner';
+import Header from '@/app/LandingPage/Header';
+import AboutMe from '@/app/LandingPage/AboutMe';
+import Skills from '@/app/LandingPage/Skills';
+import AcademicEducation from '@/app/LandingPage/AcademicEducation';
+import Professional from '@/app/LandingPage/Professional';
+import Projects from '@/app/LandingPage/Projects';
+import Footer from '@/app/LandingPage/Footer';
 
 export default function Home() {
   return (

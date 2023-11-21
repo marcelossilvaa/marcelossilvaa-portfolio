@@ -20,7 +20,7 @@ export default function HistoryCard({ data }: HistoryCardProps) {
         {Array.isArray(data) &&
           data.map(item => (
             <div
-              className="flex justify-center-center flex-col w-[23.5%] min-w-[250px] rounded-md shadow-sm mb-3"
+              className="flex justify-center-center flex-col w-[23.5%] min-w-[250px] mb-3"
               key={item.id}
             >
               <div className="flex items-center justify-center bg-white-100 h-[24vh] my-3 rounded-md shadow-md">

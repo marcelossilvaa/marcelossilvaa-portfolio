@@ -7,23 +7,21 @@ import Bootstrap from '../public/icons/bootstrap.png';
 import Css from '../public/icons/css-3.png';
 import Tailwind from '../public/icons/tailwind.png';
 
-import UFS from '../public/assets/ufs.png'
-import UniAmerica from '../public/assets/uniamerica.png'
-import Alura from '../public/assets/alura.png'
-import XPe from '../public/assets/xpe.png'
+import UFS from '../public/assets/ufs.png';
+import UniAmerica from '../public/assets/uniamerica.png';
+import Alura from '../public/assets/alura.png';
+import XPe from '../public/assets/xpe.png';
 
-import AIESEC from '../public/assets/AIESEC.png'
-import CEMP from '../public/assets/CEMP.png'
-import CEJP from '../public/assets/CEJP.png'
-import inkPen from '../public/assets/inkPen.jpg'
+import AIESEC from '../public/assets/AIESEC.png';
+import CEMP from '../public/assets/CEMP.png';
+import CEJP from '../public/assets/CEJP.png';
+import inkPen from '../public/assets/inkPen.jpg';
 
-import AluraFlix from '../public/assets/projectsImage/AluraFlix.png'
-import AluraGeek from '../public/assets/projectsImage/AluraGeek.png'
-import Box33 from '../public/assets/projectsImage/Box33.png'
-import Flamengo from '../public/assets/projectsImage/Flamengo.png'
-import GDXConsultoria from '../public/assets/projectsImage/GDXConsultoria.png'
-
-
+import AluraFlix from '../public/assets/projectsImage/AluraFlix.png';
+import AluraGeek from '../public/assets/projectsImage/AluraGeek.png';
+import Box33 from '../public/assets/projectsImage/Box33.png';
+import Flamengo from '../public/assets/projectsImage/Flamengo.png';
+import GDXConsultoria from '../public/assets/projectsImage/GDXConsultoria.png';
 
 export const dataHeader = [
   {
@@ -32,27 +30,22 @@ export const dataHeader = [
     text: 'Sobre mim',
   },
   {
-    id: 1,
+    id: 2,
     href: '#skills',
     text: 'Skills',
   },
   {
-    id: 1,
-    href: '#hobbies',
-    text: 'Hobbies',
-  },
-  {
-    id: 1,
+    id: 3,
     href: '#academicEducation',
     text: 'Formação',
   },
   {
-    id: 1,
+    id: 4,
     href: '#projects',
     text: 'Projetos',
   },
   {
-    id: 1,
+    id: 5,
     href: '#contact',
     text: 'marcelo_810@hotmail.com',
   },
@@ -136,7 +129,7 @@ export const dataAcademic = [
     id: 2,
     image: UniAmerica,
     title: 'Ciência da Computação',
-    date:'2021 - em andamento',
+    date: '2021 - em andamento',
     institution: 'UniAmerica',
   },
   {
@@ -149,11 +142,11 @@ export const dataAcademic = [
   {
     id: 4,
     image: XPe,
-    title:'Bootcamp React',
+    title: 'Bootcamp React',
     date: '2023',
-    institution:'XPe',
+    institution: 'XPe',
   },
-]
+];
 
 export const dataProfessional = [
   {
@@ -167,7 +160,7 @@ export const dataProfessional = [
     id: 2,
     image: CEMP,
     title: 'Educação Empreendedora',
-    date:'2022',
+    date: '2022',
     institution: 'CEMP - UFS',
   },
   {
@@ -180,20 +173,19 @@ export const dataProfessional = [
   {
     id: 4,
     image: inkPen,
-    title:'Co Fundador',
+    title: 'Co Fundador',
     date: '2023',
-    institution:'inkPen',
+    institution: 'inkPen',
   },
-]
-
+];
 
 export const projectsData = [
   {
-    id: "1",
+    id: '1',
     title: 'Alura Geek',
     subTitle: 'Simulação ecommerce',
     repoLink: '',
-    demoLink:'https://alura-geek-ruby.vercel.app/',
+    demoLink: 'https://alura-geek-ruby.vercel.app/',
     image: AluraGeek,
     technologies: [
       {
@@ -207,15 +199,14 @@ export const projectsData = [
     ],
   },
   {
-    id: "2",
+    id: '2',
     title: 'Alura Flix',
     subTitle: 'Simulação de streaming',
     repoLink: 'https://github.com/marcelossilvaa/AluraFlix',
-    demoLink:'https://alura-flix-1lmt-2r0sm3ttu-marcelossilvaa.vercel.app/',
+    demoLink: 'https://alura-flix-1lmt-2r0sm3ttu-marcelossilvaa.vercel.app/',
     image: AluraFlix,
     technologies: [
       {
-      
         name: 'React',
         image: React,
       },
@@ -226,11 +217,11 @@ export const projectsData = [
     ],
   },
   {
-    id: "3",
+    id: '3',
     title: 'Box33 Enigmas',
     subTitle: 'Site de Enigmas',
     repoLink: 'https://github.com/marcelossilvaa/Box33',
-    demoLink:'https://box33enigmas.vercel.app/',
+    demoLink: 'https://box33enigmas.vercel.app/',
     image: Box33,
     technologies: [
       {
@@ -244,11 +235,11 @@ export const projectsData = [
     ],
   },
   {
-    id: "4",
+    id: '4',
     title: 'Elenco Flamengo',
     subTitle: 'Exibição 2023',
     repoLink: 'https://github.com/marcelossilvaa/flamengo-team-roster',
-    demoLink:'https://flamengo-team-roster.vercel.app/',
+    demoLink: 'https://flamengo-team-roster.vercel.app/',
     image: Flamengo,
     technologies: [
       {
@@ -262,11 +253,11 @@ export const projectsData = [
     ],
   },
   {
-    id: "5",
+    id: '5',
     title: 'GDX Consultoria',
     subTitle: 'Resolução de problemas aereos',
     repoLink: '',
-    demoLink:'http://www.aerodemandas.com.br/',
+    demoLink: 'http://www.aerodemandas.com.br/',
     image: GDXConsultoria,
     technologies: [
       {
@@ -279,4 +270,22 @@ export const projectsData = [
       },
     ],
   },
-]
+  {
+    id: '5',
+    title: 'GDX Consultoria',
+    subTitle: 'Resolução de problemas aereos',
+    repoLink: '',
+    demoLink: 'http://www.aerodemandas.com.br/',
+    image: GDXConsultoria,
+    technologies: [
+      {
+        name: 'React',
+        image: React,
+      },
+      {
+        name: 'Tailwind',
+        image: Tailwind,
+      },
+    ],
+  },
+];

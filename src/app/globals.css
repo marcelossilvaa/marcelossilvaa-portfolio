@@ -5,8 +5,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
 body {
-  @apply text-black-100 text-lg scroll-smooth;
+  @apply text-black-100 text-lg;
+
 }
+
+*, *:before, *:after {
+  scroll-behavior: smooth !important ;
+}
+
 
 .teste {
   font-family: 'Dancing Script', cursive;

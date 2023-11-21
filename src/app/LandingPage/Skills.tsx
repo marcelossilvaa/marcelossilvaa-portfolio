@@ -1,6 +1,6 @@
 import { dataSkills } from '../../../@helpers/data';
-import SkillsCard from '../_components/SkillsCard';
-import Title from '../_components/Title';
+import SkillsCard from '../../components/SkillsCard';
+import Title from '../../components/Tittle';
 
 export default function Skills() {
   return (
