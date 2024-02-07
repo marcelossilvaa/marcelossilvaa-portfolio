@@ -22,6 +22,8 @@ import AluraGeek from '../public/assets/projectsImage/AluraGeek.png';
 import Box33 from '../public/assets/projectsImage/Box33.png';
 import Flamengo from '../public/assets/projectsImage/Flamengo.png';
 import GDXConsultoria from '../public/assets/projectsImage/GDXConsultoria.png';
+import inkPenSite from '../public/assets/projectsImage/inkPenSite.png';
+
 
 export const dataHeader = [
   {
@@ -261,8 +263,8 @@ export const projectsData = [
     image: GDXConsultoria,
     technologies: [
       {
-        name: 'React',
-        image: React,
+        name: 'NextJs',
+        image: Nextjs,
       },
       {
         name: 'Tailwind',
@@ -271,16 +273,16 @@ export const projectsData = [
     ],
   },
   {
-    id: '5',
-    title: 'GDX Consultoria',
-    subTitle: 'Resolução de problemas aereos',
+    id: '6',
+    title: 'inkPen',
+    subTitle: 'Site de apresentação do MVP',
     repoLink: '',
-    demoLink: 'http://www.aerodemandas.com.br/',
-    image: GDXConsultoria,
+    demoLink: 'http://www.inkpen.com.br/',
+    image: inkPenSite,
     technologies: [
       {
-        name: 'React',
-        image: React,
+        name: 'NextJs',
+        image: Nextjs,
       },
       {
         name: 'Tailwind',
