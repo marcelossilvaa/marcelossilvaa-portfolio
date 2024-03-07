@@ -6,18 +6,20 @@ import AcademicEducation from '@/app/LandingPage/AcademicEducation';
 import Professional from '@/app/LandingPage/Professional';
 import Projects from '@/app/LandingPage/Projects';
 import Footer from '@/app/LandingPage/Footer';
+import ScrollProgress from '@/components/ScrollProgress';
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between">
-      <Header />
-      <Banner />
-      <AboutMe />
-      <Skills />
-      <AcademicEducation />
-      <Professional />
-      <Projects />
-      <Footer />
+        <ScrollProgress />
+        <Header />
+        <Banner />
+        <AboutMe />
+        <Skills />
+        <AcademicEducation />
+        <Professional />
+        <Projects />
+        <Footer />      
     </main>
   );
 }

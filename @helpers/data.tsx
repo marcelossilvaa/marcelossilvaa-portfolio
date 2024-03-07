@@ -17,7 +17,7 @@ import CEMP from '../public/assets/CEMP.png';
 import CEJP from '../public/assets/CEJP.png';
 import inkPen from '../public/assets/inkPen.jpg';
 
-import AluraFlix from '../public/assets/projectsImage/AluraFlix.png';
+import NostalgiaFlix from '../public/assets/projectsImage/NostalgiaFlix.png';
 import AluraGeek from '../public/assets/projectsImage/AluraGeek.png';
 import Box33 from '../public/assets/projectsImage/Box33.png';
 import Flamengo from '../public/assets/projectsImage/Flamengo.png';
@@ -202,15 +202,15 @@ export const projectsData = [
   },
   {
     id: '2',
-    title: 'Alura Flix',
+    title: 'Nostalgia Flix',
     subTitle: 'Simulação de streaming',
     repoLink: 'https://github.com/marcelossilvaa/AluraFlix',
     demoLink: 'https://alura-flix-1lmt-2r0sm3ttu-marcelossilvaa.vercel.app/',
-    image: AluraFlix,
+    image: NostalgiaFlix,
     technologies: [
       {
-        name: 'React',
-        image: React,
+        name: 'Next',
+        image: Nextjs,
       },
       {
         name: 'Tailwind',
