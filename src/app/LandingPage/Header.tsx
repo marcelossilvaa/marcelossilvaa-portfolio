@@ -3,7 +3,6 @@ import { dataHeader } from '../../../@helpers/data';
 import { Desktop } from '../../../@helpers/icons';
 import { AnimatePresence, motion } from "framer-motion";
 import Link from 'next/link';
-import { MobileNavLink } from '@/components/MobileNavLink'
 import { useEffect, useState } from "react";
 import { menuVars } from '@/components/FrameMotion/menuVars'
 import { containerVars } from '@/components/FrameMotion/containerVars'

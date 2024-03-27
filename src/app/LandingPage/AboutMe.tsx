@@ -14,7 +14,7 @@ export default function AboutMe() {
             Sou ex graduando em Engenharia de Petróleo pela UFS, mas percebi que minha vocação
             sempre foi tecnologia, em 2021 migrei para desenvolvimento de software.
           </p>
-          <p className="teste">Marcelo Santana Silva</p>
+          <p className="font-marcelo">Marcelo Santana Silva</p>
         </div>
       </div>
     </section>

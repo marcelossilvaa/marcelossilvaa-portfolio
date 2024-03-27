@@ -3,17 +3,36 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
 
 body {
   @apply text-black-100 text-lg;
 
 }
 
+.font-marcelo{
+  font-family: 'Tangerine', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 *, *:before, *:after {
   scroll-behavior: smooth !important ;
 }
+/* Image Hover.css */
 
+.general-hover:hover{
+  transform: scale(1.1); 
+  transition: transform 0.3s ease;
+}
 
+.general-hover:not(:hover) {
+  transform: scale(1); 
+  transition: transform 0.3s ease;
+}
+
+/* scrollprogress.css */
 
 #scroll-progress-container  {
   position: fixed;
@@ -30,4 +49,24 @@ body {
   height: 100%;
   width: 0;
   transition: width 0.3s;
+}
+
+
+/* scrollbar.css */
+
+::-webkit-scrollbar {
+  width: 8px; 
+  border-radius: 200px;
+}
+
+::-webkit-scrollbar-track {
+  background: #727272;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }

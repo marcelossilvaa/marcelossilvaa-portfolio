@@ -3,7 +3,7 @@ import Javascript from '../public/icons/js.png';
 import React from '../public/icons/react.png';
 import Nextjs from '../public/icons/nextjs.png';
 import Git from '../public/icons/git.png';
-import Bootstrap from '../public/icons/bootstrap.png';
+import TypeScript from '../public/icons/typescript.svg';
 import Css from '../public/icons/css-3.png';
 import Tailwind from '../public/icons/tailwind.png';
 
@@ -11,11 +11,14 @@ import UFS from '../public/assets/ufs.png';
 import UniAmerica from '../public/assets/uniamerica.png';
 import Alura from '../public/assets/alura.png';
 import XPe from '../public/assets/xpe.png';
+import DIO from '../public/assets/dio.png';
+
 
 import AIESEC from '../public/assets/AIESEC.png';
 import CEMP from '../public/assets/CEMP.png';
 import CEJP from '../public/assets/CEJP.png';
 import inkPen from '../public/assets/inkPen.jpg';
+import Vasta from '../public/assets/vasta.png';
 
 import NostalgiaFlix from '../public/assets/projectsImage/NostalgiaFlix.png';
 import AluraGeek from '../public/assets/projectsImage/AluraGeek.png';
@@ -99,8 +102,8 @@ export const dataSkills = [
   },
   {
     id: 5,
-    icon: Bootstrap,
-    text: 'Bootstrap',
+    icon: TypeScript,
+    text: 'TypeScript',
   },
   {
     id: 6,
@@ -148,13 +151,20 @@ export const dataAcademic = [
     date: '2023',
     institution: 'XPe',
   },
+  {
+    id: 4,
+    image: DIO,
+    title: 'Bootcamp TypeScript',
+    date: '2023',
+    institution: 'DIO',
+  },
 ];
 
 export const dataProfessional = [
   {
     id: 1,
     image: AIESEC,
-    title: 'Marketing e Vendas',
+    title: 'Voluntariado',
     date: '2021',
     institution: 'AIESEC',
   },
@@ -168,16 +178,23 @@ export const dataProfessional = [
   {
     id: 3,
     image: CEJP,
-    title: 'Professor de Programação',
+    title: 'Professor',
     date: '2023',
     institution: 'CEJP',
   },
   {
     id: 4,
     image: inkPen,
-    title: 'Co Fundador',
-    date: '2023',
+    title: 'Co Founder & Dev Front End',
+    date: '2023 - 2024',
     institution: 'inkPen',
+  },
+  {
+    id: 5,
+    image: Vasta,
+    title: 'Desenvolvedor Front End',
+    date: '2024 - Até o momento',
+    institution: 'Vasta',
   },
 ];
 

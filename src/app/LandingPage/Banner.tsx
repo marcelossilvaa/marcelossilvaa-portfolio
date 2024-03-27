@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { dataBanner } from '../../../@helpers/data';
 import { ArrowUpRight } from '../../../@helpers/icons';
-import imageBanner from '../../../public/assets/marceloImage.jpg';
+import imageBanner from '../../../public/assets/marcelo_vasta.jpg';
 
 export default function Banner() {
   return (
@@ -36,7 +36,7 @@ export default function Banner() {
             ))}
           </div>
         </div>
-        <Image className="flex  rounded-full w-[250px] md:w-[370px] shadow-xl" src={imageBanner} alt="" />
+        <Image className="general-hover rounded-full w-[250px] md:w-[370px] shadow-xl" src={imageBanner} alt="" />
       </div>
     </section>
   );
