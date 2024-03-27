@@ -8,7 +8,10 @@
 
 body {
   @apply text-black-100 text-lg;
-
+  
+}
+*, *:before, *:after {
+  scroll-behavior: smooth !important ;
 }
 
 .font-marcelo{
@@ -17,9 +20,33 @@ body {
   font-style: normal;
 }
 
-*, *:before, *:after {
-  scroll-behavior: smooth !important ;
+/* Header Links */
+
+.header-links {
+  display: inline-block;
+  position: relative; 
 }
+
+.header-links::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-image: linear-gradient(to right, #464646 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.3s ease, width 0.3s ease;
+}
+
+.header-links:hover::after {
+  width: 100%;
+  background-position: 0 0;
+}
+
+
+
 /* Image Hover.css */
 
 .general-hover:hover{

@@ -37,7 +37,7 @@ export default function Header() {
             <li key={dataHeader.id} className={index === array.length - 1 ? 'font-bold' : ''}>
               <a
                 href={dataHeader.href}
-                className="hover:border-b-1 transition-opacity hover:shadow-md"
+                className="header-links"
               >
                 {dataHeader.text}
               </a>
