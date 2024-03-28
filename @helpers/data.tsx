@@ -222,7 +222,7 @@ export const projectsData = [
     title: 'Nostalgia Flix',
     subTitle: 'Simulação de streaming',
     repoLink: 'https://github.com/marcelossilvaa/AluraFlix',
-    demoLink: 'https://alura-flix-1lmt-2r0sm3ttu-marcelossilvaa.vercel.app/',
+    demoLink: 'https://nostalgia-flix.vercel.app/',
     image: NostalgiaFlix,
     technologies: [
       {
