@@ -10,19 +10,18 @@ export default function Banner() {
       <div className='h-[8vh]'></div>
       <div className="flex items-start justify-between gap-5 flex-col-reverse md:items-center md:flex-row">
         <div className="flex flex-col gap-2">
-          <h1 className="text-3xl md:text-5xl font-bold">
+          <h1 className="text-2xl md:text-5xl font-bold">
             Olá, me chamo Marcelo e sou Desenvolvedor Front-End
           </h1>
-          <p>
-            Baiano, 23 anos, graduando em Ciência da Computação e especialista como desenvolvedor
-            Front-End.
+          <p className='max-md:text-base'>
+            Baiano, 23 anos, graduando em Ciência da Computação com foco em desenvolvimento front end.
           </p>
           <div className="flex gap-2 md:gap-4">
             {dataBanner.map(item => (
               <Link
                 key={item.id}
                 href={item.link}
-                className={`flex items-center font-bold text-base md:text-lg hover:shadow-md ${
+                className={`header-links flex items-center font-bold text-sm md:text-lg ${
                   item.id === 1 ? 'text-blue-300' : ''
                 }`}
               >

@@ -155,7 +155,7 @@ export const dataAcademic = [
     id: 4,
     image: DIO,
     title: 'Bootcamp TypeScript',
-    date: '2023',
+    date: '2024 - até o momento',
     institution: 'DIO',
   },
 ];
@@ -193,7 +193,7 @@ export const dataProfessional = [
     id: 5,
     image: Vasta,
     title: 'Desenvolvedor Front End',
-    date: '2024 - Até o momento',
+    date: '2024 - até o momento',
     institution: 'Vasta',
   },
 ];
