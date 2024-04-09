@@ -24,6 +24,7 @@ export default function Banner() {
                 className={`header-links flex items-center font-bold text-sm md:text-lg ${
                   item.id === 1 ? 'text-blue-300' : ''
                 }`}
+                target="_blank"
               >
                 {item.title}
                 {item.id === 1 ? (
