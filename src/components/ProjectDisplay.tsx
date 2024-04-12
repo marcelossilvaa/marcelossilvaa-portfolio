@@ -36,7 +36,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ item, index }) => {
       variants={variants}
     >
       <div className={`flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-        <Image src={item.image} alt={item.title} className='general-hover w-full md:w-[70%] shadow-black shadow-lg max-md:mb-3' />
+        <Image src={item.image} alt={item.title} className='general-hover w-full md:w-[70%] shadow-black shadow-lg max-md:mb-3 rounded-xl' />
         <div className={`flex flex-col w-full md:w-[30%] justify-center ${index % 2 !== 0 ? 'items-end' : ''}`}>
           <h1 className='text-xl font-bold'>{item.title}</h1>
           <p className='text-base pb-2'>{item.subTitle}</p>
