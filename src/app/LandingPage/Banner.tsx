@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { dataBanner } from '../../../@helpers/data';
 import { ArrowUpRight } from '../../../@helpers/icons';
-import imageBanner from '../../../public/assets/marcelo_vasta.jpg';
+import imageBanner from '../../../public/assets/marcelo_vasta.png';
 
 export default function Banner() {
   return (
