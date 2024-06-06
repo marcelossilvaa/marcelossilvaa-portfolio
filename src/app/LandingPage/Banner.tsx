@@ -21,7 +21,7 @@ export default function Banner() {
               <Link
                 key={item.id}
                 href={item.link}
-                className={`header-links flex items-center font-bold text-sm md:text-lg ${
+                className={`auto-transition header-links flex items-center font-bold text-sm md:text-lg ${
                   item.id === 1 ? 'text-blue-300' : ''
                 }`}
                 target="_blank"

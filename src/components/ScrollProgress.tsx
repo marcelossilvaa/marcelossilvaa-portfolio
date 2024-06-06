@@ -1,8 +1,5 @@
 "use client"
-
 import React, { useEffect, useState } from 'react';
-
-
 
 function ScrollProgress() {
   const [scrollWidth, setScrollWidth] = useState(0);
