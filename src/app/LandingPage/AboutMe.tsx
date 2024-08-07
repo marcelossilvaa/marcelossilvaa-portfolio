@@ -3,7 +3,7 @@ import Title from '../../components/Tittle';
 export default function AboutMe() {
   return (
     <section id="aboutMe" className="bg-blue-100 w-full flex justify-center">
-      <div className="flex flex-col items-start max-w-6xl w-[95%] py-[8vh]">
+      <div className="auto-transition flex flex-col items-start max-w-6xl w-[95%] py-[8vh]">
         <Title title="Sobre mim" />
         <div className="flex flex-col gap-3 w-full md:w-[60%]">
           <p className='max-md:text-xs'>

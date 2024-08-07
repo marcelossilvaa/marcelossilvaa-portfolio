@@ -11,7 +11,7 @@ export default function SkillsCard({ data }: SkillsCardProps) {
       {Array.isArray(data) &&
         data.map(item => (
           <div
-            className="auto-transition general-hover flex flex-col justify-end bg-white-100 w-[23.5%] min-w-[170px] h-[170px] p-2 pl-4 rounded-md shadow-sm my-3 max-md:min-w-[30%] max-md:h-[120px]"
+            className=" general-hover flex flex-col justify-end bg-white-100 w-[23.5%] min-w-[170px] h-[170px] p-2 pl-4 rounded-md shadow-sm my-3 max-md:min-w-[30%] max-md:h-[120px]"
             key={item.id}
           >
             <Image src={item.icon} alt={item.text} className="w-7 max-md:w-6" />

@@ -100,50 +100,11 @@ body {
 
 /* Transition  */
 
-.auto-transition {
-  transition: opacity 1s ease-in-out;
+.auto-transition{
+  transition: opacity 1.5s ease-in-out;
 
   @starting-style {
       opacity: 0;
   }
 }
 
-.auto-transition:nth-child(1) {
-  transition-delay: 0.03s;
-}
-
-.auto-transition:nth-child(2) {
-  transition-delay: 0.06s;
-}
-
-.auto-transition:nth-child(3) {
-  transition-delay: 0.09s;
-}
-
-.auto-transition:nth-child(4) {
-  transition-delay: 0.12s;
-}
-
-.auto-transition:nth-child(5) {
-  transition-delay: 0.15s;
-}
-
-.auto-transition:nth-child(6) {
-  transition-delay: 0.18s;
-}
-
-.auto-transition:nth-child(7) {
-  transition-delay: 0.21s;
-}
-
-.auto-transition:nth-child(8) {
-  transition-delay: 0.24s;
-}
-
-.auto-transition:nth-child(9) {
-  transition-delay: 0.27s;
-}
-
-.auto-transition:nth-child(10) {
-  transition-delay: 0.3s;
-}

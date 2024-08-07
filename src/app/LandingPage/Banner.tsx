@@ -8,7 +8,7 @@ export default function Banner() {
   return (
     <section id='banner' className=" max-w-6xl w-[95%] py-[32px]">
       <div className='h-[8vh]'></div>
-      <div className="flex items-start justify-between gap-5 flex-col-reverse md:items-center md:flex-row">
+      <div className="auto-transition flex items-start justify-between gap-5 flex-col-reverse md:items-center md:flex-row">
         <div className="flex flex-col gap-2">
           <h1 className="text-2xl md:text-5xl font-bold">
             Olá, me chamo Marcelo e sou Desenvolvedor Front-End
@@ -21,7 +21,7 @@ export default function Banner() {
               <Link
                 key={item.id}
                 href={item.link}
-                className={`auto-transition header-links flex items-center font-bold text-sm md:text-lg ${
+                className={` header-links flex items-center font-bold text-sm md:text-lg ${
                   item.id === 1 ? 'text-blue-300' : ''
                 }`}
                 target="_blank"
@@ -36,7 +36,7 @@ export default function Banner() {
             ))}
           </div>
         </div>
-        <Image className="general-hover rounded-full w-[250px] md:w-[370px] shadow-xl" src={imageBanner} alt="" />
+        <Image className="general-hover rounded-full w-[250px] md:w-[370px] shadow-xl auto-transition-image" src={imageBanner} alt="" />
       </div>
     </section>
   );

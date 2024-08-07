@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Raleway } from 'next/font/google';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const relaway = Raleway({ subsets: ['latin'] });
 
