@@ -36,16 +36,22 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ item, index }) => {
       variants={variants}
     >
       <div className={`flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-        <Image src={item.image} alt={item.title} className='general-hover w-full md:w-[70%] shadow-black shadow-lg max-md:mb-3 rounded-xl' />
-        <div className={`flex flex-col w-full md:w-[30%] justify-center ${index % 2 !== 0 ? 'items-end' : ''}`}>
+        <Image src={item.image} alt={item.title} className='general-hover w-full lg:w-[70%] md:w-[65%] shadow-black shadow-lg max-md:mb-3 rounded-xl' />
+        <div className={`flex flex-col w-full lg:w-[30%] md:w-[35%] justify-center ${index % 2 !== 0 ? 'items-end' : ''}`}>
           <h1 className='text-xl font-bold'>{item.title}</h1>
           <p className='text-base pb-2'>{item.subTitle}</p>
           <div className='flex gap-4'>
-            <a href={item.repoLink} target="_blank">
-              <button className="text-blue-300 font-medium border border-blue-300 w-28 px-2 py-1 transition duration-300 hover:text-white hover:bg-blue-600 max-md:w-24 max-md:text-sm">
+            {item.repoLink?.length > 5 ? (
+              <a href={item.repoLink} target="_blank" rel="noopener noreferrer">
+                <button className="text-blue-300 font-medium border border-blue-300 w-28 px-2 py-1 transition duration-300 hover:text-white hover:bg-blue-600 max-md:w-24 max-md:text-sm">
+                  Repositório
+                </button>
+              </a>
+            ) : (
+              <button className="font-medium border border-blue-300 w-28 px-2 py-1 transition duration-300  max-md:w-24 max-md:text-sm bg-gray-50 cursor-default text-gray-400 hover:bg-gray-50 hover:text-gray-400">
                 Repositório
               </button>
-            </a>
+            )}
             <a href={item.demoLink} target="_blank">
               <button className="bg-blue-300 text-white border border-blue-300 w-28 p-1 cursor-pointer transition duration-300 hover:bg-blue-200 hover:text-blue-120 max-md:w-24 max-md:text-sm">
                 Ver demo
@@ -70,7 +76,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ item, index }) => {
 
 export default function ProjectDisplay() {
   return (
-    <div className='flex flex-col gap-4 md:gap-16'>
+    <div className='flex flex-col gap-14 md:gap-16'>
       {projectsData.map((item, index) => (
         <ProjectCard key={item.id} item={item} index={index} />
       ))}

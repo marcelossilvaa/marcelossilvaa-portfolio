@@ -14,7 +14,7 @@ export default function Banner() {
             Olá, me chamo Marcelo e sou Desenvolvedor Front-End
           </h1>
           <p className='max-md:text-base'>
-            Baiano, 23 anos, graduando em Ciência da Computação com foco em desenvolvimento front end.
+            Baiano, 25 anos, graduando em Ciência da Computação com foco em desenvolvimento front end.
           </p>
           <div className="flex gap-2 md:gap-4">
             {dataBanner.map(item => (

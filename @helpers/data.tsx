@@ -6,12 +6,14 @@ import Git from '../public/icons/git.png';
 import TypeScript from '../public/icons/typescript.svg';
 import Css from '../public/icons/css-3.png';
 import Tailwind from '../public/icons/tailwind.png';
+import Shopify from '../public/icons/shopify-t.webp';
 
 import UFS from '../public/assets/ufs.png';
 import UniAmerica from '../public/assets/uniamerica.png';
 import Alura from '../public/assets/alura.png';
 import XPe from '../public/assets/xpe.png';
 import DIO from '../public/assets/dio.png';
+import Cepedi from '../public/assets/cepedi.png';
 
 
 import AIESEC from '../public/assets/AIESEC.png';
@@ -20,6 +22,7 @@ import CEJP from '../public/assets/CEJP.png';
 import inkPen from '../public/assets/inkPen.jpg';
 import Vasta from '../public/assets/vasta.png';
 
+import AGVeiculos from '../public/assets/projectsImage/ag-veiculos.png';
 import NostalgiaFlix from '../public/assets/projectsImage/NostalgiaFlix.png';
 import AluraGeek from '../public/assets/projectsImage/AluraGeek.png';
 import Box33 from '../public/assets/projectsImage/Box33.png';
@@ -155,8 +158,15 @@ export const dataAcademic = [
     id: 4,
     image: DIO,
     title: 'Bootcamp TypeScript',
-    date: '2024 - até o momento',
+    date: '2024',
     institution: 'DIO',
+  },
+  {
+    id: 4,
+    image: Cepedi,
+    title: 'Residência em Software',
+    date: '2024 - 2025',
+    institution: 'Cepedi',
   },
 ];
 
@@ -201,6 +211,28 @@ export const dataProfessional = [
 export const projectsData = [
   {
     id: '1',
+    title: 'AG Veículos',
+    subTitle: 'Catálogo de concessionária',
+    repoLink: '',
+    demoLink: 'https://agveiculosba.com/',
+    image: AGVeiculos,
+    technologies: [
+      {
+        name: 'Shopify',
+        image: Shopify,
+      },
+      {
+        name: 'Next',
+        image: Nextjs,
+      },
+      {
+        name: 'Tailwind',
+        image: Tailwind,
+      },
+    ],
+  },
+  {
+    id: '2',
     title: 'Alura Geek',
     subTitle: 'Simulação ecommerce',
     repoLink: '',
@@ -218,7 +250,7 @@ export const projectsData = [
     ],
   },
   {
-    id: '2',
+    id: '3',
     title: 'Nostalgia Flix',
     subTitle: 'Simulação de streaming',
     repoLink: 'https://github.com/marcelossilvaa/AluraFlix',
@@ -236,7 +268,7 @@ export const projectsData = [
     ],
   },
   {
-    id: '3',
+    id: '4',
     title: 'Box33 Enigmas',
     subTitle: 'Site de Enigmas',
     repoLink: 'https://github.com/marcelossilvaa/Box33',
@@ -254,7 +286,7 @@ export const projectsData = [
     ],
   },
   {
-    id: '4',
+    id: '5',
     title: 'Elenco Flamengo',
     subTitle: 'Exibição 2023',
     repoLink: 'https://github.com/marcelossilvaa/flamengo-team-roster',
@@ -272,7 +304,7 @@ export const projectsData = [
     ],
   },
   {
-    id: '5',
+    id: '6',
     title: 'GDX Consultoria',
     subTitle: 'Resolução de problemas aereos',
     repoLink: '',
@@ -290,7 +322,7 @@ export const projectsData = [
     ],
   },
   {
-    id: '6',
+    id: '7',
     title: 'inkPen',
     subTitle: 'Site de apresentação do MVP',
     repoLink: '',
