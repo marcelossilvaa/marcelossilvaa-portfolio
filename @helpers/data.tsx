@@ -121,7 +121,7 @@ export const dataSkills = [
   {
     id: 8,
     icon: Nextjs,
-    text: 'NextJS',
+    text: 'NextJs',
   },
 ];
 
@@ -222,7 +222,7 @@ export const projectsData = [
         image: Shopify,
       },
       {
-        name: 'Next',
+        name: 'NextJs',
         image: Nextjs,
       },
       {
@@ -258,7 +258,7 @@ export const projectsData = [
     image: NostalgiaFlix,
     technologies: [
       {
-        name: 'Next',
+        name: 'NextJs',
         image: Nextjs,
       },
       {
