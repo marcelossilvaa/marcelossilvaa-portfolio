@@ -7,6 +7,9 @@ import TypeScript from '../public/icons/typescript.svg';
 import Css from '../public/icons/css-3.png';
 import Tailwind from '../public/icons/tailwind.png';
 import Shopify from '../public/icons/shopify-t.webp';
+import Hydrogen from '../public/icons/hydrogen.svg';
+import Ionic from '../public/icons/ionic.svg';
+import Liquid from '../public/icons/liquid.svg';
 
 import UFS from '../public/assets/ufs.png';
 import UniAmerica from '../public/assets/uniamerica.png';
@@ -14,7 +17,6 @@ import Alura from '../public/assets/alura.png';
 import XPe from '../public/assets/xpe.png';
 import DIO from '../public/assets/dio.png';
 import Cepedi from '../public/assets/cepedi.png';
-
 
 import AIESEC from '../public/assets/AIESEC.png';
 import CEMP from '../public/assets/CEMP.png';
@@ -29,7 +31,6 @@ import Box33 from '../public/assets/projectsImage/Box33.png';
 import Flamengo from '../public/assets/projectsImage/Flamengo.png';
 import GDXConsultoria from '../public/assets/projectsImage/GDXConsultoria.png';
 import inkPenSite from '../public/assets/projectsImage/inkPenSite.png';
-
 
 export const dataHeader = [
   {
@@ -122,6 +123,26 @@ export const dataSkills = [
     id: 8,
     icon: Nextjs,
     text: 'NextJs',
+  },
+  {
+    id: 8,
+    icon: Shopify,
+    text: 'Shopify',
+  },
+  {
+    id: 8,
+    icon: Liquid,
+    text: 'Liquid',
+  },
+  {
+    id: 8,
+    icon: Hydrogen,
+    text: 'Hydrogen',
+  },
+  {
+    id: 8,
+    icon: Ionic,
+    text: 'Ionic & Capacitor',
   },
 ];
 
