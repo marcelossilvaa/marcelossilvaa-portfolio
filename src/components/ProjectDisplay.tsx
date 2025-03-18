@@ -85,7 +85,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ item, index }) => {
 
 export default function ProjectDisplay() {
   return (
-    <div className="flex flex-col gap-14 md:gap-16">
+    <div className="w-full flex flex-col gap-14 md:gap-16">
       {projectsData.map((item, index) => (
         <ProjectCard key={item.id} item={item} index={index} />
       ))}
