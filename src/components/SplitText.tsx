@@ -53,7 +53,7 @@ const SplitText: React.FC<SplitTextProps> = ({
     return () => observer.disconnect();
   }, [threshold, rootMargin]);
 
-  const springs = useSprings(
+  const springs = useSprings<any>(
     letters.length,
     letters.map((_, i) => ({
       from: animationFrom,
