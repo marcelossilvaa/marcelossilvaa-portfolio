@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { dataBanner } from '../../../@helpers/data';
 import { ArrowUpRight } from '../../../@helpers/icons';
-import imageBanner from '../../../public/assets/marcelo_vasta.png';
+import imageBanner from '../../../public/assets/marcelo-new.jpeg';
 import SplitText from '../../components/SplitText';
 const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
