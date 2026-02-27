@@ -1,44 +1,36 @@
 'use client';
-import { useEffect, useState } from 'react';
-import { dataSkills } from '../../../@helpers/data';
+import { getSkillsData } from '@/content/skills';
 import SkillsCard from '../../components/SkillsCard';
 import Title from '../../components/Tittle';
 import { motion } from 'framer-motion';
+import { revealSectionVars } from '@/components/FrameMotion/revealVars';
+import { useLocale } from '@/i18n/LocaleProvider';
+import { translations } from '@/i18n/translations';
 
 export default function Skills() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  const handleScroll = () => {
-    const section = document.getElementById('skills');
-    if (section) {
-      const { top } = section.getBoundingClientRect();
-      if (top < window.innerHeight && top > 0) {
-        setIsVisible(true);
-      }
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const { locale } = useLocale();
+  const text = translations[locale];
+  const skillsData = getSkillsData(locale);
 
   return (
-    <section id="skills" className="bg-white-200 w-full flex justify-center py-[8vh]">
-      <div className="max-w-6xl w-[95%] flex justify-center flex-col items-center">
+    <section id="skills" className="bg-bg-primary w-full flex justify-center py-[8vh]">
+      <motion.div
+        className="max-w-6xl w-[95%] flex justify-center flex-col items-center"
+        variants={revealSectionVars}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+      >
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
+          variants={revealSectionVars}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.25 }}
         >
-          <Title title="Skills" />
+          <Title title={text.sections.skills} />
         </motion.div>
-        <div>
-          <SkillsCard data={dataSkills} isVisible={isVisible} />
-        </div>
-      </div>
+        <SkillsCard data={skillsData} />
+      </motion.div>
     </section>
   );
 }

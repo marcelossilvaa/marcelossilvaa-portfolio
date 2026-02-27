@@ -11,15 +11,15 @@ import ScrollProgress from '@/components/ScrollProgress';
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between">
-        <ScrollProgress />
-        <Header />
-        <Banner />
-        <AboutMe />
-        <Skills />
-        <AcademicEducation />
-        <Professional />
-        <Projects />
-        <Footer />      
+      <ScrollProgress />
+      <Header />
+      <Banner />
+      <AboutMe />
+      <Skills />
+      <AcademicEducation />
+      <Professional />
+      <Projects />
+      <Footer />
     </main>
   );
 }

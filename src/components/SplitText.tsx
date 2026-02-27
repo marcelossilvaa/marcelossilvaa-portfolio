@@ -53,21 +53,20 @@ const SplitText: React.FC<SplitTextProps> = ({
     return () => observer.disconnect();
   }, [threshold, rootMargin]);
 
-  const springs = useSprings<any>(
+  const springs = useSprings(
     letters.length,
     letters.map((_, i) => ({
       from: animationFrom,
-      to: inView
-        ? async (next: (props: any) => Promise<void>) => {
-            await next(animationTo);
-            animatedCount.current += 1;
-            if (animatedCount.current === letters.length && onLetterAnimationComplete) {
-              onLetterAnimationComplete();
-            }
-          }
-        : animationFrom,
+      to: inView ? animationTo : animationFrom,
       delay: i * delay,
       config: { easing },
+      onRest: () => {
+        if (!inView) return;
+        animatedCount.current += 1;
+        if (animatedCount.current === letters.length && onLetterAnimationComplete) {
+          onLetterAnimationComplete();
+        }
+      },
     }))
   );
 
@@ -86,7 +85,7 @@ const SplitText: React.FC<SplitTextProps> = ({
             return (
               <animated.span
                 key={index}
-                style={springs[index] as unknown as React.CSSProperties}
+                style={springs[index]}
                 className="inline-block transform transition-opacity will-change-transform"
               >
                 {letter}

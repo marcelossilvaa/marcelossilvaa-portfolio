@@ -1,76 +1,106 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 
+:root {
+  --bg-primary: 246 248 251;
+  --bg-secondary: 238 242 248;
+  --surface: 255 255 255;
+  --surface-soft: 248 250 252;
+  --text-primary: 15 23 42;
+  --text-secondary: 71 85 105;
+  --border-soft: 219 227 239;
+  --accent-primary: 168 85 247;
+  --accent-secondary: 236 72 153;
+}
+
+.dark {
+  --bg-primary: 3 7 18;
+  --bg-secondary: 12 20 36;
+  --surface: 15 23 42;
+  --surface-soft: 30 41 59;
+  --text-primary: 241 245 249;
+  --text-secondary: 148 163 184;
+  --border-soft: 51 65 85;
+  --accent-primary: 192 132 252;
+  --accent-secondary: 244 114 182;
+}
 
 body {
-  @apply text-black-100 text-lg;
-  
-}
-*, *:before, *:after {
-  scroll-behavior: smooth !important ;
+  @apply bg-bg-primary text-text-primary text-base md:text-lg antialiased;
+  background-image:
+    radial-gradient(circle at top right, rgba(var(--accent-primary), 0.1), transparent 40%),
+    radial-gradient(circle at 20% 20%, rgba(var(--accent-secondary), 0.08), transparent 35%);
+  position: relative;
 }
 
-.font-marcelo{
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(var(--accent-primary), 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--accent-primary), 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black 35%, transparent 100%);
+  opacity: 0.32;
+}
+
+*,
+*:before,
+*:after {
+  scroll-behavior: smooth !important;
+}
+
+.font-marcelo {
   font-family: 'Tangerine', cursive;
-  font-weight: 400;
-  font-style: normal;
 }
 
-/* Header Links */
+a {
+  @apply transition-colors duration-300;
+}
 
 .header-links {
-  position: relative; 
+  @apply relative text-text-secondary hover:text-text-primary;
 }
 
 .header-links::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   width: 0%;
   height: 2px;
-  background-image: linear-gradient(to right, #464646 50%, transparent 50%);
-  background-size: 200% 100%;
-  background-position: 100% 0;
-  transition: background-position 0.3s ease, width 0.3s ease;
+  background: linear-gradient(90deg, #1d4ed8, #2563eb);
+  transition: width 0.3s ease;
 }
 
 .header-links:hover::after {
   width: 100%;
-  background-position: 0 0;
 }
-
-
-
-/* Image Hover.css */
 
 @media only screen and (min-width: 768px) {
-  .general-hover:hover{
-    transform: scale(1.1); 
-    transition: transform 0.3s ease;
+  .general-hover:hover {
+    transform: translateY(-2px) scale(1.01);
+    transition: transform 0.28s ease;
   }
-  
+
   .general-hover:not(:hover) {
-    transform: scale(1); 
-    transition: transform 0.3s ease;
+    transform: scale(1);
+    transition: transform 0.28s ease;
   }
 }
 
-
-
-/* scrollprogress.css */
-
-#scroll-progress-container  {
+#scroll-progress-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 5px;
-  background-color: #eee;
+  height: 4px;
+  background-color: rgba(var(--border-soft), 0.75);
   display: none;
   z-index: 999;
 }
@@ -78,37 +108,78 @@ body {
 #scroll-progress {
   height: 100%;
   width: 0;
-  transition: width 0.3s;
+  transition: width 0.3s ease-out;
 }
 
-
-/* scrollbar.css */
-
 ::-webkit-scrollbar {
-  width: 8px; 
+  width: 8px;
   border-radius: 200px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #727272;
+  background: rgb(var(--border-soft));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: rgba(var(--text-secondary), 0.5);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: rgba(var(--text-secondary), 0.9);
 }
 
+.futuristic-card {
+  @apply border border-border-soft shadow-soft backdrop-blur-md;
+  background-color: rgba(255, 255, 255, 0.72);
+  background-image: linear-gradient(
+    140deg,
+    rgba(var(--accent-primary), 0.12) 0%,
+    rgba(var(--accent-secondary), 0.08) 30%,
+    transparent 100%
+  );
+}
 
-/* Transition  */
+.dark .futuristic-card {
+  background-color: rgba(15, 23, 42, 0.55);
+}
 
-.auto-transition{
+.futuristic-card-purple {
+  background-image: linear-gradient(
+    145deg,
+    rgba(168, 85, 247, 0.22) 0%,
+    rgba(236, 72, 153, 0.14) 42%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+}
+
+.dark .futuristic-card-purple {
+  background-image: linear-gradient(
+    145deg,
+    rgba(168, 85, 247, 0.34) 0%,
+    rgba(236, 72, 153, 0.2) 42%,
+    rgba(15, 23, 42, 0.22) 100%
+  );
+}
+
+.futuristic-pill {
+  @apply border border-border-soft bg-surface-soft text-text-secondary rounded-full px-3 py-1 text-sm;
+}
+
+.auto-transition {
   transition: opacity 1.5s ease-in-out;
 
   @starting-style {
-      opacity: 0;
+    opacity: 0;
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

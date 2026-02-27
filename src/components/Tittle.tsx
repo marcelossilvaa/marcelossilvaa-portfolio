@@ -3,5 +3,9 @@ interface TitleProps {
 }
 
 export default function Title({ title }: TitleProps) {
-  return <h1 className="font-bold text-3xl py-2">{title}</h1>;
+  return (
+    <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary py-2">
+      {title}
+    </h2>
+  );
 }

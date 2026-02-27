@@ -1,14 +1,22 @@
 'use client';
-import { dataHeader } from '../../../@helpers/data';
+import { getNavigationLinks } from '@/content/navigation';
 import { Desktop } from '../../../@helpers/icons';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { menuVars } from '@/components/FrameMotion/menuVars';
 import { containerVars } from '@/components/FrameMotion/containerVars';
+import { mobileLinkVars } from '@/components/FrameMotion/mobileLinkVars';
+import ThemeToggle from '@/components/theme/ThemeToggle';
+import LanguageToggle from '@/components/i18n/LanguageToggle';
+import { useLocale } from '@/i18n/LocaleProvider';
+import { translations } from '@/i18n/translations';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { locale } = useLocale();
+  const text = translations[locale];
+  const navigationLinks = getNavigationLinks(locale);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -16,43 +24,42 @@ export default function Header() {
     const setResize = () => (innerWidth >= 768 && menuOpen ? setMenuOpen(false) : null);
 
     window.addEventListener('resize', setResize);
+    return () => window.removeEventListener('resize', setResize);
   }, [menuOpen]);
 
-  const menuClose = () => setMenuOpen(false);
-
   return (
-    <header className="auto-transition z-10 flex justify-center w-full fixed backdrop-blur-md bg-opacity-50 bg-white">
-      <div className="flex h-[8vh] justify-between items-center text-[15px] text-black-100 max-w-6xl w-[95%]">
-        <Link href={'/#banner'} className=" flex flex-row gap-1 items-center z-10">
-          <Desktop size={28} color="#3f433d" weight="bold" />
-          <h1 className="font-bold">Marcelo S Silva</h1>
+    <header className="auto-transition z-20 flex justify-center w-full fixed bg-surface/85 backdrop-blur-md border-b border-border-soft">
+      <div className="flex h-[8vh] justify-between items-center text-[15px] text-text-primary max-w-6xl w-[95%]">
+        <Link href="/#banner" className="flex flex-row gap-1 items-center z-10">
+          <Desktop size={28} className="text-text-primary" weight="bold" />
+          <h1 className="font-bold tracking-tight">Marcelo S Silva</h1>
         </Link>
-        <div className="hidden md:block">
-          <ul className=" flex space-x-4 ">
-            {dataHeader.map((dataHeader, index, array) => (
-              <li
-                key={dataHeader.id}
-                className={` ${index === array.length - 1 ? 'font-bold' : ''}`}
-              >
-                <a href={dataHeader.href} className="header-links">
-                  {dataHeader.text}
+        <div className="hidden md:flex items-center gap-4">
+          <ul className="flex space-x-5">
+            {navigationLinks.map((item, index, array) => (
+              <li key={item.id} className={`${index === array.length - 1 ? 'font-bold' : ''}`}>
+                <a href={item.href} className="header-links">
+                  {item.text}
                 </a>
               </li>
             ))}
           </ul>
+          <LanguageToggle />
+          <ThemeToggle />
         </div>
 
         <div className="flex md:hidden z-10 scale-150">
-          <label className="sus-hamburger-1a2b cursor-pointer">
+          <label className="sus-hamburger-1a2b cursor-pointer" aria-label={text.header.openMenu}>
             <input
               type="checkbox"
               className="hidden peer"
               checked={menuOpen}
               onChange={toggleMenu}
+              aria-label={menuOpen ? text.header.closeMenu : text.header.openMenu}
             />
             <svg
               viewBox="0 0 32 32"
-              className="h-12 transition-transform duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] peer-checked:rotate-[-45deg]"
+              className="h-12 text-text-primary transition-transform duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] peer-checked:rotate-[-45deg]"
             >
               <path
                 className="sus-line-1a2b sus-line-top-bottom-1a2b"
@@ -66,7 +73,7 @@ export default function Header() {
         <style jsx>{`
           .sus-line-1a2b {
             fill: none;
-            stroke: #464646;
+            stroke: currentColor;
             stroke-linecap: round;
             stroke-linejoin: round;
             stroke-width: 2;
@@ -91,7 +98,7 @@ export default function Header() {
               initial="initial"
               animate="animate"
               exit="exit"
-              className="fixed md:hidden top-0 origin-top left-0 bg-primary-900 w-full h-[28rem] rounded-br-2xl rounded-bl-2xl bg-white backdrop-blur-md bg-opacity-90"
+              className="fixed md:hidden top-0 origin-top left-0 w-full h-[28rem] rounded-br-2xl rounded-bl-2xl bg-surface/95 backdrop-blur-md border-b border-border-soft"
             >
               <motion.div
                 variants={containerVars}
@@ -100,21 +107,23 @@ export default function Header() {
                 exit="initial"
                 className="md:hidden font-poppins w-full gap-10 flex flex-col items-center xs:text-xl md:text-base py-20 px-4"
               >
-                {dataHeader.map((dataHeader, index, array) => (
-                  <div
-                    key={dataHeader.id}
-                    className={`overflow-hidden text-lg ${
-                      index === array.length - 1 ? 'font-bold' : ''
-                    }`}
+                {navigationLinks.map((item, index, array) => (
+                  <motion.div
+                    key={item.id}
+                    variants={mobileLinkVars}
+                    className={`overflow-hidden text-lg ${index === array.length - 1 ? 'font-bold' : ''}`}
                   >
                     <a
-                      href={dataHeader.href}
-                      className="hover:border-b-1 transition-opacity hover:shadow-md"
+                      href={item.href}
+                      className="header-links"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      {dataHeader.text}
+                      {item.text}
                     </a>
-                  </div>
+                  </motion.div>
                 ))}
+                <LanguageToggle />
+                <ThemeToggle />
               </motion.div>
             </motion.div>
           )}

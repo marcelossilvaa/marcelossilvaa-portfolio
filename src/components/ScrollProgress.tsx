@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from 'react';
 
 function ScrollProgress() {
@@ -7,7 +7,8 @@ function ScrollProgress() {
 
   useEffect(() => {
     function handleScroll() {
-      const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      const scrolled =
+        (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
       setScrollWidth(scrolled);
 
       if (window.scrollY > 100) {
@@ -26,8 +27,11 @@ function ScrollProgress() {
 
   return (
     <div style={{ display: displayProgress ? 'block' : 'none' }} id="scroll-progress-container">
-      <div id="scroll-progress"  className='bg-black-100' style={{ width: `${scrollWidth}%` }}>
-      </div>
+      <div
+        id="scroll-progress"
+        className="bg-gradient-to-r from-accent-secondary to-accent-primary"
+        style={{ width: `${scrollWidth}%` }}
+      />
     </div>
   );
 }
