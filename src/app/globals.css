@@ -165,6 +165,69 @@ a {
   @apply border border-border-soft bg-surface-soft text-text-secondary rounded-full px-3 py-1 text-sm;
 }
 
+.profile-ring {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-ring::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 9999px;
+  padding: 1.6px;
+  background: linear-gradient(
+    160deg,
+    rgba(39, 51, 73, 0.78) 0%,
+    rgba(71, 85, 105, 0.56) 40%,
+    rgba(30, 41, 59, 0.78) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: profileRingSpin 15s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes profileRingSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.profile-ring::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 9999px;
+  z-index: 2;
+  background: radial-gradient(circle at 50% 3px, rgba(100, 116, 139, 0.95) 0 4px, transparent 5px);
+  animation: orbitDot 5.2s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes orbitDot {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dark .profile-ring::before {
+  background: linear-gradient(
+    160deg,
+    rgba(71, 85, 105, 0.75) 0%,
+    rgba(100, 116, 139, 0.45) 45%,
+    rgba(51, 65, 85, 0.75) 100%
+  );
+}
+
+.dark .profile-ring::after {
+  background: radial-gradient(circle at 50% 3px, rgba(203, 213, 225, 0.9) 0 4px, transparent 5px);
+}
+
 .auto-transition {
   transition: opacity 1.5s ease-in-out;
 

@@ -56,8 +56,9 @@ export const translations: Record<Locale, TranslationSchema> = {
       closeMenu: 'Fechar menu',
     },
     banner: {
-      hero: 'Olá, me chamo Marcelo e sou Desenvolvedor Front-End',
-      subtitle: 'Baiano, 25 anos, graduando em Ciência da Computação com foco em desenvolvimento front-end.',
+      hero: 'Olá, me chamo Marcelo e sou Especialista Front-End',
+      subtitle:
+        'Formado em Ciência da Computação, com foco em ecommerce, CRO e experiências de alta conversão.',
     },
     footer: {
       cta: 'Entre em contato, estou sempre disponível para novos projetos.',
@@ -96,8 +97,9 @@ export const translations: Record<Locale, TranslationSchema> = {
       closeMenu: 'Close menu',
     },
     banner: {
-      hero: "Hi, I'm Marcelo and I'm a Front-End Developer",
-      subtitle: 'Brazilian, 25 years old, Computer Science student focused on front-end development.',
+      hero: "Hi, I'm Marcelo and I'm a Front-End Specialist",
+      subtitle:
+        "Bachelor's degree in Computer Science, focused on ecommerce, CRO, and high-conversion digital experiences.",
     },
     footer: {
       cta: "Let's connect. I'm always open to new projects.",

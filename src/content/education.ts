@@ -20,8 +20,8 @@ export function getEducationData(locale: Locale): HistoryItem[] {
       {
         id: 2,
         image: UniAmerica,
-        title: 'Computer Science',
-        date: '2021 - 2025',
+        title: "Bachelor's Degree in Computer Science",
+        date: '2021 - 2025 | completed',
         institution: 'UniAmerica',
       },
       {
@@ -66,8 +66,8 @@ export function getEducationData(locale: Locale): HistoryItem[] {
     {
       id: 2,
       image: UniAmerica,
-      title: 'Ciência da Computação',
-      date: '2021 - 2025',
+      title: 'Bacharelado em Ciência da Computação',
+      date: '2021 - 2025 | concluído',
       institution: 'UniAmerica',
     },
     {

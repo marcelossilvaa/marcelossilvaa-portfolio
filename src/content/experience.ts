@@ -32,12 +32,12 @@ export function getProfessionalData(locale: Locale): HistoryItem[] {
       {
         id: 3,
         image: Webjump,
-        title: 'Mid-level Front-End Developer',
+        title: 'Mid-level Front-End Specialist (Ecommerce & CRO)',
         date: '2025 - present',
         institution: 'Webjump',
         summary: [
           'Allocated to enterprise e-commerce accounts such as Azul, Nespresso and 333Obras.',
-          'Implemented A/B tests and personalization with JavaScript/CSS and Adobe Target/Analytics.',
+          'Implemented A/B tests and personalization with JavaScript/CSS and Adobe Target/Analytics to increase conversion.',
         ],
       },
     ];
@@ -69,12 +69,12 @@ export function getProfessionalData(locale: Locale): HistoryItem[] {
     {
       id: 3,
       image: Webjump,
-      title: 'Desenvolvedor Front-End Pleno',
+      title: 'Especialista Front-End Pleno (Ecommerce & CRO)',
       date: '2025 - até o momento',
       institution: 'Webjump',
       summary: [
         'Atuação em e-commerces de grande porte como Azul, Nespresso e 333Obras.',
-        'Implementação de testes A/B e personalizações com JavaScript/CSS e Adobe Target/Analytics.',
+        'Implementação de testes A/B e personalizações com JavaScript/CSS e Adobe Target/Analytics para aumento de conversão.',
       ],
     },
   ];

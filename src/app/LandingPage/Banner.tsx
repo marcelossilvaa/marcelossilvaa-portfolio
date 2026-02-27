@@ -24,8 +24,7 @@ export default function Banner() {
         variants={revealSectionVars}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.25 }}
-      >
+        viewport={{ once: false, amount: 0.25 }}>
         <div className="flex flex-col gap-2">
           <SplitText
             text={text.banner.hero}
@@ -37,16 +36,13 @@ export default function Banner() {
             threshold={0.2}
             rootMargin="-50px"
           />
-          <p className="max-md:text-base text-text-secondary md:max-w-xl">
-            {text.banner.subtitle}
-          </p>
+          <p className="max-md:text-base text-text-secondary md:max-w-xl">{text.banner.subtitle}</p>
           <motion.div
             className="flex gap-2 md:gap-4 flex-wrap"
             variants={staggerContainerVars}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }}
-          >
+            viewport={{ once: false, amount: 0.2 }}>
             {socialLinks.map((item) => (
               <Link
                 key={item.id}
@@ -56,8 +52,7 @@ export default function Banner() {
                 }`}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`Abrir ${item.title} em nova aba`}
-              >
+                aria-label={`Abrir ${item.title} em nova aba`}>
                 {item.title}
                 {item.id === 1 ? (
                   <ArrowUpRight size={22} className="text-accent-primary" weight="bold" />
@@ -68,12 +63,14 @@ export default function Banner() {
             ))}
           </motion.div>
         </div>
-        <Image
-          className="general-hover rounded-full w-[250px] md:w-[360px] border-4 border-surface shadow-soft"
-          src={imageBanner}
-          alt="Foto de Marcelo Santana Silva"
-          priority
-        />
+        <div className="profile-ring general-hover min-w-[250px] md:min-w-[350px] rounded-full">
+          <Image
+            className="relative z-[1] rounded-full w-[250px] md:w-[350px] border-2 border-surface shadow-soft"
+            src={imageBanner}
+            alt="Foto de Marcelo Santana Silva"
+            priority
+          />
+        </div>
       </motion.div>
     </section>
   );
