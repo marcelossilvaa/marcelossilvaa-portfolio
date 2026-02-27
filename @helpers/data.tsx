@@ -18,19 +18,14 @@ import XPe from '../public/assets/xpe.png';
 import DIO from '../public/assets/dio.png';
 import Cepedi from '../public/assets/cepedi.png';
 
-import AIESEC from '../public/assets/AIESEC.png';
-import CEMP from '../public/assets/CEMP.png';
-import CEJP from '../public/assets/CEJP.png';
 import inkPen from '../public/assets/inkPen.jpg';
 import Vasta from '../public/assets/vasta.png';
 
 import AGVeiculos from '../public/assets/projectsImage/ag-veiculos.png';
-import NostalgiaFlix from '../public/assets/projectsImage/NostalgiaFlix.png';
 import AluraGeek from '../public/assets/projectsImage/AluraGeek.png';
-import Box33 from '../public/assets/projectsImage/Box33.png';
-import Flamengo from '../public/assets/projectsImage/Flamengo.png';
 import GDXConsultoria from '../public/assets/projectsImage/GDXConsultoria.png';
 import inkPenSite from '../public/assets/projectsImage/inkPenSite.png';
+import Webjump from '../public/assets/logo_webjump.webp';
 
 export const dataHeader = [
   {
@@ -158,7 +153,7 @@ export const dataAcademic = [
     id: 2,
     image: UniAmerica,
     title: 'Ciência da Computação',
-    date: '2021 - em andamento',
+    date: '2021 - 2025',
     institution: 'UniAmerica',
   },
   {
@@ -194,38 +189,24 @@ export const dataAcademic = [
 export const dataProfessional = [
   {
     id: 1,
-    image: AIESEC,
-    title: 'Voluntariado',
-    date: '2021',
-    institution: 'AIESEC',
-  },
-  {
-    id: 2,
-    image: CEMP,
-    title: 'Educação Empreendedora',
-    date: '2022',
-    institution: 'CEMP - UFS',
-  },
-  {
-    id: 3,
-    image: CEJP,
-    title: 'Professor',
-    date: '2023',
-    institution: 'CEJP',
-  },
-  {
-    id: 4,
     image: inkPen,
     title: 'Co Founder & Dev Front End',
     date: '2023 - 2024',
     institution: 'inkPen',
   },
   {
-    id: 5,
+    id: 2,
     image: Vasta,
     title: 'Desenvolvedor Front End',
     date: '2024 - até o momento',
     institution: 'Vasta',
+  },
+  {
+    id: 3,
+    image: Webjump,
+    title: 'Desenvolvedor Front End',
+    date: '2025 - até o momento',
+    institution: 'Webjump',
   },
 ];
 
@@ -259,60 +240,6 @@ export const projectsData = [
     repoLink: '',
     demoLink: 'https://alura-geek-ruby.vercel.app/',
     image: AluraGeek,
-    technologies: [
-      {
-        name: 'React',
-        image: React,
-      },
-      {
-        name: 'Tailwind',
-        image: Tailwind,
-      },
-    ],
-  },
-  {
-    id: '3',
-    title: 'Nostalgia Flix',
-    subTitle: 'Simulação de streaming',
-    repoLink: 'https://github.com/marcelossilvaa/AluraFlix',
-    demoLink: 'https://nostalgia-flix.vercel.app/',
-    image: NostalgiaFlix,
-    technologies: [
-      {
-        name: 'NextJs',
-        image: Nextjs,
-      },
-      {
-        name: 'Tailwind',
-        image: Tailwind,
-      },
-    ],
-  },
-  {
-    id: '4',
-    title: 'Box33 Enigmas',
-    subTitle: 'Site de Enigmas',
-    repoLink: 'https://github.com/marcelossilvaa/Box33',
-    demoLink: 'https://box33enigmas.vercel.app/',
-    image: Box33,
-    technologies: [
-      {
-        name: 'React',
-        image: React,
-      },
-      {
-        name: 'Tailwind',
-        image: Tailwind,
-      },
-    ],
-  },
-  {
-    id: '5',
-    title: 'Elenco Flamengo',
-    subTitle: 'Exibição 2023',
-    repoLink: 'https://github.com/marcelossilvaa/flamengo-team-roster',
-    demoLink: 'https://flamengo-team-roster.vercel.app/',
-    image: Flamengo,
     technologies: [
       {
         name: 'React',
