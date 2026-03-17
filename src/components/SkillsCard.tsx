@@ -74,12 +74,6 @@ export default function SkillsCard({ data }: SkillsCardProps) {
       title: isEnglish ? 'E-commerce ecosystem' : 'Ecossistema e-commerce',
       predicate: (item: SkillItem) => ['Shopify', 'Liquid', 'Ionic & Capacitor'].includes(item.text),
     },
-    {
-      id: 'optimization',
-      title: isEnglish ? 'Frontend foundations and collaboration' : 'Fundamentos front-end e colaboração',
-      predicate: (item: SkillItem) =>
-        ['JavaScript', 'Git & GitHub', 'Git e GitHub', 'CSS', 'HTML'].includes(item.text),
-    },
   ];
 
   return (
@@ -118,7 +112,7 @@ export default function SkillsCard({ data }: SkillsCardProps) {
           );
         })}
 
-        <RevealOnScroll once={false} threshold={0.2} delayMs={240} className="w-full">
+        <RevealOnScroll once={false} threshold={0.2} delayMs={160} className="w-full">
           <article className="futuristic-card rounded-2xl p-4 md:p-5">
             <h3 className="text-base md:text-lg font-bold text-text-primary mb-3">
               {isEnglish ? 'Applied AI and automation' : 'IA aplicada e automação'}
@@ -138,7 +132,7 @@ export default function SkillsCard({ data }: SkillsCardProps) {
           </article>
         </RevealOnScroll>
 
-        <RevealOnScroll once={false} threshold={0.2} delayMs={320} className="w-full">
+        <RevealOnScroll once={false} threshold={0.2} delayMs={240} className="w-full">
           <article className="futuristic-card rounded-2xl p-4 md:p-5">
             <h3 className="text-base md:text-lg font-bold text-text-primary mb-3">
               {isEnglish ? 'CRO and analytics' : 'CRO e analytics'}
