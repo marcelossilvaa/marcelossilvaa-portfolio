@@ -14,6 +14,8 @@ export default function Banner() {
   const { locale } = useLocale();
   const text = translations[locale];
   const socialLinks = getSocialLinks(locale);
+  const heroHighlights =
+    locale === 'en' ? ['CMS', 'performance', 'conversion'] : ['CMS', 'performance', 'conversão'];
 
   return (
     <section id="banner" className="max-w-6xl w-[95%] py-[32px]">
@@ -26,6 +28,8 @@ export default function Banner() {
           <SplitText
             text={text.banner.hero}
             className="text-3xl md:text-5xl font-bold tracking-tight text-text-primary"
+            highlightWords={heroHighlights}
+            highlightClassName="bg-gradient-to-r from-violet-300 via-indigo-300 to-cyan-300 bg-clip-text text-transparent"
             delay={50}
             animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
             animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
@@ -33,8 +37,24 @@ export default function Banner() {
             threshold={0.2}
             rootMargin="-50px"
           />
-          <p className="max-md:text-base text-text-secondary md:max-w-xl">{text.banner.subtitle}</p>
-          <div className="flex gap-2 md:gap-4 flex-wrap">
+          <p className="max-md:text-base text-text-secondary md:max-w-2xl">{text.banner.subtitle}</p>
+          <div className="flex gap-3 md:gap-4 flex-wrap mt-2">
+            <a
+              href="https://wa.me/5577991219434"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm md:text-base font-semibold bg-gradient-to-r from-violet-500 via-indigo-500 to-cyan-500 text-white hover:opacity-90 transition-opacity shadow-[0_10px_25px_rgba(99,102,241,0.35)]"
+            >
+              {text.banner.ctaPrimary}
+            </a>
+            <Link
+              href="/#projects"
+              className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm md:text-base font-semibold border border-border-soft text-text-primary hover:bg-surface-soft transition-colors"
+            >
+              {text.banner.ctaSecondary}
+            </Link>
+          </div>
+          <div className="flex gap-2 md:gap-4 flex-wrap mt-1">
             {socialLinks.map((item, index) => (
               <RevealOnScroll
                 key={item.id}

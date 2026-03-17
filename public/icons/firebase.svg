@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Firebase">
+  <defs>
+    <linearGradient id="firebaseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFCA28" />
+      <stop offset="55%" stop-color="#FF9100" />
+      <stop offset="100%" stop-color="#F57C00" />
+    </linearGradient>
+  </defs>
+  <path
+    fill="url(#firebaseGradient)"
+    d="M56 214 126 28c1-4 6-5 9-2l18 21-57 167-34 7c-4 1-8-3-6-7Z"
+  />
+  <path
+    fill="#FFA000"
+    d="M94 214 200 107c3-3 8-1 9 3l14 83c1 4-2 8-6 9l-123 12c-5 1-8-4-4-8Z"
+  />
+  <path
+    fill="#F57F17"
+    d="M88 132 129 73c2-3 6-3 8 0l23 35-72 106c-2 3-7 1-7-2l-2-72c0-3 0-6 2-9Z"
+  />
+</svg>

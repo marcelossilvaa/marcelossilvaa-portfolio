@@ -13,6 +13,8 @@ interface SplitTextProps {
   rootMargin?: string;
   textAlign?: 'left' | 'right' | 'center' | 'justify' | 'start' | 'end';
   onLetterAnimationComplete?: () => void;
+  highlightWords?: string[];
+  highlightClassName?: string;
 }
 
 const SplitText: React.FC<SplitTextProps> = ({
@@ -26,8 +28,14 @@ const SplitText: React.FC<SplitTextProps> = ({
   rootMargin = '-100px',
   textAlign = 'start',
   onLetterAnimationComplete,
+  highlightWords = [],
+  highlightClassName = 'text-accent-primary',
 }) => {
   const words = text.split(' ').map((word) => word.split(''));
+  const wordTokens = text.split(' ');
+  const normalizedHighlights = new Set(
+    highlightWords.map((word) => word.toLocaleLowerCase().replace(/^[^\wÀ-ÿ]+|[^\wÀ-ÿ]+$/g, ''))
+  );
   const letters = words.flat();
   const [inView, setInView] = useState(false);
   const ref = useRef<HTMLParagraphElement>(null);
@@ -81,12 +89,19 @@ const SplitText: React.FC<SplitTextProps> = ({
           {word.map((letter, letterIndex) => {
             const index =
               words.slice(0, wordIndex).reduce((acc, w) => acc + w.length, 0) + letterIndex;
+            const token = wordTokens[wordIndex] ?? '';
+            const normalizedToken = token
+              .toLocaleLowerCase()
+              .replace(/^[^\wÀ-ÿ]+|[^\wÀ-ÿ]+$/g, '');
+            const isHighlightedWord = normalizedHighlights.has(normalizedToken);
 
             return (
               <animated.span
                 key={index}
                 style={springs[index]}
-                className="inline-block transform transition-opacity will-change-transform"
+                className={`inline-block transform transition-opacity will-change-transform ${
+                  isHighlightedWord ? highlightClassName : ''
+                }`}
               >
                 {letter}
               </animated.span>

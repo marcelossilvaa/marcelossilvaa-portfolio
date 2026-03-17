@@ -16,7 +16,7 @@ export default function AboutMe() {
       id="aboutMe"
       className="bg-bg-secondary w-full flex justify-center border-y border-border-soft">
       <RevealOnScroll
-        className="auto-transition flex flex-col items-start max-w-6xl w-[95%] py-[8vh]"
+        className="auto-transition flex flex-col items-start max-w-6xl w-[95%] py-[6vh]"
         threshold={0.25}
         once={false}>
         <Title title={text.sections.about} />

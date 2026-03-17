@@ -42,8 +42,14 @@ export type ProjectItem = {
   image: StaticImageData;
   title: string;
   subTitle: string;
+  challenge: string;
+  strategy: string;
+  impact: string;
+  featured?: boolean;
   repoLink: string;
   demoLink: string;
+  appStoreLink?: string;
+  playStoreLink?: string;
   technologies: ProjectTechnology[];
 };
 

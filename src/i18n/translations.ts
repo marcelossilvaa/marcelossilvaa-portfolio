@@ -6,6 +6,7 @@ type TranslationSchema = {
     skills: string;
     education: string;
     professional: string;
+    process: string;
     projects: string;
     contact: string;
   };
@@ -16,16 +17,21 @@ type TranslationSchema = {
   banner: {
     hero: string;
     subtitle: string;
+    ctaPrimary: string;
+    ctaSecondary: string;
   };
   footer: {
     cta: string;
     developedBy: string;
   };
   project: {
-    repository: string;
     demo: string;
     all: string;
     noResults: string;
+    challenge: string;
+    strategy: string;
+    impact: string;
+    featured: string;
   };
   skills: {
     close: string;
@@ -39,6 +45,16 @@ type TranslationSchema = {
     light: string;
     dark: string;
   };
+  process: {
+    introTitle: string;
+    introDescription: string;
+    experimentationTitle: string;
+    experimentationDescription: string;
+    automationTitle: string;
+    automationDescription: string;
+    architectureTitle: string;
+    architectureDescription: string;
+  };
 };
 
 export const translations: Record<Locale, TranslationSchema> = {
@@ -46,8 +62,9 @@ export const translations: Record<Locale, TranslationSchema> = {
     sections: {
       about: 'Sobre mim',
       skills: 'Skills',
-      education: 'Formação Acadêmica',
-      professional: 'Histórico Profissional',
+      education: 'Formação e especializações',
+      professional: 'Experiência profissional',
+      process: 'Como eu trabalho',
       projects: 'Projetos',
       contact: 'Contato',
     },
@@ -56,19 +73,24 @@ export const translations: Record<Locale, TranslationSchema> = {
       closeMenu: 'Fechar menu',
     },
     banner: {
-      hero: 'Olá, me chamo Marcelo e sou Especialista Front-End',
+      hero: 'Desenvolvimento Front-End e CMS para e-commerces com foco em performance e conversão',
       subtitle:
-        'Formado em Ciência da Computação, com foco em ecommerce, CRO e experiências de alta conversão.',
+        'Projeto e implemento soluções escaláveis com Next.js, Shopify, CMS headless e automação para transformar experiência digital em resultado de negócio.',
+      ctaPrimary: 'Falar no WhatsApp',
+      ctaSecondary: 'Ver estudos de caso',
     },
     footer: {
       cta: 'Entre em contato, estou sempre disponível para novos projetos.',
       developedBy: 'Desenvolvido por Marcelo S Silva',
     },
     project: {
-      repository: 'Repositório',
-      demo: 'Ver demo',
+      demo: 'Ver preview',
       all: 'Todas',
       noResults: 'Nenhum projeto encontrado para esse filtro.',
+      challenge: 'Desafio',
+      strategy: 'Estratégia',
+      impact: 'Impacto',
+      featured: 'Caso em destaque',
     },
     skills: {
       close: 'Fechar',
@@ -82,13 +104,28 @@ export const translations: Record<Locale, TranslationSchema> = {
       light: 'Tema claro',
       dark: 'Tema escuro',
     },
+    process: {
+      introTitle: 'Diagnóstico técnico e de negócio',
+      introDescription:
+        'Mapeio jornada, performance e pontos de atrito para definir um plano de ação com prioridade clara.',
+      experimentationTitle: 'Implementação e experimentação',
+      experimentationDescription:
+        'Entrego melhorias no front-end e valido hipóteses com testes para evoluir conversão com segurança.',
+      automationTitle: 'Automação com n8n',
+      automationDescription:
+        'Automatizo coleta e organização de dados para reduzir trabalho manual e acelerar decisões.',
+      architectureTitle: 'Evolução contínua com IA',
+      architectureDescription:
+        'Uso Cursor e Claude Code para acelerar refactors, documentação e entregas mantendo qualidade técnica.',
+    },
   },
   en: {
     sections: {
       about: 'About me',
       skills: 'Skills',
-      education: 'Education',
-      professional: 'Professional History',
+      education: 'Education and specializations',
+      professional: 'Professional experience',
+      process: 'How I work',
       projects: 'Projects',
       contact: 'Contact',
     },
@@ -97,19 +134,24 @@ export const translations: Record<Locale, TranslationSchema> = {
       closeMenu: 'Close menu',
     },
     banner: {
-      hero: "Hi, I'm Marcelo and I'm a Front-End Specialist",
+      hero: 'Front-end and CMS development for e-commerce focused on performance and conversion',
       subtitle:
-        "Bachelor's degree in Computer Science, focused on ecommerce, CRO, and high-conversion digital experiences.",
+        'I design and implement scalable solutions with Next.js, Shopify, headless CMS, and automation to turn digital experience into business outcomes.',
+      ctaPrimary: 'Chat on WhatsApp',
+      ctaSecondary: 'See case studies',
     },
     footer: {
       cta: "Let's connect. I'm always open to new projects.",
       developedBy: 'Developed by Marcelo S Silva',
     },
     project: {
-      repository: 'Repository',
-      demo: 'Live demo',
+      demo: 'See preview',
       all: 'All',
       noResults: 'No projects found for this filter.',
+      challenge: 'Challenge',
+      strategy: 'Strategy',
+      impact: 'Impact',
+      featured: 'Featured case',
     },
     skills: {
       close: 'Close',
@@ -122,6 +164,20 @@ export const translations: Record<Locale, TranslationSchema> = {
       loading: 'Loading theme',
       light: 'Light mode',
       dark: 'Dark mode',
+    },
+    process: {
+      introTitle: 'Technical and business diagnosis',
+      introDescription:
+        'I map journey, performance, and friction points to define a clear prioritized action plan.',
+      experimentationTitle: 'Implementation and experimentation',
+      experimentationDescription:
+        'I ship front-end improvements and validate hypotheses through experiments to improve conversion safely.',
+      automationTitle: 'Automation with n8n',
+      automationDescription:
+        'I automate data collection and organization to reduce manual effort and speed up decisions.',
+      architectureTitle: 'Continuous evolution with AI',
+      architectureDescription:
+        'I use Cursor and Claude Code to accelerate refactors, documentation, and delivery while maintaining quality.',
     },
   },
 };

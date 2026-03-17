@@ -63,6 +63,10 @@ a {
   @apply transition-colors duration-300;
 }
 
+:where(section[id], footer[id], div[id]) {
+  scroll-margin-top: calc(8vh + 12px);
+}
+
 .header-links {
   @apply relative text-text-secondary hover:text-text-primary;
 }

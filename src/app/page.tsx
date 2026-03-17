@@ -4,6 +4,7 @@ import AboutMe from '@/app/LandingPage/AboutMe';
 import Skills from '@/app/LandingPage/Skills';
 import AcademicEducation from '@/app/LandingPage/AcademicEducation';
 import Professional from '@/app/LandingPage/Professional';
+import Process from '@/app/LandingPage/Process';
 import Projects from '@/app/LandingPage/Projects';
 import Footer from '@/app/LandingPage/Footer';
 import ScrollProgress from '@/components/ScrollProgress';
@@ -16,8 +17,9 @@ export default function Home() {
       <Banner />
       <AboutMe />
       <Skills />
-      <AcademicEducation />
       <Professional />
+      <AcademicEducation />
+      <Process />
       <Projects />
       <Footer />
     </main>

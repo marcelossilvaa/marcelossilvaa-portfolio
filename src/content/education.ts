@@ -1,9 +1,6 @@
-import UFS from '../../public/assets/ufs.png';
 import UniAmerica from '../../public/assets/uniamerica.png';
-import Alura from '../../public/assets/alura.png';
-import XPe from '../../public/assets/xpe.png';
-import DIO from '../../public/assets/dio.png';
 import Cepedi from '../../public/assets/cepedi.png';
+import AluraOracle from '../../public/assets/aluraoracle.png';
 import type { HistoryItem } from '@/types/portfolio';
 import type { Locale } from '@/i18n/LocaleProvider';
 
@@ -11,39 +8,22 @@ export function getEducationData(locale: Locale): HistoryItem[] {
   if (locale === 'en') {
     return [
       {
-        id: 1,
-        image: UFS,
-        title: 'Petroleum Engineering',
-        date: '2019 - 2022 | paused',
-        institution: 'UFS',
-      },
-      {
         id: 2,
         image: UniAmerica,
         title: "Bachelor's Degree in Computer Science",
         date: '2021 - 2025 | completed',
         institution: 'UniAmerica',
+        summary: [
+          'Solid foundation in software engineering, algorithms, data structures, and architecture for scalable front-end products.',
+        ],
       },
       {
         id: 3,
-        image: Alura,
-        title: 'Front-End Program',
+        image: AluraOracle,
+        title: 'Oracle Next Education + Alura | Intensive Front-End Track',
         date: '2022 - 2023',
-        institution: 'Alura',
-      },
-      {
-        id: 4,
-        image: XPe,
-        title: 'React Bootcamp',
-        date: '2023',
-        institution: 'XPe',
-      },
-      {
-        id: 5,
-        image: DIO,
-        title: 'TypeScript Bootcamp',
-        date: '2024',
-        institution: 'DIO',
+        institution: 'Oracle + Alura',
+        summary: ['Intensive track focused on robust front-end foundations and hands-on project delivery.'],
       },
       {
         id: 6,
@@ -51,45 +31,31 @@ export function getEducationData(locale: Locale): HistoryItem[] {
         title: 'Software Engineering Residency',
         date: '2024 - 2025',
         institution: 'Cepedi',
+        summary: [
+          'Business-oriented residency focused on front-end development, product vision, and delivery of solutions connected to real business goals.',
+        ],
       },
     ];
   }
 
   return [
     {
-      id: 1,
-      image: UFS,
-      title: 'Engenharia de Petróleo',
-      date: '2019 - 2022 | trancado',
-      institution: 'UFS',
-    },
-    {
       id: 2,
       image: UniAmerica,
       title: 'Bacharelado em Ciência da Computação',
       date: '2021 - 2025 | concluído',
       institution: 'UniAmerica',
+      summary: [
+        'Base sólida em engenharia de software, algoritmos, estruturas de dados e arquitetura para produtos front-end escaláveis.',
+      ],
     },
     {
       id: 3,
-      image: Alura,
-      title: 'Formação Front-End',
+      image: AluraOracle,
+      title: 'Oracle Next Education + Alura | Formação Front-End Intensiva',
       date: '2022 - 2023',
-      institution: 'Alura',
-    },
-    {
-      id: 4,
-      image: XPe,
-      title: 'Bootcamp React',
-      date: '2023',
-      institution: 'XPe',
-    },
-    {
-      id: 5,
-      image: DIO,
-      title: 'Bootcamp TypeScript',
-      date: '2024',
-      institution: 'DIO',
+      institution: 'Oracle + Alura',
+      summary: ['Formação intensiva com foco em base front-end robusta e entrega prática de projetos.'],
     },
     {
       id: 6,
@@ -97,6 +63,9 @@ export function getEducationData(locale: Locale): HistoryItem[] {
       title: 'Residência em Software',
       date: '2024 - 2025',
       institution: 'Cepedi',
+      summary: [
+        'Residência voltada a negócios com foco em desenvolvimento front-end, visão de produto e entrega alinhada a objetivos reais da empresa.',
+      ],
     },
   ];
 }

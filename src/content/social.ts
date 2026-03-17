@@ -7,8 +7,8 @@ export function getSocialLinks(locale: Locale): SocialLink[] {
     { id: 2, title: 'GitHub', link: 'https://github.com/marcelossilvaa' },
     {
       id: 3,
-      title: locale === 'en' ? 'Resume' : 'Currículo',
-      link: 'https://drive.google.com/drive/folders/1ALrPuM_eH1-gyth63X7OcetRmCWdrWlY?usp=share_link',
+      title: 'WhatsApp',
+      link: 'https://wa.me/5577991219434',
     },
     { id: 4, title: 'Instagram', link: 'https://www.instagram.com/marcelossilva1/' },
   ];
