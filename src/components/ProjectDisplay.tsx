@@ -1,12 +1,11 @@
 'use client';
 import Image from 'next/image';
 import { getProjectsData } from '@/content/projects';
-import { motion } from 'framer-motion';
 import type { ProjectItem } from '@/types/portfolio';
-import { revealCardVars, staggerContainerVars } from '@/components/FrameMotion/revealVars';
 import { useMemo, useState } from 'react';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { translations } from '@/i18n/translations';
+import { RevealOnScroll } from '@/components/RevealOnScroll';
 
 interface ProjectCardProps {
   item: ProjectItem;
@@ -24,25 +23,25 @@ const ProjectCard = ({
   };
 }) => {
   return (
-    <motion.div
+    <RevealOnScroll
       key={item.id}
-      className={`w-full flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
-      variants={revealCardVars}
-    >
+      once={false}
+      threshold={0.15}
+      delayMs={Math.min(index, 6) * 90}
+      className={`w-full flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
       <div
-        className={`w-full flex flex-col md:flex-row ${
+        className={`w-full flex flex-col md:flex-row overflow-hidden rounded-2xl border border-border-soft shadow-soft ${
           index % 2 === 0 ? 'md:flex-row-reverse' : ''
-        }`}
-      >
+        }`}>
         <Image
           src={item.image}
           alt={item.title}
-          className="general-hover w-full lg:w-[70%] md:w-[65%] shadow-soft border border-border-soft max-md:mb-3 rounded-2xl"
+          className="general-hover w-full lg:w-[70%] md:w-[65%] rounded-none border-0 shadow-none"
         />
         <div
-          className={`flex flex-col w-full lg:w-[30%] md:w-[35%] justify-center ${
-            index % 2 !== 0 ? 'items-end' : ''
-          } rounded-2xl p-4 md:p-5 border border-border-soft shadow-soft backdrop-blur-sm bg-[linear-gradient(140deg,rgba(168,85,247,0.14)_0%,rgba(236,72,153,0.08)_30%,rgba(15,23,42,0.02)_100%)] dark:bg-[linear-gradient(140deg,rgba(168,85,247,0.2)_0%,rgba(236,72,153,0.12)_30%,rgba(15,23,42,0.35)_100%)]`}
+          className={`flex flex-col w-full lg:w-[30%] md:w-[35%] justify-center items-start ${
+            index % 2 !== 0 ? 'md:items-end' : ''
+          } rounded-none p-4 md:p-5 border-0 shadow-none backdrop-blur-sm bg-[linear-gradient(140deg,rgba(168,85,247,0.14)_0%,rgba(236,72,153,0.08)_30%,rgba(15,23,42,0.02)_100%)] dark:bg-[linear-gradient(140deg,rgba(168,85,247,0.2)_0%,rgba(236,72,153,0.12)_30%,rgba(15,23,42,0.35)_100%)]`}
         >
           <h3 className="text-xl font-bold text-text-primary">{item.title}</h3>
           <p className="text-base pb-3 text-text-secondary">{item.subTitle}</p>
@@ -69,7 +68,7 @@ const ProjectCard = ({
               rel="noopener noreferrer"
               aria-label={`${text.project.demo} ${item.title}`}
             >
-              <button className="bg-accent-primary text-white border border-accent-primary w-28 p-1 rounded-md cursor-pointer transition duration-300 hover:bg-accent-secondary max-md:w-24 max-md:text-sm">
+              <button className="live-demo-btn w-28 p-1 rounded-md max-md:w-24 max-md:text-sm">
                 {text.project.demo}
               </button>
             </a>
@@ -86,7 +85,7 @@ const ProjectCard = ({
           </div>
         </div>
       </div>
-    </motion.div>
+    </RevealOnScroll>
   );
 };
 
@@ -140,12 +139,7 @@ export default function ProjectDisplay() {
         ))}
       </div>
 
-      <motion.div
-        className="w-full flex flex-col gap-14 md:gap-16"
-        variants={staggerContainerVars}
-        initial="hidden"
-        animate="visible"
-      >
+      <div className="w-full flex flex-col gap-14 md:gap-16">
         {filteredProjects.length > 0 ? (
           filteredProjects.map((item, index) => (
             <ProjectCard key={item.id} item={item} index={index} text={text} />
@@ -153,7 +147,7 @@ export default function ProjectDisplay() {
         ) : (
           <p className="text-center text-text-secondary">{text.project.noResults}</p>
         )}
-      </motion.div>
+      </div>
     </>
   );
 }

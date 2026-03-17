@@ -2,8 +2,7 @@
 import { getSkillsData } from '@/content/skills';
 import SkillsCard from '../../components/SkillsCard';
 import Title from '../../components/Tittle';
-import { motion } from 'framer-motion';
-import { revealSectionVars } from '@/components/FrameMotion/revealVars';
+import { RevealOnScroll } from '@/components/RevealOnScroll';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { translations } from '@/i18n/translations';
 
@@ -14,23 +13,15 @@ export default function Skills() {
 
   return (
     <section id="skills" className="bg-bg-primary w-full flex justify-center py-[8vh]">
-      <motion.div
+      <RevealOnScroll
         className="max-w-6xl w-[95%] flex justify-center flex-col items-center"
-        variants={revealSectionVars}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.2 }}
-      >
-        <motion.div
-          variants={revealSectionVars}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.25 }}
-        >
+        threshold={0.2}
+        once={false}>
+        <RevealOnScroll threshold={0.25} once={false}>
           <Title title={text.sections.skills} />
-        </motion.div>
+        </RevealOnScroll>
         <SkillsCard data={skillsData} />
-      </motion.div>
+      </RevealOnScroll>
     </section>
   );
 }

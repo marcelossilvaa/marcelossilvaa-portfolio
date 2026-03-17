@@ -29,7 +29,7 @@ export default function Header() {
 
   return (
     <header className="auto-transition z-20 flex justify-center w-full fixed bg-surface/85 backdrop-blur-md border-b border-border-soft">
-      <div className="flex h-[8vh] justify-between items-center text-[15px] text-text-primary max-w-6xl w-[95%]">
+      <div className="flex h-[8vh] justify-between items-center text-[15px] text-text-primary max-w-6xl w-full px-4 md:w-[95%] md:px-0">
         <Link href="/#banner" className="flex flex-row gap-1 items-center z-10">
           <Desktop size={28} className="text-text-primary" weight="bold" />
           <h1 className="font-bold tracking-tight">Marcelo S Silva</h1>
@@ -48,7 +48,7 @@ export default function Header() {
           <ThemeToggle />
         </div>
 
-        <div className="flex md:hidden z-10 scale-150">
+        <div className="flex md:hidden z-10 scale-125">
           <label className="sus-hamburger-1a2b cursor-pointer" aria-label={text.header.openMenu}>
             <input
               type="checkbox"
@@ -59,7 +59,7 @@ export default function Header() {
             />
             <svg
               viewBox="0 0 32 32"
-              className="h-12 text-text-primary transition-transform duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] peer-checked:rotate-[-45deg]"
+              className="h-10 text-text-primary transition-transform duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] peer-checked:rotate-[-45deg]"
             >
               <path
                 className="sus-line-1a2b sus-line-top-bottom-1a2b"
@@ -98,14 +98,14 @@ export default function Header() {
               initial="initial"
               animate="animate"
               exit="exit"
-              className="fixed md:hidden top-0 origin-top left-0 w-full h-[28rem] rounded-br-2xl rounded-bl-2xl bg-surface/95 backdrop-blur-md border-b border-border-soft"
+              className="fixed md:hidden top-0 origin-top left-0 w-full max-h-[100dvh] min-h-[28rem] overflow-y-auto rounded-br-2xl rounded-bl-2xl bg-surface/95 backdrop-blur-md border-b border-border-soft"
             >
               <motion.div
                 variants={containerVars}
                 initial="initial"
                 animate="open"
                 exit="initial"
-                className="md:hidden font-poppins w-full gap-10 flex flex-col items-center xs:text-xl md:text-base py-20 px-4"
+                className="md:hidden font-poppins w-full gap-7 flex flex-col items-center xs:text-xl md:text-base pt-24 pb-10 px-4"
               >
                 {navigationLinks.map((item, index, array) => (
                   <motion.div

@@ -1,27 +1,44 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 function ScrollProgress() {
   const [scrollWidth, setScrollWidth] = useState(0);
   const [displayProgress, setDisplayProgress] = useState(false);
+  const targetWidthRef = useRef(0);
+  const animatedWidthRef = useRef(0);
+  const frameRef = useRef<number | null>(null);
 
   useEffect(() => {
-    function handleScroll() {
-      const scrolled =
-        (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-      setScrollWidth(scrolled);
+    function animateProgress() {
+      const delta = targetWidthRef.current - animatedWidthRef.current;
+      animatedWidthRef.current += delta * 0.18;
 
-      if (window.scrollY > 100) {
-        setDisplayProgress(true);
-      } else {
-        setDisplayProgress(false);
+      if (Math.abs(delta) < 0.05) {
+        animatedWidthRef.current = targetWidthRef.current;
       }
+
+      setScrollWidth(animatedWidthRef.current);
+      frameRef.current = window.requestAnimationFrame(animateProgress);
     }
 
-    window.addEventListener('scroll', handleScroll);
+    function handleScroll() {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled =
+        maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+      targetWidthRef.current = Math.max(0, Math.min(100, scrolled));
+
+      setDisplayProgress(window.scrollY > 100);
+    }
+
+    handleScroll();
+    frameRef.current = window.requestAnimationFrame(animateProgress);
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      if (frameRef.current !== null) {
+        window.cancelAnimationFrame(frameRef.current);
+      }
     };
   }, []);
 

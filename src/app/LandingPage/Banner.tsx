@@ -5,8 +5,7 @@ import { ArrowUpRight } from '../../../@helpers/icons';
 import imageBanner from '../../../public/assets/marcelo-new.jpeg';
 import SplitText from '../../components/SplitText';
 import { getSocialLinks } from '@/content/social';
-import { motion } from 'framer-motion';
-import { revealSectionVars, staggerContainerVars } from '@/components/FrameMotion/revealVars';
+import { RevealOnScroll } from '@/components/RevealOnScroll';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { translations } from '@/i18n/translations';
 const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
@@ -19,12 +18,10 @@ export default function Banner() {
   return (
     <section id="banner" className="max-w-6xl w-[95%] py-[32px]">
       <div className="h-[8vh]"></div>
-      <motion.div
+      <RevealOnScroll
         className="auto-transition flex items-start justify-between gap-8 flex-col-reverse md:items-center md:flex-row"
-        variants={revealSectionVars}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.25 }}>
+        threshold={0.25}
+        once={false}>
         <div className="flex flex-col gap-2">
           <SplitText
             text={text.banner.hero}
@@ -37,31 +34,33 @@ export default function Banner() {
             rootMargin="-50px"
           />
           <p className="max-md:text-base text-text-secondary md:max-w-xl">{text.banner.subtitle}</p>
-          <motion.div
-            className="flex gap-2 md:gap-4 flex-wrap"
-            variants={staggerContainerVars}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }}>
-            {socialLinks.map((item) => (
-              <Link
+          <div className="flex gap-2 md:gap-4 flex-wrap">
+            {socialLinks.map((item, index) => (
+              <RevealOnScroll
                 key={item.id}
-                href={item.link}
-                className={`header-links flex items-center font-bold text-sm md:text-lg ${
-                  item.id === 1 ? 'text-accent-primary' : ''
-                }`}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Abrir ${item.title} em nova aba`}>
-                {item.title}
-                {item.id === 1 ? (
-                  <ArrowUpRight size={22} className="text-accent-primary" weight="bold" />
-                ) : (
-                  <ArrowUpRight size={20} color="#475569" weight="bold" />
-                )}
-              </Link>
+                variant="up"
+                threshold={0.2}
+                once={false}
+                delayMs={index * 80}
+                className="inline-flex">
+                <Link
+                  href={item.link}
+                  className={`header-links flex items-center font-bold text-sm md:text-lg ${
+                    item.id === 1 ? 'text-accent-primary' : ''
+                  }`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Abrir ${item.title} em nova aba`}>
+                  {item.title}
+                  {item.id === 1 ? (
+                    <ArrowUpRight size={22} className="text-accent-primary" weight="bold" />
+                  ) : (
+                    <ArrowUpRight size={20} color="#475569" weight="bold" />
+                  )}
+                </Link>
+              </RevealOnScroll>
             ))}
-          </motion.div>
+          </div>
         </div>
         <div className="profile-ring general-hover min-w-[250px] md:min-w-[350px] rounded-full">
           <Image
@@ -71,7 +70,7 @@ export default function Banner() {
             priority
           />
         </div>
-      </motion.div>
+      </RevealOnScroll>
     </section>
   );
 }

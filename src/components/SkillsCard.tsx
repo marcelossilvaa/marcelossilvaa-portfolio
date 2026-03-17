@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { SkillItem } from '@/types/portfolio';
-import { revealCardVars, staggerContainerVars } from '@/components/FrameMotion/revealVars';
 import { useEffect, useState } from 'react';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { translations } from '@/i18n/translations';
+import { RevealOnScroll } from '@/components/RevealOnScroll';
 
 interface SkillsCardProps {
   data: SkillItem[];
@@ -30,19 +30,17 @@ export default function SkillsCard({ data }: SkillsCardProps) {
 
   return (
     <>
-      <motion.div
-        className="flex w-full flex-wrap gap-4 md:gap-5 justify-center items-center mt-4"
-        variants={staggerContainerVars}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.18 }}
-      >
-        {data.map((item) => (
-          <motion.button
-            type="button"
-            className="group general-hover futuristic-card futuristic-card-purple flex flex-col justify-end items-start w-[23.5%] min-w-[170px] h-[170px] p-3 md:p-4 rounded-xl mb-3 max-md:min-w-[30%] max-md:h-[125px] text-left cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-glow hover:border-accent-primary/70"
+      <div className="flex w-full flex-wrap gap-4 md:gap-5 justify-center items-center mt-4">
+        {data.map((item, index) => (
+          <RevealOnScroll
             key={item.id}
-            variants={revealCardVars}
+            once={false}
+            threshold={0.18}
+            delayMs={index * 70}
+            className="w-[23.5%] min-w-[170px] mb-3 max-md:min-w-[30%]">
+            <button
+            type="button"
+            className="group general-hover futuristic-card futuristic-card-purple flex h-[170px] w-full flex-col justify-end items-start p-3 md:p-4 rounded-xl max-md:h-[125px] text-left cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-glow hover:border-accent-primary/70"
             onClick={() => setSelectedSkill(item)}
             aria-label={`Abrir detalhes da skill ${item.text}`}
           >
@@ -57,9 +55,10 @@ export default function SkillsCard({ data }: SkillsCardProps) {
             <p className="text-xs text-text-secondary transition-colors group-hover:text-text-primary">
               {item.category}
             </p>
-          </motion.button>
+            </button>
+          </RevealOnScroll>
         ))}
-      </motion.div>
+      </div>
 
       <AnimatePresence>
         {selectedSkill && (
