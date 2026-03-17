@@ -30,6 +30,8 @@ export type HistoryItem = {
   date: string;
   institution: string;
   summary?: string[];
+  companyLink?: string;
+  logoOnDark?: boolean;
 };
 
 export type ProjectTechnology = {
