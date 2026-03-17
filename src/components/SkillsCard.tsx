@@ -67,7 +67,7 @@ export default function SkillsCard({ data }: SkillsCardProps) {
       id: 'headless',
       title: isEnglish ? 'Headless architecture' : 'Arquitetura headless',
       predicate: (item: SkillItem) =>
-        ['Next.js', 'TypeScript', 'React', 'TailwindCSS', 'Hydrogen'].includes(item.text),
+        ['Next.js', 'TypeScript', 'React', 'TailwindCSS', 'Hydrogen', 'Payload CMS'].includes(item.text),
     },
     {
       id: 'ecommerce',
@@ -76,7 +76,7 @@ export default function SkillsCard({ data }: SkillsCardProps) {
     },
     {
       id: 'optimization',
-      title: isEnglish ? 'Data and optimization' : 'Dados e otimização',
+      title: isEnglish ? 'Frontend foundations and collaboration' : 'Fundamentos front-end e colaboração',
       predicate: (item: SkillItem) =>
         ['JavaScript', 'Git & GitHub', 'Git e GitHub', 'CSS', 'HTML'].includes(item.text),
     },

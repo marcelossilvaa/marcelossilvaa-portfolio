@@ -14,15 +14,14 @@ export default function Footer() {
     <footer id="contact" className="w-full bg-bg-secondary py-10">
       <div className="flex flex-col justify-center items-center gap-2 text-sm md:text-lg text-text-secondary">
         <Title title={text.sections.contact} />
-        <p>{text.footer.cta}</p>
+        <p className="max-md:text-center">{text.footer.cta}</p>
         {contactLinks.map((contact) => (
           <a
             key={contact.id}
             href={contact.href}
             className="header-links"
             target="_blank"
-            rel="noopener noreferrer"
-          >
+            rel="noopener noreferrer">
             {contact.label}: {contact.value}
           </a>
         ))}

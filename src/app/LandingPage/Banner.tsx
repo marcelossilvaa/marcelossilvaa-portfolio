@@ -15,7 +15,7 @@ export default function Banner() {
   const text = translations[locale];
   const socialLinks = getSocialLinks(locale);
   const heroHighlights =
-    locale === 'en' ? ['CMS', 'performance', 'conversion'] : ['CMS', 'performance', 'conversão'];
+    locale === 'en' ? ['e-commerce', 'performance', 'conversion'] : ['e-commerces', 'performance', 'conversão'];
 
   return (
     <section id="banner" className="max-w-6xl w-[95%] py-[32px]">

@@ -14,7 +14,7 @@ export default function Projects() {
     <section id="projects" className="bg-bg-primary w-full flex justify-center py-[6vh] border-y border-border-soft">
       <RevealOnScroll
         className="max-w-6xl w-[95%] flex justify-center flex-col items-center"
-        threshold={0.2}>
+        threshold={0.05}>
         <div className="pb-4">
           <Title title={text.sections.projects} />
         </div>

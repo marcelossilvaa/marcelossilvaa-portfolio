@@ -10,6 +10,7 @@ import Shopify from '../../public/icons/shopify-t.webp';
 import Hydrogen from '../../public/icons/hydrogen.svg';
 import Ionic from '../../public/icons/ionic.svg';
 import Liquid from '../../public/icons/liquid.svg';
+import PayloadLogo from '../../public/assets/payload-logo.png';
 import type { SkillItem } from '@/types/portfolio';
 import type { Locale } from '@/i18n/LocaleProvider';
 
@@ -136,6 +137,16 @@ export function getSkillsData(locale: Locale): SkillItem[] {
         description: 'I develop hybrid mobile experiences leveraging web stack and native deployment.',
         highlights: ['Hybrid apps', 'Capacitor plugins', 'Mobile UI'],
       },
+      {
+        id: 13,
+        icon: PayloadLogo,
+        text: 'Payload CMS',
+        category: 'Headless CMS',
+        level: 'Advanced',
+        experience: '2 years',
+        description: 'I model scalable content structures and build modern editorial workflows for headless products.',
+        highlights: ['Collections', 'Access control', 'Content modeling'],
+      },
     ];
   }
 
@@ -259,6 +270,16 @@ export function getSkillsData(locale: Locale): SkillItem[] {
       experience: '3 anos',
       description: 'Crio experiências mobile híbridas aproveitando stack frontend e deploy multiplataforma.',
       highlights: ['Hybrid Apps', 'Capacitor plugins', 'UI mobile'],
+    },
+    {
+      id: 13,
+      icon: PayloadLogo,
+      text: 'Payload CMS',
+      category: 'Headless CMS',
+      level: 'Avançado',
+      experience: '2 anos',
+      description: 'Modelo estruturas de conteúdo escaláveis e crio fluxos editoriais modernos para produtos headless.',
+      highlights: ['Collections', 'Controle de acesso', 'Modelagem de conteúdo'],
     },
   ];
 }

@@ -73,7 +73,7 @@ export const translations: Record<Locale, TranslationSchema> = {
       closeMenu: 'Fechar menu',
     },
     banner: {
-      hero: 'Desenvolvimento Front-End e CMS para e-commerces com foco em performance e conversão',
+      hero: 'Desenvolvimento Front-End para e-commerces com foco em performance e conversão',
       subtitle:
         'Projeto e implemento soluções escaláveis com Next.js, Shopify, CMS headless e automação para transformar experiência digital em resultado de negócio.',
       ctaPrimary: 'Falar no WhatsApp',
@@ -134,7 +134,7 @@ export const translations: Record<Locale, TranslationSchema> = {
       closeMenu: 'Close menu',
     },
     banner: {
-      hero: 'Front-end and CMS development for e-commerce focused on performance and conversion',
+      hero: 'Front-end development for e-commerce focused on performance and conversion',
       subtitle:
         'I design and implement scalable solutions with Next.js, Shopify, headless CMS, and automation to turn digital experience into business outcomes.',
       ctaPrimary: 'Chat on WhatsApp',

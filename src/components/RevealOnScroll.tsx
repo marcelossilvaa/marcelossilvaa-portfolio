@@ -30,6 +30,11 @@ export function RevealOnScroll({
     const element = ref.current;
     if (!element) return;
 
+    const viewportHeight = window.innerHeight || 1;
+    const elementHeight = element.getBoundingClientRect().height || 1;
+    const maxVisibleRatio = Math.min(1, viewportHeight / elementHeight);
+    const safeThreshold = Math.min(threshold, Math.max(0.01, maxVisibleRatio * 0.8));
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -43,7 +48,7 @@ export function RevealOnScroll({
         }
       },
       {
-        threshold,
+        threshold: safeThreshold,
         rootMargin: '0px 0px -10% 0px',
       }
     );
