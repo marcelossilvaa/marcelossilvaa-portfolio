@@ -17,7 +17,7 @@ export default function LanguageToggle() {
       title={text.language.label}
     >
       <Translate size={14} weight="bold" />
-      <span>{text.language.short}</span>
+      <span>{locale === 'pt' ? 'PT' : 'EN'}</span>
     </button>
   );
 }

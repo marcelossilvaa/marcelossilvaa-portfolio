@@ -42,11 +42,6 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (!ready) return;
 
-    if (isEnglishPath(pathname) && locale !== 'en') {
-      setLocaleState('en');
-      return;
-    }
-
     window.localStorage.setItem(STORAGE_KEY, locale);
     document.documentElement.lang = locale === 'pt' ? 'pt-BR' : 'en';
   }, [locale, pathname, ready]);
