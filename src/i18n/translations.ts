@@ -23,6 +23,12 @@ type TranslationSchema = {
   footer: {
     cta: string;
     developedBy: string;
+    navTitle: string;
+    contactTitle: string;
+    socialLabel: string;
+    backToTop: string;
+    brands: string;
+    tagline: string;
   };
   project: {
     demo: string;
@@ -86,6 +92,12 @@ export const translations: Record<Locale, TranslationSchema> = {
     footer: {
       cta: 'Entre em contato, estou sempre disponível para novos projetos.',
       developedBy: 'Desenvolvido por Marcelo S Silva',
+      navTitle: 'Navegação',
+      contactTitle: 'Canais diretos',
+      socialLabel: 'Redes sociais',
+      backToTop: 'Voltar ao topo',
+      brands: 'Marcas',
+      tagline: 'Front-end · e-commerce · performance',
     },
     project: {
       demo: 'Ver preview',
@@ -152,6 +164,12 @@ export const translations: Record<Locale, TranslationSchema> = {
     footer: {
       cta: "Let's connect. I'm always open to new projects.",
       developedBy: 'Developed by Marcelo S Silva',
+      navTitle: 'Navigation',
+      contactTitle: 'Direct channels',
+      socialLabel: 'Social',
+      backToTop: 'Back to top',
+      brands: 'Brands',
+      tagline: 'Front-end · e-commerce · performance',
     },
     project: {
       demo: 'See preview',
