@@ -24,6 +24,15 @@ export default function Projects() {
             : 'Estudos de caso selecionados com foco em decisões de arquitetura, estratégia de conversão e resultados de entrega.'}
         </p>
         <ProjectDisplay />
+        <p className="mt-14 max-w-2xl text-center text-base leading-relaxed text-text-secondary">
+          {text.closing.afterProjectsLead}{' '}
+          <a
+            href="#contact"
+            className="font-semibold text-accent-primary underline-offset-4 transition hover:underline"
+          >
+            {text.closing.afterProjectsCta}
+          </a>
+        </p>
       </RevealOnScroll>
     </section>
   );

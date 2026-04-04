@@ -1,5 +1,6 @@
 import type { ContactItem, SocialLink } from '@/types/portfolio';
 import type { Locale } from '@/i18n/LocaleProvider';
+import { getWhatsAppHref } from '@/content/whatsapp';
 
 export function getSocialLinks(locale: Locale): SocialLink[] {
   return [
@@ -8,7 +9,7 @@ export function getSocialLinks(locale: Locale): SocialLink[] {
     {
       id: 3,
       title: 'WhatsApp',
-      link: 'https://wa.me/5577991219434',
+      link: getWhatsAppHref(locale),
     },
     { id: 4, title: 'Instagram', link: 'https://www.instagram.com/marcelossilva1/' },
   ];
@@ -26,13 +27,13 @@ export function getContactLinks(locale: Locale): ContactItem[] {
       id: 2,
       label: 'WhatsApp',
       value: '(77) 99121-9434',
-      href: 'https://wa.me/5577991219434',
+      href: getWhatsAppHref(locale),
     },
     {
       id: 3,
       label: locale === 'en' ? 'Email' : 'Email',
       value: 'marcelo_810@hotmail.com',
-      href: 'mailto:marcelo_810@hotmail.com',
+      href: `mailto:marcelo_810@hotmail.com?subject=${encodeURIComponent(locale === 'en' ? 'Portfolio — contact' : 'Contato pelo portfólio')}`,
     },
   ];
 }

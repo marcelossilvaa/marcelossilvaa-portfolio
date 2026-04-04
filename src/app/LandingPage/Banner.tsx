@@ -5,6 +5,7 @@ import { ArrowUpRight } from '../../../@helpers/icons';
 import imageBanner from '../../../public/assets/marcelo-new.jpeg';
 import SplitText from '../../components/SplitText';
 import { getSocialLinks } from '@/content/social';
+import { getWhatsAppHref } from '@/content/whatsapp';
 import { RevealOnScroll } from '@/components/RevealOnScroll';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { translations } from '@/i18n/translations';
@@ -40,9 +41,10 @@ export default function Banner() {
           <p className="max-md:text-base text-text-secondary md:max-w-2xl">{text.banner.subtitle}</p>
           <div className="flex gap-3 md:gap-4 flex-wrap mt-2">
             <a
-              href="https://wa.me/5577991219434"
+              href={getWhatsAppHref(locale)}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={text.banner.ctaPrimaryAria}
               className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm md:text-base font-semibold bg-gradient-to-r from-violet-500 via-indigo-500 to-cyan-500 text-white hover:opacity-90 transition-opacity shadow-[0_10px_25px_rgba(99,102,241,0.35)]"
             >
               {text.banner.ctaPrimary}
@@ -54,6 +56,7 @@ export default function Banner() {
               {text.banner.ctaSecondary}
             </Link>
           </div>
+          <p className="mt-2 max-w-xl text-sm text-text-secondary/90">{text.banner.heroTrust}</p>
           <div className="flex gap-2 md:gap-4 flex-wrap mt-1">
             {socialLinks.map((item, index) => (
               <RevealOnScroll
@@ -70,7 +73,8 @@ export default function Banner() {
                   }`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Abrir ${item.title} em nova aba`}>
+                  aria-label={text.banner.openSocialAria.replace('{name}', item.title)}
+                >
                   {item.title}
                   {item.id === 1 ? (
                     <ArrowUpRight size={22} className="text-accent-primary" weight="bold" />

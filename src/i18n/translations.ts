@@ -13,12 +13,21 @@ type TranslationSchema = {
   header: {
     openMenu: string;
     closeMenu: string;
+    ctaWhatsApp: string;
+    ctaWhatsAppAria: string;
   };
   banner: {
     hero: string;
     subtitle: string;
     ctaPrimary: string;
     ctaSecondary: string;
+    heroTrust: string;
+    ctaPrimaryAria: string;
+    openSocialAria: string;
+  };
+  closing: {
+    afterProjectsLead: string;
+    afterProjectsCta: string;
   };
   footer: {
     cta: string;
@@ -90,6 +99,8 @@ export const translations: Record<Locale, TranslationSchema> = {
     header: {
       openMenu: 'Abrir menu',
       closeMenu: 'Fechar menu',
+      ctaWhatsApp: 'WhatsApp',
+      ctaWhatsAppAria: 'Abrir conversa no WhatsApp com mensagem já preenchida',
     },
     banner: {
       hero: 'Desenvolvimento Front-End para e-commerces com foco em performance e conversão',
@@ -97,6 +108,13 @@ export const translations: Record<Locale, TranslationSchema> = {
         'Projeto e implemento soluções escaláveis com Next.js, Shopify, CMS headless e automação para transformar experiência digital em resultado de negócio.',
       ctaPrimary: 'Falar no WhatsApp',
       ctaSecondary: 'Ver estudos de caso',
+      heroTrust: 'Resposta em geral em até 1 dia útil · conversa sem compromisso',
+      ctaPrimaryAria: 'Enviar mensagem no WhatsApp com texto inicial sugerido',
+      openSocialAria: 'Abrir {name} em nova aba',
+    },
+    closing: {
+      afterProjectsLead: 'Quer algo nessa linha para o seu e-commerce ou produto digital?',
+      afterProjectsCta: 'Ir para contato',
     },
     footer: {
       cta: 'Obrigado por visitar o portfólio — novos projetos e parcerias são sempre bem-vindos.',
@@ -171,6 +189,8 @@ export const translations: Record<Locale, TranslationSchema> = {
     header: {
       openMenu: 'Open menu',
       closeMenu: 'Close menu',
+      ctaWhatsApp: 'WhatsApp',
+      ctaWhatsAppAria: 'Open WhatsApp chat with a pre-filled message',
     },
     banner: {
       hero: 'Front-end development for e-commerce focused on performance and conversion',
@@ -178,6 +198,13 @@ export const translations: Record<Locale, TranslationSchema> = {
         'I design and implement scalable solutions with Next.js, Shopify, headless CMS, and automation to turn digital experience into business outcomes.',
       ctaPrimary: 'Chat on WhatsApp',
       ctaSecondary: 'See case studies',
+      heroTrust: 'I usually reply within one business day · no-obligation chat',
+      ctaPrimaryAria: 'Message on WhatsApp with a suggested opening line',
+      openSocialAria: 'Open {name} in a new tab',
+    },
+    closing: {
+      afterProjectsLead: 'Looking for something similar for your e-commerce or digital product?',
+      afterProjectsCta: 'Go to contact',
     },
     footer: {
       cta: 'Thanks for visiting — new projects and partnerships are always welcome.',

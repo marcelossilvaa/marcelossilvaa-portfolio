@@ -11,6 +11,7 @@ import ThemeToggle from '@/components/theme/ThemeToggle';
 import LanguageToggle from '@/components/i18n/LanguageToggle';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { translations } from '@/i18n/translations';
+import { getWhatsAppHref } from '@/content/whatsapp';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -34,7 +35,7 @@ export default function Header() {
           <Desktop size={28} className="text-text-primary" weight="bold" />
           <h1 className="font-bold tracking-tight">Marcelo S Silva</h1>
         </Link>
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-3 lg:gap-4">
           <ul className="flex space-x-5">
             {navigationLinks.map((item, index, array) => (
               <li key={item.id} className={`${index === array.length - 1 ? 'font-bold' : ''}`}>
@@ -44,6 +45,15 @@ export default function Header() {
               </li>
             ))}
           </ul>
+          <a
+            href={getWhatsAppHref(locale)}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={text.header.ctaWhatsAppAria}
+            className="inline-flex shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-violet-500 via-indigo-500 to-cyan-500 px-4 py-2 text-sm font-semibold text-white shadow-[0_6px_18px_rgba(99,102,241,0.35)] transition-opacity hover:opacity-90"
+          >
+            {text.header.ctaWhatsApp}
+          </a>
           <LanguageToggle />
           <ThemeToggle />
         </div>
@@ -122,6 +132,16 @@ export default function Header() {
                     </a>
                   </motion.div>
                 ))}
+                <a
+                  href={getWhatsAppHref(locale)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={text.header.ctaWhatsAppAria}
+                  onClick={() => setMenuOpen(false)}
+                  className="mt-2 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-violet-500 via-indigo-500 to-cyan-500 px-8 py-3 text-base font-semibold text-white shadow-[0_10px_25px_rgba(99,102,241,0.35)]"
+                >
+                  {text.banner.ctaPrimary}
+                </a>
                 <LanguageToggle />
                 <ThemeToggle />
               </motion.div>
