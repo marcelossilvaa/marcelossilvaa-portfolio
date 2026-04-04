@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: 'Marcelo | Portfolio',
   description:
     'Portfólio de Marcelo Santana Silva, desenvolvedor front-end focado em interfaces modernas, performance e experiência do usuário.',
+  verification: {
+    google: 'kQDLyJ9I0syTc1U2mu0BW8bFuSsjzk6QB092QbI0Ogk',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
