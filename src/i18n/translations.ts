@@ -55,6 +55,10 @@ type TranslationSchema = {
     architectureTitle: string;
     architectureDescription: string;
   };
+  clients: {
+    title: string;
+    subtitle: string;
+  };
 };
 
 export const translations: Record<Locale, TranslationSchema> = {
@@ -118,6 +122,11 @@ export const translations: Record<Locale, TranslationSchema> = {
       architectureDescription:
         'Uso Cursor e Claude Code para acelerar refactors, documentação e entregas mantendo qualidade técnica.',
     },
+    clients: {
+      title: 'Marcas com quem trabalhei',
+      subtitle:
+        'Projetos realizados em parceria com agências ao longo da minha trajetória.',
+    },
   },
   en: {
     sections: {
@@ -178,6 +187,10 @@ export const translations: Record<Locale, TranslationSchema> = {
       architectureTitle: 'Continuous evolution with AI',
       architectureDescription:
         'I use Cursor and Claude Code to accelerate refactors, documentation, and delivery while maintaining quality.',
+    },
+    clients: {
+      title: 'Brands I’ve worked with',
+      subtitle: 'Projects delivered in partnership with agencies throughout my career.',
     },
   },
 };

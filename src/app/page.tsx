@@ -1,5 +1,6 @@
 import Banner from '@/app/LandingPage/Banner';
 import Header from '@/app/LandingPage/Header';
+import ClientLogos from '@/app/LandingPage/ClientLogos';
 import AboutMe from '@/app/LandingPage/AboutMe';
 import Skills from '@/app/LandingPage/Skills';
 import AcademicEducation from '@/app/LandingPage/AcademicEducation';
@@ -15,6 +16,7 @@ export default function Home() {
       <ScrollProgress />
       <Header />
       <Banner />
+      <ClientLogos />
       <AboutMe />
       <Skills />
       <Professional />

@@ -73,7 +73,7 @@ const ProjectCard = ({
             </a>
             {item.appStoreLink && (
               <a href={item.appStoreLink} target="_blank" rel="noopener noreferrer" aria-label={`App Store ${item.title}`}>
-                <button className="futuristic-pill !text-white border-accent-primary/60 inline-flex items-center gap-1.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-primary hover:bg-accent-primary/15 hover:shadow-[0_0_16px_rgba(124,58,237,0.45)]">
+                <button className="inline-flex items-center gap-1.5 rounded-full border border-accent-primary bg-surface px-3 py-1 text-sm font-semibold text-text-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-primary/12 hover:shadow-[0_0_16px_rgba(124,58,237,0.35)] dark:border-accent-primary/70 dark:bg-surface-soft/80 dark:text-slate-100 dark:hover:bg-accent-primary/25">
                   App Store
                   <ArrowUpRight size={12} weight="bold" />
                 </button>
@@ -81,7 +81,7 @@ const ProjectCard = ({
             )}
             {item.playStoreLink && (
               <a href={item.playStoreLink} target="_blank" rel="noopener noreferrer" aria-label={`Google Play ${item.title}`}>
-                <button className="futuristic-pill !text-white border-accent-primary/60 inline-flex items-center gap-1.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-primary hover:bg-accent-primary/15 hover:shadow-[0_0_16px_rgba(124,58,237,0.45)]">
+                <button className="inline-flex items-center gap-1.5 rounded-full border border-accent-primary bg-surface px-3 py-1 text-sm font-semibold text-text-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-primary/12 hover:shadow-[0_0_16px_rgba(124,58,237,0.35)] dark:border-accent-primary/70 dark:bg-surface-soft/80 dark:text-slate-100 dark:hover:bg-accent-primary/25">
                   Google Play
                   <ArrowUpRight size={12} weight="bold" />
                 </button>
@@ -127,7 +127,7 @@ export default function ProjectDisplay() {
           onClick={() => setSelectedTech(null)}
           className={`futuristic-pill transition-colors ${
             selectedTech === null
-              ? '!text-white border-accent-primary shadow-glow'
+              ? '!border-accent-primary !bg-accent-primary !text-white shadow-glow'
               : 'hover:text-text-primary'
           }`}
           aria-label={text.project.all}
@@ -141,7 +141,7 @@ export default function ProjectDisplay() {
             onClick={() => setSelectedTech(tech)}
             className={`futuristic-pill transition-colors ${
               selectedTech === tech
-                ? '!text-white border-accent-primary shadow-glow'
+                ? '!border-accent-primary !bg-accent-primary !text-white shadow-glow'
                 : 'hover:text-text-primary'
             }`}
             aria-label={`${text.sections.projects}: ${tech}`}
