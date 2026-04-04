@@ -7,6 +7,7 @@ import AcademicEducation from '@/app/LandingPage/AcademicEducation';
 import Professional from '@/app/LandingPage/Professional';
 import Process from '@/app/LandingPage/Process';
 import Projects from '@/app/LandingPage/Projects';
+import Contact from '@/app/LandingPage/Contact';
 import Footer from '@/app/LandingPage/Footer';
 import ScrollProgress from '@/components/ScrollProgress';
 
@@ -23,6 +24,7 @@ export default function Home() {
       <AcademicEducation />
       <Process />
       <Projects />
+      <Contact />
       <Footer />
     </main>
   );

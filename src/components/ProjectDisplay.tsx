@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { getProjectsData } from '@/content/projects';
 import type { ProjectItem } from '@/types/portfolio';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { translations } from '@/i18n/translations';
 import { RevealOnScroll } from '@/components/RevealOnScroll';
@@ -33,12 +33,13 @@ const ProjectCard = ({
       strategy: string;
       impact: string;
       featured: string;
+      seeMore: string;
+      seeLess: string;
     };
   };
 }) => {
   return (
     <RevealOnScroll
-      key={item.id}
       once={false}
       threshold={0.15}
       delayMs={Math.min(index, 6) * 90}
@@ -106,6 +107,11 @@ export default function ProjectDisplay() {
   const text = translations[locale];
   const projectsData = getProjectsData(locale);
   const [selectedTech, setSelectedTech] = useState<string | null>(null);
+  const [mobileProjectsExpanded, setMobileProjectsExpanded] = useState(false);
+
+  useEffect(() => {
+    setMobileProjectsExpanded(false);
+  }, [selectedTech]);
 
   const techFilters = useMemo(() => {
     const uniqueTechs = Array.from(new Set(projectsData.flatMap((project) => project.technologies.map((tech) => tech.name))));
@@ -151,15 +157,39 @@ export default function ProjectDisplay() {
         ))}
       </div>
 
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+      <div
+        id="projects-grid"
+        className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10"
+      >
         {filteredProjects.length > 0 ? (
           filteredProjects.map((item, index) => (
-            <ProjectCard key={item.id} item={item} index={index} text={text} />
+            <div
+              key={item.id}
+              className={
+                index >= 2 && !mobileProjectsExpanded ? 'hidden w-full md:block' : 'w-full'
+              }
+            >
+              <ProjectCard item={item} index={index} text={text} />
+            </div>
           ))
         ) : (
           <p className="text-center text-text-secondary">{text.project.noResults}</p>
         )}
       </div>
+
+      {filteredProjects.length > 2 ? (
+        <div className="mt-8 flex w-full justify-center md:hidden">
+          <button
+            type="button"
+            onClick={() => setMobileProjectsExpanded((v) => !v)}
+            className="rounded-xl border border-accent-primary/60 bg-surface px-8 py-3 text-base font-semibold text-text-primary shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-primary/12 hover:shadow-[0_0_20px_rgba(124,58,237,0.35)] dark:border-accent-primary/50 dark:bg-surface-soft/80 dark:hover:bg-accent-primary/20"
+            aria-expanded={mobileProjectsExpanded}
+            aria-controls="projects-grid"
+          >
+            {mobileProjectsExpanded ? text.project.seeLess : text.project.seeMore}
+          </button>
+        </div>
+      ) : null}
     </>
   );
 }

@@ -24,7 +24,6 @@ type TranslationSchema = {
     cta: string;
     developedBy: string;
     navTitle: string;
-    contactTitle: string;
     socialLabel: string;
     backToTop: string;
     brands: string;
@@ -38,6 +37,8 @@ type TranslationSchema = {
     strategy: string;
     impact: string;
     featured: string;
+    seeMore: string;
+    seeLess: string;
   };
   skills: {
     close: string;
@@ -65,6 +66,14 @@ type TranslationSchema = {
     title: string;
     subtitle: string;
   };
+  contactSection: {
+    eyebrow: string;
+    lead: string;
+    emailButton: string;
+    whatsappButton: string;
+    linkedinButton: string;
+    availability: string;
+  };
 };
 
 export const translations: Record<Locale, TranslationSchema> = {
@@ -90,10 +99,9 @@ export const translations: Record<Locale, TranslationSchema> = {
       ctaSecondary: 'Ver estudos de caso',
     },
     footer: {
-      cta: 'Entre em contato, estou sempre disponível para novos projetos.',
+      cta: 'Obrigado por visitar o portfólio — novos projetos e parcerias são sempre bem-vindos.',
       developedBy: 'Desenvolvido por Marcelo S Silva',
       navTitle: 'Navegação',
-      contactTitle: 'Canais diretos',
       socialLabel: 'Redes sociais',
       backToTop: 'Voltar ao topo',
       brands: 'Marcas',
@@ -107,6 +115,8 @@ export const translations: Record<Locale, TranslationSchema> = {
       strategy: 'Estratégia',
       impact: 'Impacto',
       featured: 'Caso em destaque',
+      seeMore: 'Ver mais projetos',
+      seeLess: 'Ver menos',
     },
     skills: {
       close: 'Fechar',
@@ -139,6 +149,14 @@ export const translations: Record<Locale, TranslationSchema> = {
       subtitle:
         'Projetos realizados em parceria com agências ao longo da minha trajetória.',
     },
+    contactSection: {
+      eyebrow: 'Próximo passo',
+      lead: 'Tem um projeto, uma vaga ou quer trocar ideia sobre freela e parcerias? Me chama por um dos canais abaixo.',
+      emailButton: 'Enviar e-mail',
+      whatsappButton: 'Conversar no WhatsApp',
+      linkedinButton: 'Abrir LinkedIn',
+      availability: 'Em geral respondo em até um dia útil.',
+    },
   },
   en: {
     sections: {
@@ -162,10 +180,9 @@ export const translations: Record<Locale, TranslationSchema> = {
       ctaSecondary: 'See case studies',
     },
     footer: {
-      cta: "Let's connect. I'm always open to new projects.",
+      cta: 'Thanks for visiting — new projects and partnerships are always welcome.',
       developedBy: 'Developed by Marcelo S Silva',
       navTitle: 'Navigation',
-      contactTitle: 'Direct channels',
       socialLabel: 'Social',
       backToTop: 'Back to top',
       brands: 'Brands',
@@ -179,6 +196,8 @@ export const translations: Record<Locale, TranslationSchema> = {
       strategy: 'Strategy',
       impact: 'Impact',
       featured: 'Featured case',
+      seeMore: 'See more projects',
+      seeLess: 'Show less',
     },
     skills: {
       close: 'Close',
@@ -209,6 +228,14 @@ export const translations: Record<Locale, TranslationSchema> = {
     clients: {
       title: 'Brands I’ve worked with',
       subtitle: 'Projects delivered in partnership with agencies throughout my career.',
+    },
+    contactSection: {
+      eyebrow: 'Next step',
+      lead: 'Have a project, a role, or want to chat about freelance or partnerships? Reach out using one of the options below.',
+      emailButton: 'Send email',
+      whatsappButton: 'Chat on WhatsApp',
+      linkedinButton: 'Open LinkedIn',
+      availability: 'I usually reply within one business day.',
     },
   },
 };

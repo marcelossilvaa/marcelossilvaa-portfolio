@@ -9,7 +9,7 @@ export function getNavigationLinks(locale: Locale): NavItem[] {
       { id: 3, href: '#professional', text: 'Experience' },
       { id: 4, href: '#process', text: 'Process' },
       { id: 5, href: '#projects', text: 'Projects' },
-      { id: 6, href: '#contact', text: 'marcelo_810@hotmail.com' },
+      { id: 6, href: '#contact', text: 'Contact' },
     ];
   }
 
@@ -19,6 +19,6 @@ export function getNavigationLinks(locale: Locale): NavItem[] {
     { id: 3, href: '#professional', text: 'Experiência' },
     { id: 4, href: '#process', text: 'Processo' },
     { id: 5, href: '#projects', text: 'Projetos' },
-    { id: 6, href: '#contact', text: 'marcelo_810@hotmail.com' },
+    { id: 6, href: '#contact', text: 'Contato' },
   ];
 }

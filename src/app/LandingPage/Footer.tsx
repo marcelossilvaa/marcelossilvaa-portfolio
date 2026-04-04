@@ -1,27 +1,11 @@
 'use client';
 
-import {
-  ArrowUpRight,
-  CaretUp,
-  EnvelopeSimple,
-  GithubLogo,
-  InstagramLogo,
-  LinkedinLogo,
-  WhatsappLogo,
-} from '@phosphor-icons/react';
-import Title from '../../components/Tittle';
-import { getContactLinks, getSocialLinks } from '@/content/social';
+import { ArrowUpRight, CaretUp, GithubLogo, InstagramLogo, LinkedinLogo, WhatsappLogo } from '@phosphor-icons/react';
+import { getSocialLinks } from '@/content/social';
 import { getNavigationLinks } from '@/content/navigation';
 import type { NavItem } from '@/types/portfolio';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { translations } from '@/i18n/translations';
-
-function contactChannelIcon(label: string) {
-  const l = label.toLowerCase();
-  if (l.includes('instagram')) return InstagramLogo;
-  if (l.includes('whatsapp')) return WhatsappLogo;
-  return EnvelopeSimple;
-}
 
 function socialIconFor(title: string) {
   const t = title.toLowerCase();
@@ -35,17 +19,16 @@ function socialIconFor(title: string) {
 export default function Footer() {
   const { locale } = useLocale();
   const text = translations[locale];
-  const contactLinks = getContactLinks(locale);
   const socialLinks = getSocialLinks(locale);
 
   const footerNav: NavItem[] = [
-    ...getNavigationLinks(locale).filter((l) => l.id !== 6),
+    ...getNavigationLinks(locale),
     { id: 7, href: '#clients', text: text.footer.brands },
   ];
 
   return (
     <footer
-      id="contact"
+      id="site-footer"
       className="relative w-full overflow-hidden border-t border-border-soft bg-bg-secondary"
     >
       <div
@@ -59,10 +42,10 @@ export default function Footer() {
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,rgba(var(--accent-primary),0.04)_45%,transparent_100%)] dark:bg-[linear-gradient(180deg,transparent_0%,rgba(var(--accent-primary),0.07)_50%,transparent_100%)]" />
 
       <div className="relative mx-auto flex w-[95%] max-w-6xl flex-col gap-12 py-14 md:py-20">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
-          <div className="flex flex-col gap-5 lg:col-span-5">
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-10 xl:gap-16">
+          <div className="flex max-w-lg shrink-0 flex-col gap-5">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-primary">{text.footer.tagline}</p>
-            <Title title={text.sections.contact} />
+            <h2 className="text-2xl font-bold tracking-tight text-text-primary md:text-3xl">Marcelo S Silva</h2>
             <p className="max-w-md text-base leading-relaxed text-text-secondary">{text.footer.cta}</p>
             <a
               href="#banner"
@@ -73,9 +56,12 @@ export default function Footer() {
             </a>
           </div>
 
-          <nav className="lg:col-span-3" aria-label={text.footer.navTitle}>
+          <nav
+            className="shrink-0 lg:min-w-[min(100%,220px)] lg:text-right"
+            aria-label={text.footer.navTitle}
+          >
             <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-text-primary">{text.footer.navTitle}</h3>
-            <ul className="flex flex-col gap-2.5">
+            <ul className="flex flex-col gap-2.5 lg:items-end">
               {footerNav.map((item) => (
                 <li key={`${item.id}-${item.href}`}>
                   <a
@@ -89,43 +75,6 @@ export default function Footer() {
               ))}
             </ul>
           </nav>
-
-          <div className="lg:col-span-4">
-            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-text-primary">{text.footer.contactTitle}</h3>
-            <ul className="flex flex-col gap-3">
-              {contactLinks.map((contact) => {
-                const Icon = contactChannelIcon(contact.label);
-                const isExternal = contact.href.startsWith('http');
-                return (
-                  <li key={contact.id}>
-                    <a
-                      href={contact.href}
-                      {...(isExternal
-                        ? { target: '_blank' as const, rel: 'noopener noreferrer' }
-                        : {})}
-                      className="group flex items-center gap-3 rounded-xl border border-border-soft bg-surface/70 p-3 shadow-soft backdrop-blur-sm transition hover:border-accent-primary/45 hover:bg-accent-primary/[0.07] dark:bg-surface/40"
-                    >
-                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-accent-primary/12 text-accent-primary transition group-hover:bg-accent-primary/20 dark:bg-accent-primary/18">
-                        <Icon size={22} weight="duotone" />
-                      </span>
-                      <span className="min-w-0 flex-1">
-                        <span className="block text-[11px] font-semibold uppercase tracking-wide text-text-secondary">
-                          {contact.label}
-                        </span>
-                        <span className="block truncate text-sm font-semibold text-text-primary">{contact.value}</span>
-                      </span>
-                      <ArrowUpRight
-                        size={18}
-                        weight="bold"
-                        className="shrink-0 text-accent-primary opacity-0 transition group-hover:opacity-100"
-                        aria-hidden
-                      />
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
         </div>
 
         <div className="flex flex-col gap-8 border-t border-border-soft pt-10 md:flex-row md:items-center md:justify-between">
