@@ -1,5 +1,6 @@
 'use client';
 
+import { MotionConfig } from 'framer-motion';
 import { useCallback, useEffect, useState } from 'react';
 import { getV2Sections } from '@/content/v2Content';
 import { useLocale, type Locale } from '@/i18n/LocaleProvider';
@@ -44,29 +45,33 @@ export default function V2Experience({ locale }: V2ExperienceProps) {
   const handleBootFinish = useCallback(() => setBootDone(true), []);
 
   return (
-    <div className="v2-shell">
-      <BootSequence text={text} onFinish={handleBootFinish} />
+    // reducedMotion="user" deixa o framer-motion trocar transform/layout por
+    // fade quando o sistema pede menos movimento.
+    <MotionConfig reducedMotion="user">
+      <div className="v2-shell">
+        <BootSequence text={text} onFinish={handleBootFinish} />
 
-      <div className="v2-atmosphere" aria-hidden="true" />
-      <div className="v2-glow v2-glow--signal" aria-hidden="true" />
-      <div className="v2-glow v2-glow--violet" aria-hidden="true" />
+        <div className="v2-atmosphere" aria-hidden="true" />
+        <div className="v2-glow v2-glow--signal" aria-hidden="true" />
+        <div className="v2-glow v2-glow--violet" aria-hidden="true" />
 
-      <HudFrame sections={sections} text={text} locale={locale} />
+        <HudFrame sections={sections} text={text} locale={locale} />
 
-      <main className="v2-content">
-        <HeroSection locale={locale} text={text} bootDone={bootDone} />
-        <SignalSection locale={locale} text={text} />
-        <CoordinatesSection locale={locale} text={text} />
-        <SystemSection locale={locale} text={text} />
-        <ExperienceSection locale={locale} text={text} />
-        <EducationSection locale={locale} text={text} />
-        <BrandsSection text={text} />
-        <WorkSection locale={locale} text={text} />
-        <ToolkitSection locale={locale} text={text} />
-        <ServicesSection locale={locale} text={text} />
-        <AvailabilitySection locale={locale} text={text} />
-        <ContactSection locale={locale} text={text} />
-      </main>
-    </div>
+        <main className="v2-content">
+          <HeroSection locale={locale} text={text} bootDone={bootDone} />
+          <SignalSection locale={locale} text={text} />
+          <CoordinatesSection locale={locale} text={text} />
+          <SystemSection locale={locale} text={text} />
+          <ExperienceSection locale={locale} text={text} />
+          <EducationSection locale={locale} text={text} />
+          <BrandsSection text={text} />
+          <WorkSection locale={locale} text={text} />
+          <ToolkitSection locale={locale} text={text} />
+          <ServicesSection locale={locale} text={text} />
+          <AvailabilitySection locale={locale} text={text} />
+          <ContactSection locale={locale} text={text} />
+        </main>
+      </div>
+    </MotionConfig>
   );
 }

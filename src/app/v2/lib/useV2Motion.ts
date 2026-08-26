@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 /** Respeita prefers-reduced-motion para desligar loops e animações longas. */
 export function usePrefersReducedMotion(): boolean {
@@ -30,9 +30,13 @@ export function useMounted(): boolean {
  */
 export function useActiveSection(ids: string[]): string {
   const [active, setActive] = useState(ids[0] ?? '');
+  // A lista chega como array novo a cada render; a chave estável evita
+  // recriar o observer em toda re-renderização do HUD.
+  const key = ids.join(',');
 
   useEffect(() => {
-    const elements = ids
+    const elements = key
+      .split(',')
       .map((id) => document.getElementById(id))
       .filter((element): element is HTMLElement => Boolean(element));
 
@@ -51,40 +55,9 @@ export function useActiveSection(ids: string[]): string {
 
     elements.forEach((element) => observer.observe(element));
     return () => observer.disconnect();
-  }, [ids]);
+  }, [key]);
 
   return active;
-}
-
-/** Progresso vertical da página entre 0 e 1, atualizado em rAF. */
-export function useScrollProgress(): number {
-  const [progress, setProgress] = useState(0);
-  const frame = useRef<number | null>(null);
-
-  useEffect(() => {
-    const update = () => {
-      frame.current = null;
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0);
-    };
-
-    const onScroll = () => {
-      if (frame.current !== null) return;
-      frame.current = window.requestAnimationFrame(update);
-    };
-
-    update();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
-
-    return () => {
-      if (frame.current !== null) window.cancelAnimationFrame(frame.current);
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
-    };
-  }, []);
-
-  return progress;
 }
 
 /** Rolagem suave respeitando a barra fixa do HUD. */

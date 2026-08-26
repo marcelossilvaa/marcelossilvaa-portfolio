@@ -192,11 +192,17 @@ html.v2-page ::selection {
    Estruturas de seção
    -------------------------------------------------------------------------- */
 
+/* Compensa a barra fixa do HUD nos saltos por âncora nativa (href="#work").
+   A navegação por JS calcula o próprio offset e não é afetada. */
+.v2-section,
+.v2-hero {
+  scroll-margin-top: 3.25rem;
+}
+
 .v2-section {
   position: relative;
   border-top: 1px solid var(--v2-line);
   padding-block: clamp(4.5rem, 11vw, 9.5rem);
-  scroll-margin-top: 0;
 }
 
 .v2-wrap {
@@ -456,11 +462,14 @@ html.v2-page ::selection {
   transform: translateX(0);
 }
 
+/* Puramente decorativo: nunca deve capturar toque/clique de conteúdo abaixo.
+   Escondido em telas pequenas, onde competiria com CTAs no canto. */
 .v2-hud__scroll {
   position: absolute;
   right: clamp(1.25rem, 4vw, 2.5rem);
   bottom: 1.25rem;
-  display: flex;
+  display: none;
+  pointer-events: none;
   align-items: center;
   gap: 0.5rem;
   font-family: var(--font-v2-mono), monospace;
@@ -486,6 +495,12 @@ html.v2-page ::selection {
   height: 12px;
   background: var(--v2-signal);
   animation: v2ScrollHint 2.1s var(--v2-ease) infinite;
+}
+
+@media (min-width: 1024px) {
+  .v2-hud__scroll {
+    display: flex;
+  }
 }
 
 @keyframes v2ScrollHint {
@@ -821,10 +836,16 @@ html.v2-page ::selection {
   background: rgba(244, 244, 242, 0.02);
 }
 
+/* Mobile: data em cima, empresa embaixo, botão + ocupando as duas linhas.
+   Desktop: as três peças em uma única linha. */
 .v2-timeline__trigger {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    'date plus'
+    'title plus';
+  gap: 0.75rem 1rem;
+  align-items: center;
   width: 100%;
   padding-block: clamp(1.35rem, 3vw, 2.1rem);
   text-align: left;
@@ -834,10 +855,23 @@ html.v2-page ::selection {
   color: inherit;
 }
 
+.v2-timeline__date {
+  grid-area: date;
+}
+
+.v2-timeline__title {
+  grid-area: title;
+}
+
+.v2-timeline__plus {
+  grid-area: plus;
+  justify-self: end;
+}
+
 @media (min-width: 768px) {
   .v2-timeline__trigger {
-    grid-template-columns: 10rem 1fr auto;
-    align-items: center;
+    grid-template-columns: 10rem minmax(0, 1fr) auto;
+    grid-template-areas: 'date title plus';
   }
 }
 

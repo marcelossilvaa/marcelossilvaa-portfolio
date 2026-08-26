@@ -1,12 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useScroll } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import type { V2SectionMeta } from '@/content/v2Content';
 import type { V2TranslationSchema } from '@/i18n/v2Translations';
 import type { Locale } from '@/i18n/LocaleProvider';
-import { useActiveSection, useScrollLock, useScrollProgress, useScrollToSection } from '../lib/useV2Motion';
+import { useActiveSection, useScrollLock, useScrollToSection } from '../lib/useV2Motion';
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -16,7 +16,8 @@ type HudFrameProps = {
   locale: Locale;
 };
 
-function useLocalClock(): string {
+/** Isolado em componente próprio para que o tick de 1s não re-renderize o HUD. */
+function LocalClock({ label }: { label: string }) {
   const [time, setTime] = useState('--:--:--');
 
   useEffect(() => {
@@ -33,7 +34,12 @@ function useLocalClock(): string {
     return () => window.clearInterval(interval);
   }, []);
 
-  return time;
+  return (
+    <span className="v2-mono hidden items-center gap-2 text-[var(--v2-dim)] lg:flex">
+      <span className="v2-pulse" />
+      {label} {time}
+    </span>
+  );
 }
 
 /**
@@ -43,9 +49,8 @@ function useLocalClock(): string {
 export function HudFrame({ sections, text, locale }: HudFrameProps) {
   const ids = sections.map((section) => section.id);
   const active = useActiveSection(ids);
-  const progress = useScrollProgress();
   const scrollTo = useScrollToSection();
-  const clock = useLocalClock();
+  const { scrollYProgress } = useScroll();
   const [indexOpen, setIndexOpen] = useState(false);
 
   useScrollLock(indexOpen);
@@ -79,10 +84,7 @@ export function HudFrame({ sections, text, locale }: HudFrameProps) {
           </div>
 
           <div className="flex items-center gap-2 sm:gap-3">
-            <span className="v2-mono hidden items-center gap-2 text-[var(--v2-dim)] lg:flex">
-              <span className="v2-pulse" />
-              {text.hud.localTime} {clock}
-            </span>
+            <LocalClock label={text.hud.localTime} />
             <Link href={alternateHref} className="v2-ghost-btn" aria-label={text.hud.switchLocale}>
               {locale === 'pt' ? 'EN' : 'PT'}
             </Link>
@@ -101,11 +103,7 @@ export function HudFrame({ sections, text, locale }: HudFrameProps) {
             </button>
           </div>
 
-          <motion.div
-            className="v2-hud__progress"
-            style={{ width: '100%', scaleX: progress }}
-            transition={{ duration: 0.15 }}
-          />
+          <motion.div className="v2-hud__progress" style={{ width: '100%', scaleX: scrollYProgress }} />
         </div>
 
         <nav className="v2-hud__rail" aria-label={text.hud.index}>

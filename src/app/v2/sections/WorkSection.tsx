@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
+import { AnimatePresence, motion, useMotionValue, useSpring } from 'framer-motion';
+import { useCallback, useState } from 'react';
 import { getProjectsData } from '@/content/projects';
 import type { Locale } from '@/i18n/LocaleProvider';
 import type { V2TranslationSchema } from '@/i18n/v2Translations';
@@ -21,7 +21,30 @@ export function WorkSection({ locale, text }: WorkSectionProps) {
   const projects = getProjectsData(locale);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [hovered, setHovered] = useState<number | null>(null);
-  const [pointer, setPointer] = useState({ x: 0, y: 0 });
+
+  // MotionValues em vez de estado: a prévia segue o cursor sem re-renderizar
+  // as nove linhas do índice a cada mousemove.
+  const rawX = useMotionValue(0);
+  const rawY = useMotionValue(0);
+  const previewX = useSpring(rawX, { stiffness: 320, damping: 32, mass: 0.4 });
+  const previewY = useSpring(rawY, { stiffness: 320, damping: 32, mass: 0.4 });
+
+  const trackPointer = useCallback(
+    (event: React.MouseEvent, immediate = false) => {
+      const x = event.clientX + 28;
+      const y = event.clientY - 90;
+
+      if (immediate) {
+        // Evita que a prévia entre voando desde a última posição conhecida.
+        previewX.jump(x);
+        previewY.jump(y);
+      }
+
+      rawX.set(x);
+      rawY.set(y);
+    },
+    [rawX, rawY, previewX, previewY]
+  );
 
   return (
     <section id="work" className="v2-section">
@@ -46,8 +69,11 @@ export function WorkSection({ locale, text }: WorkSectionProps) {
                 type="button"
                 className="v2-work__row"
                 onClick={() => setActiveIndex(index)}
-                onMouseEnter={() => setHovered(index)}
-                onMouseMove={(event) => setPointer({ x: event.clientX, y: event.clientY })}
+                onMouseEnter={(event) => {
+                  trackPointer(event, hovered === null);
+                  setHovered(index);
+                }}
+                onMouseMove={(event) => trackPointer(event)}
                 aria-label={`${text.work.open} ${project.title}`}
               >
                 <span className="v2-mono tabular-nums">{String(index + 1).padStart(2, '0')}</span>
@@ -93,7 +119,7 @@ export function WorkSection({ locale, text }: WorkSectionProps) {
         {hovered !== null && (
           <motion.div
             className="v2-work__preview hidden lg:block"
-            style={{ left: pointer.x + 28, top: pointer.y - 90 }}
+            style={{ left: 0, top: 0, x: previewX, y: previewY }}
             initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.96 }}

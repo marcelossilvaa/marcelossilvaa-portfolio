@@ -44,14 +44,14 @@ export function ExperienceSection({ locale, text }: ExperienceSectionProps) {
                     onClick={() => setOpenId(isOpen ? null : item.id)}
                     aria-expanded={isOpen}
                   >
-                    <span className="v2-mono flex items-center gap-2 text-[var(--v2-dim)] md:order-1">
+                    <span className="v2-timeline__date v2-mono flex items-center gap-2 text-[var(--v2-dim)]">
                       {item.date}
                       {isCurrent && (
                         <span className="v2-tag v2-tag--signal !px-1.5 !py-0.5">{text.experience.now}</span>
                       )}
                     </span>
 
-                    <span className="flex min-w-0 items-center gap-4 md:order-2">
+                    <span className="v2-timeline__title flex min-w-0 items-center gap-4">
                       <span className="relative hidden h-11 w-11 flex-shrink-0 items-center justify-center border border-[var(--v2-line)] bg-[var(--v2-bg-panel)] sm:flex">
                         <Image
                           src={item.image}
@@ -69,7 +69,7 @@ export function ExperienceSection({ locale, text }: ExperienceSectionProps) {
                       </span>
                     </span>
 
-                    <span className="v2-plus md:order-3" data-open={isOpen} aria-hidden="true" />
+                    <span className="v2-plus v2-timeline__plus" data-open={isOpen} aria-hidden="true" />
                   </button>
 
                   <AnimatePresence initial={false}>
