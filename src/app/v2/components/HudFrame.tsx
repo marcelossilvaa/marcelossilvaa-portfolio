@@ -153,7 +153,7 @@ export function HudFrame({ sections, text, locale }: HudFrameProps) {
                   }}
                 >
                   <span className="v2-mono w-8 flex-shrink-0 text-[var(--v2-dim)]">{section.index}</span>
-                  <span className="v2-display text-[clamp(1.6rem,6vw,3rem)]">{section.label}</span>
+                  <span className="v2-display text-[clamp(1.4rem,5vw,2.25rem)]">{section.label}</span>
                 </motion.button>
               ))}
             </div>

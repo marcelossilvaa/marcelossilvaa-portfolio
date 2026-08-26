@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { AnimatePresence, motion, useMotionValue, useSpring } from 'framer-motion';
 import { useCallback, useState } from 'react';
 import { getProjectsData } from '@/content/projects';
+import { getV2ProjectKinds } from '@/content/v2Content';
 import type { Locale } from '@/i18n/LocaleProvider';
 import type { V2TranslationSchema } from '@/i18n/v2Translations';
 import { FrameViewer } from '../components/FrameViewer';
@@ -19,6 +20,7 @@ type WorkSectionProps = {
 
 export function WorkSection({ locale, text }: WorkSectionProps) {
   const projects = getProjectsData(locale);
+  const kinds = getV2ProjectKinds(locale);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [hovered, setHovered] = useState<number | null>(null);
 
@@ -52,7 +54,7 @@ export function WorkSection({ locale, text }: WorkSectionProps) {
         <SectionHeader index="07" eyebrow={text.work.eyebrow} title={text.work.title} lead={text.work.lead} />
 
         <div
-          className="hidden grid-cols-[3.5rem_minmax(0,1.15fr)_minmax(0,1fr)_7rem_2.5rem] gap-3 pb-3 md:grid"
+          className="hidden grid-cols-[3.5rem_minmax(0,1.15fr)_minmax(0,1fr)_9.5rem_2.5rem] gap-3 pb-3 md:grid"
           aria-hidden="true"
         >
           <span className="v2-eyebrow">#</span>
@@ -101,9 +103,7 @@ export function WorkSection({ locale, text }: WorkSectionProps) {
                   )}
                 </span>
 
-                <span className="v2-mono hidden truncate md:block">
-                  {project.featured ? text.work.featured : project.subTitle.split(' ').slice(0, 2).join(' ')}
-                </span>
+                <span className="v2-mono hidden truncate md:block">{kinds[project.id] ?? '—'}</span>
 
                 <span className="v2-mono text-right" aria-hidden="true">
                   ↗

@@ -323,6 +323,27 @@ export function getV2Toolkit(locale: Locale): V2ToolkitGroup[] {
   ];
 }
 
+/**
+ * Rótulo curto de tipo por projeto, indexado pelo id usado em src/content/projects.ts.
+ * Existe para a coluna "Tipo" do índice, onde truncar o subtítulo produzia
+ * fragmentos sem sentido.
+ */
+export function getV2ProjectKinds(locale: Locale): Record<string, string> {
+  const isEn = locale === 'en';
+
+  return {
+    '8': isEn ? 'Commerce + App' : 'Commerce + App',
+    '5': isEn ? 'Headless CMS' : 'CMS headless',
+    '0': isEn ? 'Storefront' : 'Storefront',
+    '1': isEn ? 'Catalog' : 'Catálogo',
+    '2': isEn ? 'Front-end' : 'Front-end',
+    '3': isEn ? 'Institutional' : 'Institucional',
+    '4': isEn ? 'Product site' : 'Site de produto',
+    '6': 'Dashboard',
+    '7': isEn ? 'Portfolio' : 'Portfólio',
+  };
+}
+
 export type V2Service = {
   index: string;
   title: string;

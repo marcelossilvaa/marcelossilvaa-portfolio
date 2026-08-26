@@ -53,21 +53,32 @@ export function ContactSection({ locale, text }: ContactSectionProps) {
           </div>
         </Reveal>
 
-        <div className="v2-contact__title">
+        {/* A detecção de viewport fica no pai, que não é transformado: se ela
+            ficasse nas linhas, o translate de 105% as tiraria da tela e a
+            animação nunca disparava. */}
+        <motion.div
+          className="v2-contact__title"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {[text.contact.titleLine1, text.contact.titleLine2].map((line, lineIndex) => (
-            <span key={line} className="block overflow-hidden">
+            <span key={line} className="v2-contact__line">
               <motion.span
                 className="block"
-                initial={{ y: '105%' }}
-                whileInView={{ y: '0%' }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 1.1, delay: lineIndex * 0.12, ease: EASE }}
+                variants={{
+                  hidden: { y: '105%' },
+                  visible: {
+                    y: '0%',
+                    transition: { duration: 1.1, delay: lineIndex * 0.12, ease: EASE },
+                  },
+                }}
               >
                 {lineIndex === 1 ? <span className="v2-signal-text">{line}</span> : line}
               </motion.span>
             </span>
           ))}
-        </div>
+        </motion.div>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)] lg:gap-16">
           <Reveal>

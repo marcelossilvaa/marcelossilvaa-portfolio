@@ -27,7 +27,7 @@ export function SignalSection({ locale, text }: SignalSectionProps) {
 
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:items-center lg:gap-16">
           <Reveal>
-            <blockquote className="v2-heading border-l border-[var(--v2-signal)] pl-6 text-[clamp(1.5rem,3.6vw,2.6rem)]">
+            <blockquote className="v2-heading border-l border-[var(--v2-signal)] pl-5 text-[clamp(1.3rem,3.6vw,2.6rem)] md:pl-6">
               “{text.signal.quote}”
             </blockquote>
 

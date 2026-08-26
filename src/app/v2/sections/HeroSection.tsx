@@ -38,7 +38,7 @@ export function HeroSection({ locale, text, bootDone }: HeroSectionProps) {
             transition={{ duration: 0.8, delay: baseDelay, ease: EASE }}
           >
             <span className="v2-mono text-[var(--v2-signal)]">{text.hero.edition}</span>
-            <span className="h-px w-10 bg-[var(--v2-line-strong)]" />
+            <span className="hidden h-px w-10 bg-[var(--v2-line-strong)] sm:block" />
             <ScrambleText
               text={locale === 'en' ? 'Vitória da Conquista, Brazil' : 'Vitória da Conquista, Brasil'}
               className="v2-mono text-[var(--v2-muted)]"

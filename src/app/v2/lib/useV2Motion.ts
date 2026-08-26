@@ -71,12 +71,23 @@ export function useScrollToSection() {
   }, []);
 }
 
+// Boot, índice e lightbox podem se sobrepor; a contagem evita que o primeiro a
+// fechar destrave o scroll enquanto outro overlay ainda está aberto.
+let scrollLockCount = 0;
+
 /** Trava o scroll do documento enquanto overlays estão abertos. */
 export function useScrollLock(locked: boolean) {
   useEffect(() => {
     if (!locked) return;
 
+    scrollLockCount += 1;
     document.documentElement.classList.add('v2-locked');
-    return () => document.documentElement.classList.remove('v2-locked');
+
+    return () => {
+      scrollLockCount = Math.max(0, scrollLockCount - 1);
+      if (scrollLockCount === 0) {
+        document.documentElement.classList.remove('v2-locked');
+      }
+    };
   }, [locked]);
 }
