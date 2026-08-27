@@ -10,7 +10,6 @@ import { HudFrame } from './components/HudFrame';
 import { AvailabilitySection } from './sections/AvailabilitySection';
 import { BrandsSection } from './sections/BrandsSection';
 import { ContactSection } from './sections/ContactSection';
-import { CoordinatesSection } from './sections/CoordinatesSection';
 import { EducationSection } from './sections/EducationSection';
 import { ExperienceSection } from './sections/ExperienceSection';
 import { HeroSection } from './sections/HeroSection';
@@ -60,11 +59,10 @@ export default function V2Experience({ locale }: V2ExperienceProps) {
         <main className="v2-content">
           <HeroSection locale={locale} text={text} bootDone={bootDone} />
           <SignalSection locale={locale} text={text} />
-          <CoordinatesSection locale={locale} text={text} />
+          <BrandsSection locale={locale} text={text} />
           <SystemSection locale={locale} text={text} />
           <ExperienceSection locale={locale} text={text} />
           <EducationSection locale={locale} text={text} />
-          <BrandsSection text={text} />
           <WorkSection locale={locale} text={text} />
           <ToolkitSection locale={locale} text={text} />
           <ServicesSection locale={locale} text={text} />

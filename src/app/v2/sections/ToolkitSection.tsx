@@ -1,6 +1,6 @@
 'use client';
 
-import { getV2Toolkit } from '@/content/v2Content';
+import { getV2SectionIndex, getV2Toolkit } from '@/content/v2Content';
 import type { Locale } from '@/i18n/LocaleProvider';
 import type { V2TranslationSchema } from '@/i18n/v2Translations';
 import { Reveal } from '../components/Reveal';
@@ -18,7 +18,7 @@ export function ToolkitSection({ locale, text }: ToolkitSectionProps) {
     <section id="toolkit" className="v2-section">
       <div className="v2-wrap">
         <SectionHeader
-          index="08"
+          index={getV2SectionIndex(locale, 'toolkit')}
           eyebrow={text.toolkit.eyebrow}
           title={text.toolkit.title}
           lead={text.toolkit.lead}

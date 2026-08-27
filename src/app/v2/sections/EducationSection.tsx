@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { getEducationData } from '@/content/education';
+import { getV2SectionIndex } from '@/content/v2Content';
 import type { Locale } from '@/i18n/LocaleProvider';
 import type { V2TranslationSchema } from '@/i18n/v2Translations';
 import { Reveal } from '../components/Reveal';
@@ -19,7 +20,7 @@ export function EducationSection({ locale, text }: EducationSectionProps) {
     <section id="education" className="v2-section">
       <div className="v2-wrap">
         <SectionHeader
-          index="05"
+          index={getV2SectionIndex(locale, 'education')}
           eyebrow={text.education.eyebrow}
           title={text.education.title}
           lead={text.education.lead}

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { getV2Pipeline, getV2SystemPillars } from '@/content/v2Content';
+import { getV2Pipeline, getV2SectionIndex, getV2SystemPillars } from '@/content/v2Content';
 import type { Locale } from '@/i18n/LocaleProvider';
 import type { V2TranslationSchema } from '@/i18n/v2Translations';
 import { Reveal, Stagger, staggerChild } from '../components/Reveal';
@@ -19,9 +19,14 @@ export function SystemSection({ locale, text }: SystemSectionProps) {
   return (
     <section id="system" className="v2-section">
       <div className="v2-wrap">
-        <SectionHeader index="03" eyebrow={text.system.eyebrow} title={text.system.title} lead={text.system.lead} />
+        <SectionHeader
+          index={getV2SectionIndex(locale, 'system')}
+          eyebrow={text.system.eyebrow}
+          title={text.system.title}
+          lead={text.system.lead}
+        />
 
-        <div className="grid gap-px border border-[var(--v2-line)] bg-[var(--v2-line)] lg:grid-cols-2">
+        <div className="grid gap-px border border-[var(--v2-line)] bg-[var(--v2-line)] lg:grid-cols-3">
           {pillars.map((pillar, index) => (
             <Reveal key={pillar.index} delay={index * 0.1}>
               <article className="flex h-full flex-col gap-6 bg-[var(--v2-bg-elev)] p-6 md:p-10">

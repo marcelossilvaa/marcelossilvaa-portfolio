@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { getWhatsAppHref } from '@/content/whatsapp';
 import type { Locale } from '@/i18n/LocaleProvider';
 import type { V2TranslationSchema } from '@/i18n/v2Translations';
-import { getV2Keywords } from '@/content/v2Content';
+import { getV2Keywords, getV2SectionIndex } from '@/content/v2Content';
 import { Marquee } from '../components/Marquee';
 import { Reveal } from '../components/Reveal';
 import { ScrambleText } from '../components/ScrambleText';
@@ -47,7 +47,9 @@ export function ContactSection({ locale, text }: ContactSectionProps) {
       <div className="v2-wrap">
         <Reveal>
           <div className="mb-10 flex items-center gap-3">
-            <span className="v2-mono tabular-nums text-[var(--v2-signal)]">11</span>
+            <span className="v2-mono tabular-nums text-[var(--v2-signal)]">
+              {getV2SectionIndex(locale, 'contact')}
+            </span>
             <span className="h-px w-8 bg-[var(--v2-line-strong)]" />
             <ScrambleText text={text.contact.eyebrow} className="v2-mono text-[var(--v2-muted)]" />
           </div>

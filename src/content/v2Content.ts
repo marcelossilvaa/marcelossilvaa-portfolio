@@ -2,18 +2,16 @@ import type { Locale } from '@/i18n/LocaleProvider';
 
 /**
  * Conteúdo exclusivo da experiência /v2. Reaproveita os dados canônicos de
- * src/content/* e adiciona apenas o que a narrativa "mission control" exige
- * (índice de seções, esteira de palavras-chave, pipeline, toolkit, coordenadas).
+ * src/content/* e adiciona apenas o que a narrativa "mission control" exige.
  */
 
 export type V2SectionId =
   | 'index'
   | 'signal'
-  | 'coordinates'
+  | 'brands'
   | 'system'
   | 'experience'
   | 'education'
-  | 'brands'
   | 'work'
   | 'toolkit'
   | 'services'
@@ -32,81 +30,75 @@ export function getV2Sections(locale: Locale): V2SectionMeta[] {
   return [
     { id: 'index', index: '00', label: isEn ? 'Index' : 'Índice' },
     { id: 'signal', index: '01', label: isEn ? 'Signal' : 'Sinal' },
-    { id: 'coordinates', index: '02', label: isEn ? 'Coordinates' : 'Coordenadas' },
+    { id: 'brands', index: '02', label: isEn ? 'Brands' : 'Marcas' },
     { id: 'system', index: '03', label: isEn ? 'System' : 'Sistema' },
     { id: 'experience', index: '04', label: isEn ? 'Experience' : 'Experiência' },
     { id: 'education', index: '05', label: isEn ? 'Education' : 'Formação' },
-    { id: 'brands', index: '06', label: isEn ? 'Brands' : 'Marcas' },
-    { id: 'work', index: '07', label: isEn ? 'Work' : 'Projetos' },
-    { id: 'toolkit', index: '08', label: 'Toolkit' },
-    { id: 'services', index: '09', label: isEn ? 'Services' : 'Serviços' },
-    { id: 'availability', index: '10', label: isEn ? 'Availability' : 'Agenda' },
-    { id: 'contact', index: '11', label: isEn ? 'Contact' : 'Contato' },
+    { id: 'work', index: '06', label: isEn ? 'Work' : 'Projetos' },
+    { id: 'toolkit', index: '07', label: 'Toolkit' },
+    { id: 'services', index: '08', label: isEn ? 'Services' : 'Serviços' },
+    { id: 'availability', index: '09', label: isEn ? 'Availability' : 'Agenda' },
+    { id: 'contact', index: '10', label: isEn ? 'Contact' : 'Contato' },
   ];
+}
+
+export function getV2SectionIndex(locale: Locale, id: V2SectionId): string {
+  return getV2Sections(locale).find((section) => section.id === id)?.index ?? '00';
 }
 
 export function getV2Keywords(locale: Locale): string[] {
   const isEn = locale === 'en';
 
   return [
-    'FRONT-END',
-    'E-COMMERCE',
+    'FULL STACK',
     'CRO',
-    'SHOPIFY',
+    isEn ? 'CONVERSION' : 'CONVERSÃO',
+    'SAAS',
+    'E-COMMERCE',
     'NEXT.JS',
-    isEn ? 'WEB PERFORMANCE' : 'PERFORMANCE WEB',
-    'A/B TESTING',
-    'HEADLESS',
-    isEn ? 'AUTOMATION' : 'AUTOMAÇÃO',
-    isEn ? 'APPLIED AI' : 'IA APLICADA',
+    'SHOPIFY',
+    isEn ? 'A/B TESTING' : 'TESTES A/B',
+    isEn ? 'FUNNEL OPTIMIZATION' : 'OTIMIZAÇÃO DE FUNIL',
     'ADOBE TARGET',
     'GA4',
-    isEn ? 'CONVERSION' : 'CONVERSÃO',
+    isEn ? 'APPLIED AI' : 'IA APLICADA',
+    isEn ? 'AUTOMATION' : 'AUTOMAÇÃO',
   ];
 }
 
-/** Nuvem densa de capacidades exibida no hero — mistura stack, IA e CRO. */
+/** Nuvem densa de capacidades exibida no hero — stack, SaaS, CRO e IA. */
 export function getV2TagCloud(locale: Locale): string[] {
   const isEn = locale === 'en';
 
   return [
-    'Next.js',
-    'React',
-    'TypeScript',
-    'JavaScript',
-    'HTML',
-    'CSS',
-    'TailwindCSS',
-    'Shopify',
-    'Liquid',
-    'Hydrogen',
-    'Payload CMS',
-    'Ionic & Capacitor',
-    'Node.js',
-    'PostgreSQL',
-    'Firebase',
-    'Git & GitHub',
-    isEn ? 'Headless Commerce' : 'Commerce Headless',
-    'Storefront API',
-    'Checkout UX',
-    'Core Web Vitals',
+    'Full Stack',
+    'SaaS',
+    'CRO',
+    isEn ? 'Conversion Rate Optimization' : 'Otimização de conversão',
+    isEn ? 'Landing Pages' : 'Landing pages',
+    isEn ? 'Funnel Analysis' : 'Análise de funil',
     'A/B Testing',
     'Adobe Target',
     'Adobe Analytics',
     'GA4',
     'GTM',
-    isEn ? 'Conversion Tracking' : 'Tracking de Conversão',
-    isEn ? 'Funnel Analysis' : 'Análise de Funil',
+    'Next.js',
+    'React',
+    'TypeScript',
+    'Node.js',
+    'PostgreSQL',
+    'Shopify',
+    'Liquid',
+    'Payload CMS',
+    'Core Web Vitals',
+    isEn ? 'Technical SEO' : 'SEO técnico',
+    isEn ? 'Product Analytics' : 'Analytics de produto',
     'n8n',
     'Cursor',
     'Claude Code',
-    'GitHub Copilot',
-    'Antigravity',
-    'Prompt Engineering',
-    isEn ? 'AI-assisted Code Review' : 'Code Review com IA',
-    'Design System',
-    'SEO',
-    'A11y',
+    isEn ? 'AI-assisted Delivery' : 'Entrega assistida por IA',
+    isEn ? 'Business Metrics' : 'Métricas de negócio',
+    isEn ? 'Strategic Experiments' : 'Experimentos estratégicos',
   ];
 }
 
@@ -120,36 +112,10 @@ export function getV2Stats(locale: Locale): V2Stat[] {
   const isEn = locale === 'en';
 
   return [
-    { value: 4, suffix: '+', label: isEn ? 'years in front-end' : 'anos em front-end' },
-    { value: 8, suffix: '', label: isEn ? 'brands delivered' : 'marcas atendidas' },
-    { value: 9, suffix: '', label: isEn ? 'projects in this index' : 'projetos neste índice' },
-    { value: 3, suffix: '', label: isEn ? 'companies / squads' : 'empresas / squads' },
-  ];
-}
-
-export type V2Coordinate = {
-  eyebrow: string;
-  place: string;
-  detail: string;
-  note: string;
-};
-
-export function getV2Coordinates(locale: Locale): [V2Coordinate, V2Coordinate] {
-  const isEn = locale === 'en';
-
-  return [
-    {
-      eyebrow: isEn ? 'Where I am' : 'Onde eu estou',
-      place: isEn ? 'Vitória da Conquista, Brazil' : 'Vitória da Conquista, Brasil',
-      detail: '14.8619° S, 40.8444° W',
-      note: isEn ? 'UTC−3 · Bahia' : 'UTC−3 · Bahia',
-    },
-    {
-      eyebrow: isEn ? 'Where I could be' : 'Onde eu poderia estar',
-      place: isEn ? 'Remote / Worldwide' : 'Remoto / Mundo',
-      detail: isEn ? 'Open to new coordinates' : 'Aberto a novas coordenadas',
-      note: isEn ? 'PT native · EN professional' : 'PT nativo · EN profissional',
-    },
+    { value: 4, suffix: '+', label: isEn ? 'years shipping product' : 'anos entregando produto' },
+    { value: 8, suffix: '', label: isEn ? 'brands in production' : 'marcas em produção' },
+    { value: 12, suffix: '', label: isEn ? 'projects in this index' : 'projetos neste índice' },
+    { value: 4, suffix: '', label: isEn ? 'SaaS / full-stack builds' : 'SaaS / builds full stack' },
   ];
 }
 
@@ -168,23 +134,33 @@ export function getV2SystemPillars(locale: Locale): V2SystemPillar[] {
     return [
       {
         index: '01',
-        kicker: 'Engineering',
-        title: 'Front-end architecture for commerce',
+        kicker: 'Full stack',
+        title: 'SaaS & digital products end-to-end',
         description:
-          'Storefronts in Shopify and Next.js, headless content models and component systems built to survive traffic peaks and constant iteration.',
-        tags: ['Shopify / Liquid', 'Next.js / Hydrogen', 'Headless CMS'],
-        outcomeLabel: 'Engineering outcome',
-        outcome: 'Storefronts that ship fast, stay fast and stay easy to change.',
+          'From landing page and auth flows to dashboards, APIs and data models — I ship complete products with Next.js, Node.js and PostgreSQL, not just UI slices.',
+        tags: ['Next.js / React', 'Node.js / PostgreSQL', 'SaaS architecture'],
+        outcomeLabel: 'Product outcome',
+        outcome: 'Working software your team can operate, measure and evolve.',
       },
       {
         index: '02',
-        kicker: 'Conversion',
-        title: 'Experimentation & applied AI',
+        kicker: 'Commerce',
+        title: 'Storefronts built to convert',
         description:
-          'A/B tests and personalization with Adobe Target and Analytics, reporting automation with n8n and AI-assisted delivery turned into repeatable practice.',
-        tags: ['A/B Testing', 'Adobe Target / GA4', 'n8n · AI workflows'],
+          'Shopify, headless storefronts and high-traffic ecommerce with component systems tuned for Core Web Vitals, checkout clarity and iteration speed.',
+        tags: ['Shopify / Liquid', 'Headless CMS', 'Core Web Vitals'],
+        outcomeLabel: 'Engineering outcome',
+        outcome: 'Faster storefronts that stay editable under real traffic.',
+      },
+      {
+        index: '03',
+        kicker: 'CRO',
+        title: 'Experimentation & conversion intelligence',
+        description:
+          'A/B tests, personalization and funnel instrumentation with Adobe Target, GA4 and reporting automation — connecting code changes to revenue signals.',
+        tags: ['A/B Testing', 'Adobe Target / GA4', 'Funnel & LP optimization'],
         outcomeLabel: 'Business outcome',
-        outcome: 'Decisions backed by evidence instead of opinion.',
+        outcome: 'Decisions backed by evidence, not opinion.',
       },
     ];
   }
@@ -192,21 +168,31 @@ export function getV2SystemPillars(locale: Locale): V2SystemPillar[] {
   return [
     {
       index: '01',
-      kicker: 'Engenharia',
-      title: 'Arquitetura front-end para commerce',
+      kicker: 'Full stack',
+      title: 'SaaS e produtos digitais ponta a ponta',
       description:
-        'Storefronts em Shopify e Next.js, modelagem headless de conteúdo e sistemas de componentes feitos para aguentar pico de tráfego e iteração constante.',
-      tags: ['Shopify / Liquid', 'Next.js / Hydrogen', 'CMS Headless'],
-      outcomeLabel: 'Resultado de engenharia',
-      outcome: 'Storefronts que sobem rápido, seguem rápidos e continuam fáceis de mudar.',
+        'Da landing page e autenticação aos dashboards, APIs e modelagem de dados — entrego produto completo com Next.js, Node.js e PostgreSQL, não só fatias de UI.',
+      tags: ['Next.js / React', 'Node.js / PostgreSQL', 'Arquitetura SaaS'],
+      outcomeLabel: 'Resultado de produto',
+      outcome: 'Software funcionando que o time consegue operar, medir e evoluir.',
     },
     {
       index: '02',
-      kicker: 'Conversão',
-      title: 'Experimentação e IA aplicada',
+      kicker: 'Commerce',
+      title: 'Storefronts feitos para converter',
       description:
-        'Testes A/B e personalização com Adobe Target e Analytics, automação de reporte com n8n e entrega assistida por IA transformada em prática repetível.',
-      tags: ['Testes A/B', 'Adobe Target / GA4', 'n8n · fluxos com IA'],
+        'Shopify, storefronts headless e e-commerce de alto tráfego com sistemas de componentes afinados para Core Web Vitals, clareza de checkout e velocidade de iteração.',
+      tags: ['Shopify / Liquid', 'CMS Headless', 'Core Web Vitals'],
+      outcomeLabel: 'Resultado de engenharia',
+      outcome: 'Storefronts mais rápidos e editáveis sob tráfego real.',
+    },
+    {
+      index: '03',
+      kicker: 'CRO',
+      title: 'Experimentação e inteligência de conversão',
+      description:
+        'Testes A/B, personalização e instrumentação de funil com Adobe Target, GA4 e automação de reporte — conectando mudança de código a sinal de receita.',
+      tags: ['Testes A/B', 'Adobe Target / GA4', 'Funil & otimização de LP'],
       outcomeLabel: 'Resultado de negócio',
       outcome: 'Decisão sustentada por evidência, não por opinião.',
     },
@@ -215,10 +201,28 @@ export function getV2SystemPillars(locale: Locale): V2SystemPillar[] {
 
 export function getV2Pipeline(locale: Locale): string[] {
   if (locale === 'en') {
-    return ['Diagnose', 'Architect', 'Implement', 'Instrument', 'Experiment', 'Automate', 'Scale'];
+    return [
+      'Diagnose',
+      'Prioritize',
+      'Architect',
+      'Build',
+      'Instrument',
+      'Experiment',
+      'Optimize',
+      'Scale',
+    ];
   }
 
-  return ['Diagnosticar', 'Arquitetar', 'Implementar', 'Instrumentar', 'Experimentar', 'Automatizar', 'Escalar'];
+  return [
+    'Diagnosticar',
+    'Priorizar',
+    'Arquitetar',
+    'Construir',
+    'Instrumentar',
+    'Experimentar',
+    'Otimizar',
+    'Escalar',
+  ];
 }
 
 export type V2ToolkitGroup = {
@@ -234,45 +238,45 @@ export function getV2Toolkit(locale: Locale): V2ToolkitGroup[] {
     return [
       {
         letter: 'A',
-        kicker: 'Core / Web',
-        title: 'Web fundamentals',
-        summary: 'semantics · accessibility · technical SEO',
-        capabilities: ['HTML', 'CSS', 'JavaScript', 'Accessibility', 'Technical SEO', 'Responsive layout'],
+        kicker: 'Product / Full stack',
+        title: 'SaaS & application delivery',
+        summary: 'Next.js · APIs · data · auth',
+        capabilities: ['Next.js', 'React', 'Node.js', 'PostgreSQL', 'REST APIs', 'SaaS workflows'],
       },
       {
         letter: 'B',
-        kicker: 'Application / UI',
-        title: 'Modern front-end',
-        summary: 'React · Next.js · design systems',
-        capabilities: ['React', 'Next.js', 'TypeScript', 'TailwindCSS', 'App Router', 'Component architecture'],
+        kicker: 'Conversion / CRO',
+        title: 'Experimentation & analytics',
+        summary: 'A/B testing · funnels · LPs',
+        capabilities: ['CRO', 'A/B Testing', 'Adobe Target', 'GA4', 'GTM', 'Funnel analysis'],
       },
       {
         letter: 'C',
         kicker: 'Commerce / Storefront',
         title: 'E-commerce engineering',
         summary: 'Shopify · Liquid · headless',
-        capabilities: ['Shopify', 'Liquid', 'Hydrogen', 'Storefront API', 'Checkout UX', 'Custom themes'],
+        capabilities: ['Shopify', 'Liquid', 'Hydrogen', 'Checkout UX', 'Storefront API', 'Custom themes'],
       },
       {
         letter: 'D',
-        kicker: 'Measurement / CRO',
-        title: 'Experimentation & analytics',
-        summary: 'A/B testing · GA4 · Adobe',
-        capabilities: ['A/B Testing', 'Adobe Target', 'Adobe Analytics', 'GA4', 'GTM', 'Conversion tracking'],
+        kicker: 'Front-end / UI',
+        title: 'Modern interfaces',
+        summary: 'TypeScript · Tailwind · systems',
+        capabilities: ['TypeScript', 'TailwindCSS', 'Design System', 'Accessibility', 'Performance', 'Mobile'],
       },
       {
         letter: 'E',
         kicker: 'Automation / AI',
         title: 'Applied AI & automation',
-        summary: 'n8n · agents · AI-assisted delivery',
+        summary: 'n8n · agents · AI delivery',
         capabilities: ['n8n', 'Cursor', 'Claude Code', 'GitHub Copilot', 'Prompt engineering', 'AI code review'],
       },
       {
         letter: 'F',
-        kicker: 'Platform / Data',
-        title: 'Systems & content',
-        summary: 'Node.js · Payload · mobile',
-        capabilities: ['Node.js', 'Payload CMS', 'PostgreSQL', 'Firebase', 'Ionic & Capacitor', 'Git / GitHub'],
+        kicker: 'Platform / Content',
+        title: 'Systems & CMS',
+        summary: 'Payload · Firebase · mobile',
+        capabilities: ['Payload CMS', 'Firebase', 'Ionic & Capacitor', 'Technical SEO', 'Git / GitHub', 'Native mobile'],
       },
     ];
   }
@@ -280,31 +284,31 @@ export function getV2Toolkit(locale: Locale): V2ToolkitGroup[] {
   return [
     {
       letter: 'A',
-      kicker: 'Base / Web',
-      title: 'Fundamentos web',
-      summary: 'semântica · acessibilidade · SEO técnico',
-      capabilities: ['HTML', 'CSS', 'JavaScript', 'Acessibilidade', 'SEO técnico', 'Layout responsivo'],
+      kicker: 'Produto / Full stack',
+      title: 'Entrega SaaS e aplicações',
+      summary: 'Next.js · APIs · dados · auth',
+      capabilities: ['Next.js', 'React', 'Node.js', 'PostgreSQL', 'REST APIs', 'Fluxos SaaS'],
     },
     {
       letter: 'B',
-      kicker: 'Aplicação / UI',
-      title: 'Front-end moderno',
-      summary: 'React · Next.js · design systems',
-      capabilities: ['React', 'Next.js', 'TypeScript', 'TailwindCSS', 'App Router', 'Arquitetura de componentes'],
+      kicker: 'Conversão / CRO',
+      title: 'Experimentação e analytics',
+      summary: 'testes A/B · funis · LPs',
+      capabilities: ['CRO', 'Testes A/B', 'Adobe Target', 'GA4', 'GTM', 'Análise de funil'],
     },
     {
       letter: 'C',
       kicker: 'Commerce / Storefront',
       title: 'Engenharia de e-commerce',
       summary: 'Shopify · Liquid · headless',
-      capabilities: ['Shopify', 'Liquid', 'Hydrogen', 'Storefront API', 'Checkout UX', 'Temas customizados'],
+      capabilities: ['Shopify', 'Liquid', 'Hydrogen', 'Checkout UX', 'Storefront API', 'Temas customizados'],
     },
     {
       letter: 'D',
-      kicker: 'Medição / CRO',
-      title: 'Experimentação e analytics',
-      summary: 'testes A/B · GA4 · Adobe',
-      capabilities: ['Testes A/B', 'Adobe Target', 'Adobe Analytics', 'GA4', 'GTM', 'Tracking de conversão'],
+      kicker: 'Front-end / UI',
+      title: 'Interfaces modernas',
+      summary: 'TypeScript · Tailwind · systems',
+      capabilities: ['TypeScript', 'TailwindCSS', 'Design System', 'Acessibilidade', 'Performance', 'Mobile'],
     },
     {
       letter: 'E',
@@ -315,31 +319,30 @@ export function getV2Toolkit(locale: Locale): V2ToolkitGroup[] {
     },
     {
       letter: 'F',
-      kicker: 'Plataforma / Dados',
-      title: 'Sistemas e conteúdo',
-      summary: 'Node.js · Payload · mobile',
-      capabilities: ['Node.js', 'Payload CMS', 'PostgreSQL', 'Firebase', 'Ionic & Capacitor', 'Git / GitHub'],
+      kicker: 'Plataforma / Conteúdo',
+      title: 'Sistemas e CMS',
+      summary: 'Payload · Firebase · mobile',
+      capabilities: ['Payload CMS', 'Firebase', 'Ionic & Capacitor', 'SEO técnico', 'Git / GitHub', 'Mobile nativo'],
     },
   ];
 }
 
-/**
- * Rótulo curto de tipo por projeto, indexado pelo id usado em src/content/projects.ts.
- * Existe para a coluna "Tipo" do índice, onde truncar o subtítulo produzia
- * fragmentos sem sentido.
- */
+/** Rótulo curto de tipo por projeto para a coluna "Tipo" do índice /v2. */
 export function getV2ProjectKinds(locale: Locale): Record<string, string> {
   const isEn = locale === 'en';
 
   return {
     '8': isEn ? 'Commerce + App' : 'Commerce + App',
+    '9': isEn ? 'SaaS Full Stack' : 'SaaS Full Stack',
+    '10': isEn ? 'SaaS + CRO LP' : 'SaaS + LP CRO',
+    '11': isEn ? 'Automation SaaS' : 'Automação SaaS',
     '5': isEn ? 'Headless CMS' : 'CMS headless',
     '0': isEn ? 'Storefront' : 'Storefront',
     '1': isEn ? 'Catalog' : 'Catálogo',
     '2': isEn ? 'Front-end' : 'Front-end',
     '3': isEn ? 'Institutional' : 'Institucional',
     '4': isEn ? 'Product site' : 'Site de produto',
-    '6': 'Dashboard',
+    '6': isEn ? 'Trading SaaS' : 'SaaS Trading',
     '7': isEn ? 'Portfolio' : 'Portfólio',
   };
 }
@@ -356,24 +359,24 @@ export function getV2Services(locale: Locale): V2Service[] {
     return [
       {
         index: '01',
-        title: 'Storefront engineering',
-        promise: 'Turn a slow, rigid storefront into a fast, editable one.',
+        title: 'Full-stack SaaS & products',
+        promise: 'Turn a business problem into a shippable product.',
         description:
-          'Front-end architecture for Shopify and Next.js: component systems, headless content modeling, Core Web Vitals and a codebase your team can actually evolve.',
+          'End-to-end delivery: discovery, architecture, front-end, APIs, data modeling and dashboards — with a product mindset and metrics wired from day one.',
       },
       {
         index: '02',
-        title: 'CRO & experimentation',
+        title: 'CRO & conversion systems',
         promise: 'Make every release accountable to a metric.',
         description:
-          'A/B tests and personalization with Adobe Target, Adobe Analytics and GA4 — from hypothesis and instrumentation to readable results and next steps.',
+          'Landing pages, funnels, A/B tests and personalization with Adobe Target, GA4 and Adobe Analytics — from hypothesis to readable impact.',
       },
       {
         index: '03',
-        title: 'Automation & applied AI',
-        promise: 'Delete the manual work between data and decision.',
+        title: 'Commerce & storefront engineering',
+        promise: 'Ship storefronts that convert under real traffic.',
         description:
-          'Reporting and operational routines automated with n8n, plus AI-assisted delivery with Cursor and Claude Code turned into a repeatable team practice.',
+          'Shopify, Next.js and headless architectures with Core Web Vitals, experimentation hooks and a codebase your squad can keep evolving.',
       },
     ];
   }
@@ -381,24 +384,24 @@ export function getV2Services(locale: Locale): V2Service[] {
   return [
     {
       index: '01',
-      title: 'Engenharia de storefront',
-      promise: 'Transformar um storefront lento e rígido em um rápido e editável.',
+      title: 'SaaS e produtos full stack',
+      promise: 'Transformar um problema de negócio em produto publicável.',
       description:
-        'Arquitetura front-end para Shopify e Next.js: sistema de componentes, modelagem headless de conteúdo, Core Web Vitals e um código que o time consegue evoluir.',
+        'Entrega ponta a ponta: discovery, arquitetura, front-end, APIs, modelagem de dados e dashboards — com visão de produto e métricas ligadas desde o dia um.',
     },
     {
       index: '02',
-      title: 'CRO e experimentação',
+      title: 'CRO e sistemas de conversão',
       promise: 'Fazer cada release responder por uma métrica.',
       description:
-        'Testes A/B e personalização com Adobe Target, Adobe Analytics e GA4 — da hipótese e instrumentação até resultado legível e próximo passo.',
+        'Landing pages, funis, testes A/B e personalização com Adobe Target, GA4 e Adobe Analytics — da hipótese ao impacto legível.',
     },
     {
       index: '03',
-      title: 'Automação e IA aplicada',
-      promise: 'Eliminar o trabalho manual entre o dado e a decisão.',
+      title: 'Commerce e engenharia de storefront',
+      promise: 'Publicar storefronts que convertem sob tráfego real.',
       description:
-        'Rotinas de reporte e operação automatizadas com n8n, além de entrega assistida por IA com Cursor e Claude Code virando prática repetível no time.',
+        'Shopify, Next.js e arquiteturas headless com Core Web Vitals, ganchos de experimentação e um código que o squad consegue evoluir.',
     },
   ];
 }

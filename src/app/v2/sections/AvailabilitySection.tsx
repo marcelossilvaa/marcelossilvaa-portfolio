@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { getWhatsAppHref } from '@/content/whatsapp';
+import { getV2SectionIndex } from '@/content/v2Content';
 import type { Locale } from '@/i18n/LocaleProvider';
 import type { V2TranslationSchema } from '@/i18n/v2Translations';
 import { Reveal } from '../components/Reveal';
@@ -63,7 +64,7 @@ export function AvailabilitySection({ locale, text }: AvailabilitySectionProps) 
     <section id="availability" className="v2-section">
       <div className="v2-wrap">
         <SectionHeader
-          index="10"
+          index={getV2SectionIndex(locale, 'availability')}
           eyebrow={text.availability.eyebrow}
           title={text.availability.title}
           lead={text.availability.lead}

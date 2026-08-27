@@ -1,6 +1,6 @@
 'use client';
 
-import { getV2Services } from '@/content/v2Content';
+import { getV2SectionIndex, getV2Services } from '@/content/v2Content';
 import type { Locale } from '@/i18n/LocaleProvider';
 import type { V2TranslationSchema } from '@/i18n/v2Translations';
 import { Reveal } from '../components/Reveal';
@@ -18,7 +18,7 @@ export function ServicesSection({ locale, text }: ServicesSectionProps) {
     <section id="services" className="v2-section">
       <div className="v2-wrap">
         <SectionHeader
-          index="09"
+          index={getV2SectionIndex(locale, 'services')}
           eyebrow={text.services.eyebrow}
           title={text.services.title}
           lead={text.services.lead}

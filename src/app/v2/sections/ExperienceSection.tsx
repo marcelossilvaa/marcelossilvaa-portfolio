@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import { getProfessionalData } from '@/content/experience';
+import { getV2SectionIndex } from '@/content/v2Content';
 import type { Locale } from '@/i18n/LocaleProvider';
 import type { V2TranslationSchema } from '@/i18n/v2Translations';
 import { Reveal } from '../components/Reveal';
@@ -24,7 +25,7 @@ export function ExperienceSection({ locale, text }: ExperienceSectionProps) {
     <section id="experience" className="v2-section">
       <div className="v2-wrap">
         <SectionHeader
-          index="04"
+          index={getV2SectionIndex(locale, 'experience')}
           eyebrow={text.experience.eyebrow}
           title={text.experience.title}
           lead={text.experience.lead}

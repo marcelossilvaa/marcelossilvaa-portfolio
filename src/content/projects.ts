@@ -13,7 +13,10 @@ import type { ProjectItem } from '@/types/portfolio';
 import OutsetArquitetura from '../../public/assets/projectsImage/OutetArquiterura.png';
 import Nodejs from '../../public/assets/node.svg';
 import PostgreSQL from '../../public/assets/Postgres.png';
-import Oplab from '../../public/assets/projectsImage/Oplab.png';
+import OplabDash from '../../public/assets/projectsImage/oplab-dash.png';
+import SaasSolar from '../../public/assets/projectsImage/saas-solar.png';
+import ModelGrid from '../../public/assets/projectsImage/model-grid.png';
+import CotacaoAutomation from '../../public/assets/projectsImage/cotacao-automation.png';
 import SandroPrata from '../../public/assets/projectsImage/SandroPrates.png';
 import UrkaApp from '../../public/assets/projectsImage/UrkaApp.png';
 import BjjFanatics from '../../public/assets/Bjj-fanatics.png';
@@ -24,6 +27,88 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
   const isEnglish = locale === 'en';
 
   return [
+    {
+      id: '9',
+      title: 'Helix.Solar',
+      subTitle: isEnglish
+        ? 'Full-stack SaaS CRM for solar energy companies'
+        : 'SaaS full stack de CRM para empresas de energia solar',
+      challenge: isEnglish
+        ? 'Solar operators needed a single product to manage leads, proposals, installations and support — not scattered spreadsheets.'
+        : 'Operadores solares precisavam de um produto único para leads, propostas, instalações e atendimento — não planilhas espalhadas.',
+      strategy: isEnglish
+        ? 'Built end-to-end with Next.js, Node.js and PostgreSQL: auth, CRM pipelines, dashboards and AI-assisted workflows wired to business metrics from day one.'
+        : 'Construí ponta a ponta com Next.js, Node.js e PostgreSQL: auth, pipelines de CRM, dashboards e fluxos com IA ligados a métricas de negócio desde o dia um.',
+      impact: isEnglish
+        ? 'A shippable SaaS operators can run daily — with conversion-oriented landing pages and a codebase ready to scale features and experiments.'
+        : 'Um SaaS publicável que o time opera no dia a dia — com landing orientada a conversão e base pronta para escalar features e experimentos.',
+      featured: true,
+      repoLink: '',
+      demoLink: 'https://saas-solar.vercel.app/',
+      image: SaasSolar,
+      technologies: [
+        { name: 'Next.js', image: Nextjs },
+        { name: 'React', image: React },
+        { name: 'TypeScript', image: TypeScript },
+        { name: 'Node.js', image: Nodejs },
+        { name: 'PostgreSQL', image: PostgreSQL },
+        { name: 'Tailwind', image: Tailwind },
+      ],
+    },
+    {
+      id: '6',
+      title: 'StatTrade',
+      subTitle: isEnglish
+        ? 'Full-stack trading analytics platform for B3 options'
+        : 'Plataforma full stack de analytics para opções na B3',
+      challenge: isEnglish
+        ? 'Traders needed dense market data views without sacrificing responsiveness or readability on critical screens.'
+        : 'Traders precisavam de visualizações densas de mercado sem sacrificar responsividade ou legibilidade em telas críticas.',
+      strategy: isEnglish
+        ? 'Structured dashboard modules with performant rendering, clear hierarchy and full-stack delivery — front-end, APIs and data views designed for daily use.'
+        : 'Estruturei módulos de dashboard com renderização performática, hierarquia clara e entrega full stack — front-end, APIs e visões de dados pensadas para uso diário.',
+      impact: isEnglish
+        ? 'More readable analytics flow, reduced friction in portfolio tracking and a product surface ready for new market modules.'
+        : 'Leitura analítica mais fluida, menor fricção no acompanhamento de carteira e uma superfície de produto pronta para novos módulos.',
+      featured: true,
+      repoLink: '',
+      demoLink: 'https://oplab-dash.vercel.app/',
+      image: OplabDash,
+      technologies: [
+        { name: 'Next.js', image: Nextjs },
+        { name: 'React', image: React },
+        { name: 'TypeScript', image: TypeScript },
+        { name: 'Tailwind', image: Tailwind },
+        { name: 'Node.js', image: Nodejs },
+      ],
+    },
+    {
+      id: '10',
+      title: 'Model GRID',
+      subTitle: isEnglish
+        ? 'Full-stack grid bot with SEO-first landing and CRO hooks'
+        : 'Bot de grid full stack com LP SEO-first e ganchos de CRO',
+      challenge: isEnglish
+        ? 'Launch a crypto grid-trading product where the landing page had to rank, explain value fast and convert technical users.'
+        : 'Lançar um produto de grid trading onde a landing precisava ranquear, explicar valor rápido e converter usuários técnicos.',
+      strategy: isEnglish
+        ? 'Combined a conversion-focused LP (technical SEO, clear CTAs, social proof blocks) with a full-stack control panel — auth, settings, calculators and price alerts.'
+        : 'Combinei uma LP orientada a conversão (SEO técnico, CTAs claros, blocos de prova) com painel full stack — auth, configurações, calculadoras e alertas de preço.',
+      impact: isEnglish
+        ? 'Higher-intent traffic meets a product that explains, converts and retains — analytics wired to funnel steps from first visit to activation.'
+        : 'Tráfego de maior intenção encontra um produto que explica, converte e retém — analytics ligados ao funil da primeira visita à ativação.',
+      featured: true,
+      repoLink: '',
+      demoLink: 'https://model-grid.vercel.app/',
+      image: ModelGrid,
+      technologies: [
+        { name: 'Next.js', image: Nextjs },
+        { name: 'React', image: React },
+        { name: 'TypeScript', image: TypeScript },
+        { name: 'Node.js', image: Nodejs },
+        { name: 'Tailwind', image: Tailwind },
+      ],
+    },
     {
       id: '8',
       title: 'BJJ Fanatics',
@@ -55,6 +140,33 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
         { name: 'Xcode', image: TypeScript },
         { name: 'Node.js', image: Nodejs },
         { name: 'Firebase', image: Firebase },
+      ],
+    },
+    {
+      id: '11',
+      title: isEnglish ? 'Quote Automation' : 'Cotação Automation',
+      subTitle: isEnglish
+        ? 'Full-stack price monitoring via WhatsApp and Telegram'
+        : 'Monitoramento de preços full stack via WhatsApp e Telegram',
+      challenge: isEnglish
+        ? 'Teams needed automated price alerts across channels without manual polling or fragmented tools.'
+        : 'Times precisavam de alertas automatizados de preço em múltiplos canais, sem polling manual ou ferramentas fragmentadas.',
+      strategy: isEnglish
+        ? 'Built a full-stack automation product: authenticated dashboard, notification rules, channel integrations and monitoring pipelines designed for reliable daily operation.'
+        : 'Construí um produto de automação full stack: painel autenticado, regras de notificação, integrações de canal e pipelines de monitoramento pensados para operação diária confiável.',
+      impact: isEnglish
+        ? 'Faster reaction to market moves with a product surface teams can configure without touching code.'
+        : 'Reação mais rápida a movimentos de mercado com uma superfície que o time configura sem mexer em código.',
+      featured: false,
+      repoLink: '',
+      demoLink: 'https://cotacao-automation.vercel.app/',
+      image: CotacaoAutomation,
+      technologies: [
+        { name: 'Next.js', image: Nextjs },
+        { name: 'React', image: React },
+        { name: 'TypeScript', image: TypeScript },
+        { name: 'Node.js', image: Nodejs },
+        { name: 'Tailwind', image: Tailwind },
       ],
     },
     {
@@ -187,28 +299,6 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
       technologies: [
         { name: 'Next.js', image: Nextjs },
         { name: 'Tailwind', image: Tailwind },
-      ],
-    },
-    {
-      id: '6',
-      title: 'Oplab',
-      subTitle: isEnglish ? 'Dashboard for traders' : 'Dashboard voltado para traders',
-      challenge: isEnglish
-        ? 'Handle dense data views while keeping interface responsiveness.'
-        : 'Lidar com visualizações densas de dados mantendo responsividade da interface.',
-      strategy: isEnglish
-        ? 'Structured dashboard modules with performant rendering patterns and clear visual hierarchy.'
-        : 'Estruturei módulos de dashboard com padrões de renderização performáticos e hierarquia visual clara.',
-      impact: isEnglish
-        ? 'More readable analytics flow and reduced interaction friction in critical screens.'
-        : 'Leitura analítica mais fluida e menor fricção de interação em telas críticas.',
-      repoLink: '',
-      demoLink: 'https://oplab-dash.vercel.app/',
-      image: Oplab,
-      technologies: [
-        { name: 'Next.js', image: Nextjs },
-        { name: 'Tailwind', image: Tailwind },
-        { name: 'Node.js', image: Nodejs },
       ],
     },
     {

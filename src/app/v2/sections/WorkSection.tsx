@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { AnimatePresence, motion, useMotionValue, useSpring } from 'framer-motion';
 import { useCallback, useState } from 'react';
 import { getProjectsData } from '@/content/projects';
-import { getV2ProjectKinds } from '@/content/v2Content';
+import { getV2ProjectKinds, getV2SectionIndex } from '@/content/v2Content';
 import type { Locale } from '@/i18n/LocaleProvider';
 import type { V2TranslationSchema } from '@/i18n/v2Translations';
 import { FrameViewer } from '../components/FrameViewer';
@@ -51,7 +51,12 @@ export function WorkSection({ locale, text }: WorkSectionProps) {
   return (
     <section id="work" className="v2-section">
       <div className="v2-wrap">
-        <SectionHeader index="07" eyebrow={text.work.eyebrow} title={text.work.title} lead={text.work.lead} />
+        <SectionHeader
+          index={getV2SectionIndex(locale, 'work')}
+          eyebrow={text.work.eyebrow}
+          title={text.work.title}
+          lead={text.work.lead}
+        />
 
         <div
           className="hidden grid-cols-[3.5rem_minmax(0,1.15fr)_minmax(0,1fr)_9.5rem_2.5rem] gap-3 pb-3 md:grid"

@@ -35,10 +35,6 @@ export type V2TranslationSchema = {
     sequenceLabel: string;
     frames: string;
   };
-  coordinates: {
-    eyebrow: string;
-    title: string;
-  };
   system: {
     eyebrow: string;
     title: string;
@@ -128,14 +124,14 @@ const pt: V2TranslationSchema = {
     skip: 'Clique em qualquer lugar para pular',
     lines: [
       'inicializando índice do portfólio',
-      'carregando stack · shopify · next.js · cro',
+      'carregando stack · saas · full stack · cro',
       'sincronizando marcas e projetos',
-      'calibrando sinal',
+      'calibrando sinal de conversão',
     ],
     ready: 'pronto',
   },
   hud: {
-    role: 'Front-end · E-commerce · CRO',
+    role: 'Full stack · SaaS · CRO',
     localTime: 'Hora local',
     scroll: 'Rolar',
     index: 'Índice',
@@ -146,40 +142,36 @@ const pt: V2TranslationSchema = {
   },
   hero: {
     edition: 'Portfólio / 2026',
-    statement: 'Eu transformo storefronts lentos em',
-    statementHighlight: 'máquinas de conversão',
+    statement: 'Eu transformo ideias em produtos digitais que',
+    statementHighlight: 'convertem de verdade',
     support:
-      'Arquitetura front-end, experimentação de CRO e automação com IA para e-commerces que precisam de velocidade, evidência e evolução contínua.',
+      'Dev full stack com visão analítica, estratégica e técnica: entrego SaaS ponta a ponta, storefronts de alto tráfego e sistemas de CRO com experimentação, métricas e automação assistida por IA.',
     ctaPrimary: 'Falar no WhatsApp',
     ctaSecondary: 'Ver projetos',
     availability: 'Disponível para novos projetos',
   },
   signal: {
     eyebrow: 'Sinal',
-    title: 'Performance é uma decisão de negócio',
+    title: 'Código, produto e conversão no mesmo sistema',
     lead:
-      'Cada milissegundo, cada teste A/B e cada componente reaproveitado são escolhas que aparecem na receita. Meu trabalho é conectar código a métrica.',
-    quote: 'Construa sistemas em que o time consiga agir.',
+      'De SaaS full stack a e-commerce de escala: cada entrega conecta arquitetura, métrica e experimentação — porque performance e conversão são decisões de negócio.',
+    quote: 'Construa produtos em que dados e código falem a mesma língua.',
     archiveLabel: 'Arquivo visual',
     sequenceLabel: 'Sequência automática / 3.4s',
     frames: 'quadros em rotação',
   },
-  coordinates: {
-    eyebrow: 'Coordenadas',
-    title: 'Base fixa, alcance remoto',
-  },
   system: {
     eyebrow: 'Sistema',
-    title: 'Um sistema, duas frentes',
+    title: 'Três frentes, uma visão de produto',
     lead:
-      'Projetos diferentes, a mesma disciplina: estruturar o front-end, instrumentar a medição e testar hipóteses até a decisão ficar óbvia.',
+      'Full stack, commerce e CRO não são silos — são camadas do mesmo sistema. Arquiteto, construo, instrumento e testo até a decisão ficar óbvia.',
     pipelineLabel: 'Fluxo de trabalho',
   },
   experience: {
     eyebrow: 'Experiência profissional',
     title: 'Trajetória',
     lead:
-      'De MVP educacional a e-commerces de grande porte: entrega front-end conectada a produto, dados e conversão.',
+      'De MVP educacional a SaaS em produção e e-commerces de grande porte: entrega conectada a produto, dados e conversão.',
     details: 'Ver detalhes',
     hide: 'Recolher',
     now: 'agora',
@@ -195,12 +187,12 @@ const pt: V2TranslationSchema = {
   brands: {
     eyebrow: 'Marcas',
     title: 'Onde o código foi para produção',
-    lead: 'Marcas e operações que passaram pelas entregas de front-end, CRO e automação.',
+    lead: 'Marcas e operações que passaram por entregas full stack, CRO, commerce e automação.',
   },
   work: {
     eyebrow: 'Projetos',
     title: 'Índice de projetos',
-    lead: 'Selecione uma linha para abrir o visor de quadros com desafio, estratégia e impacto.',
+    lead: 'Selecione uma linha para abrir o visor com desafio, estratégia e impacto — SaaS, commerce e CRO no mesmo índice.',
     tableProject: 'Projeto',
     tableStack: 'Stack',
     tableYear: 'Tipo',
@@ -221,19 +213,19 @@ const pt: V2TranslationSchema = {
     eyebrow: 'Toolkit',
     title: 'Capacidades técnicas',
     lead:
-      'Um sistema de capacidades que cobre fundamentos web, aplicação, commerce, medição, automação e plataforma.',
+      'Um sistema de capacidades que cobre SaaS full stack, commerce, CRO, medição, automação e plataforma.',
     capabilities: 'capacidades',
   },
   services: {
     eyebrow: 'Serviços',
     title: 'Como eu entro no seu time',
-    lead: 'Três frentes de atuação, sempre amarradas a uma métrica que o negócio já acompanha.',
+    lead: 'Três frentes de atuação — SaaS, CRO e commerce — sempre amarradas a uma métrica que o negócio já acompanha.',
   },
   availability: {
     eyebrow: 'Agenda',
     title: 'Disponibilidade',
     lead:
-      'Aberto a posições e projetos em front-end, e-commerce, CRO e automação. Português nativo, inglês profissional.',
+      'Aberto a posições e projetos full stack, SaaS, e-commerce, CRO e automação. Português nativo, inglês profissional.',
     pitch: 'Escolha um dia útil e me conte qual métrica está travada.',
     status: 'Aceitando novos projetos',
     cta: 'Agendar uma conversa',
@@ -259,7 +251,7 @@ const pt: V2TranslationSchema = {
     titleLine1: 'VAMOS CONSTRUIR',
     titleLine2: 'O PRÓXIMO PASSO.',
     lead:
-      'Tem um storefront travado, um funil furado ou uma ideia que precisa de evidência? Vamos transformar isso em um próximo passo claro.',
+      'Tem um SaaS para lançar, um funil furado ou um storefront travado? Vamos transformar isso em um próximo passo claro — com código e métrica alinhados.',
     email: 'Email',
     whatsapp: 'WhatsApp',
     linkedin: 'LinkedIn',
@@ -276,14 +268,14 @@ const en: V2TranslationSchema = {
     skip: 'Click anywhere to skip',
     lines: [
       'initializing portfolio index',
-      'loading stack · shopify · next.js · cro',
+      'loading stack · saas · full stack · cro',
       'syncing brands and projects',
-      'calibrating signal',
+      'calibrating conversion signal',
     ],
     ready: 'ready',
   },
   hud: {
-    role: 'Front-end · E-commerce · CRO',
+    role: 'Full stack · SaaS · CRO',
     localTime: 'Local time',
     scroll: 'Scroll',
     index: 'Index',
@@ -294,40 +286,36 @@ const en: V2TranslationSchema = {
   },
   hero: {
     edition: 'Portfolio / 2026',
-    statement: 'I turn slow storefronts into',
-    statementHighlight: 'conversion machines',
+    statement: 'I turn ideas into digital products that',
+    statementHighlight: 'actually convert',
     support:
-      'Front-end architecture, CRO experimentation and AI-assisted automation for e-commerce operations that need speed, evidence and continuous evolution.',
+      'Full-stack developer with analytical, strategic and technical vision: I ship end-to-end SaaS, high-traffic storefronts and CRO systems with experimentation, metrics and AI-assisted automation.',
     ctaPrimary: 'Chat on WhatsApp',
     ctaSecondary: 'See projects',
     availability: 'Available for new projects',
   },
   signal: {
     eyebrow: 'Signal',
-    title: 'Performance is a business decision',
+    title: 'Code, product and conversion in one system',
     lead:
-      'Every millisecond, every A/B test and every reusable component is a choice that shows up in revenue. My job is to connect code to metric.',
-    quote: 'Build systems people can act on.',
+      'From full-stack SaaS to enterprise e-commerce: every delivery connects architecture, metrics and experimentation — because performance and conversion are business decisions.',
+    quote: 'Build products where data and code speak the same language.',
     archiveLabel: 'Visual archive',
     sequenceLabel: 'Auto sequence / 3.4s',
     frames: 'rotating frames',
   },
-  coordinates: {
-    eyebrow: 'Coordinates',
-    title: 'Fixed base, remote range',
-  },
   system: {
     eyebrow: 'System',
-    title: 'One system, two fronts',
+    title: 'Three fronts, one product vision',
     lead:
-      'Different projects, the same discipline: structure the front-end, instrument the measurement and test hypotheses until the decision becomes obvious.',
+      'Full stack, commerce and CRO are not silos — they are layers of the same system. I architect, build, instrument and test until the decision becomes obvious.',
     pipelineLabel: 'Workflow',
   },
   experience: {
     eyebrow: 'Professional experience',
     title: 'Track record',
     lead:
-      'From an educational MVP to enterprise e-commerce: front-end delivery wired into product, data and conversion.',
+      'From an educational MVP to production SaaS and enterprise e-commerce: delivery wired into product, data and conversion.',
     details: 'View details',
     hide: 'Collapse',
     now: 'now',
@@ -343,12 +331,12 @@ const en: V2TranslationSchema = {
   brands: {
     eyebrow: 'Brands',
     title: 'Where the code went live',
-    lead: 'Brands and operations touched by front-end, CRO and automation delivery.',
+    lead: 'Brands and operations touched by full-stack, CRO, commerce and automation delivery.',
   },
   work: {
     eyebrow: 'Work',
     title: 'Project index',
-    lead: 'Select a row to open the frame viewer with challenge, strategy and impact.',
+    lead: 'Select a row to open the frame viewer with challenge, strategy and impact — SaaS, commerce and CRO in one index.',
     tableProject: 'Project',
     tableStack: 'Stack',
     tableYear: 'Type',
@@ -369,19 +357,19 @@ const en: V2TranslationSchema = {
     eyebrow: 'Toolkit',
     title: 'Technical capabilities',
     lead:
-      'A capability system covering web fundamentals, application, commerce, measurement, automation and platform.',
+      'A capability system covering full-stack SaaS, commerce, CRO, measurement, automation and platform.',
     capabilities: 'capabilities',
   },
   services: {
     eyebrow: 'Services',
     title: 'How I plug into your team',
-    lead: 'Three engagement tracks, always tied to a metric the business already watches.',
+    lead: 'Three engagement tracks — SaaS, CRO and commerce — always tied to a metric the business already watches.',
   },
   availability: {
     eyebrow: 'Availability',
     title: 'Availability',
     lead:
-      'Open to roles and projects in front-end, e-commerce, CRO and automation. Portuguese native, professional English.',
+      'Open to full-stack, SaaS, e-commerce, CRO and automation roles and projects. Portuguese native, professional English.',
     pitch: 'Pick a weekday and tell me which metric is stuck.',
     status: 'Accepting new projects',
     cta: 'Schedule a conversation',
@@ -407,7 +395,7 @@ const en: V2TranslationSchema = {
     titleLine1: "LET'S BUILD",
     titleLine2: "WHAT'S NEXT.",
     lead:
-      'Got a stuck storefront, a leaking funnel or an idea that needs evidence? Let’s turn it into a clear next move.',
+      'Launching a SaaS, fixing a leaking funnel or unblocking a storefront? Let’s turn it into a clear next move — with code and metrics aligned.',
     email: 'Email',
     whatsapp: 'WhatsApp',
     linkedin: 'LinkedIn',
