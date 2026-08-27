@@ -29,24 +29,25 @@ export function EducationSection({ locale, text }: EducationSectionProps) {
         <div className="grid gap-px border border-[var(--v2-line)] bg-[var(--v2-line)] md:grid-cols-3">
           {education.map((item, index) => (
             <Reveal key={item.id} delay={index * 0.08}>
-              <article className="v2-bracket flex h-full flex-col gap-6 bg-[var(--v2-bg-elev)] p-6 md:p-8">
+              <article className="v2-bracket flex h-full flex-col gap-5 bg-[var(--v2-bg-elev)] p-5 md:gap-6 md:p-7">
+                <div className="v2-edu-logo">
+                  <Image
+                    src={item.image}
+                    alt={item.institution}
+                    width={200}
+                    height={72}
+                    className="object-contain"
+                  />
+                </div>
+
                 <div className="flex items-center justify-between gap-4">
                   <span className="v2-mono text-[var(--v2-signal)]">
                     {text.education.nodeLabel} / {String(index + 1).padStart(2, '0')}
                   </span>
-                  <span className="relative flex h-10 w-10 items-center justify-center border border-[var(--v2-line)] bg-[var(--v2-bg-panel)]">
-                    <Image
-                      src={item.image}
-                      alt={item.institution}
-                      width={28}
-                      height={28}
-                      className="h-auto w-6 object-contain"
-                    />
-                  </span>
+                  <span className="v2-mono text-[var(--v2-dim)]">{item.date}</span>
                 </div>
 
                 <div>
-                  <p className="v2-mono mb-3 text-[var(--v2-dim)]">{item.date}</p>
                   <h3 className="v2-heading text-[1.15rem] leading-snug md:text-[1.3rem]">{item.title}</h3>
                   <p className="v2-mono mt-2 text-[var(--v2-muted)]">{item.institution}</p>
                 </div>

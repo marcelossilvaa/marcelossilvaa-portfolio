@@ -52,14 +52,14 @@ export function ExperienceSection({ locale, text }: ExperienceSectionProps) {
                       )}
                     </span>
 
-                    <span className="v2-timeline__title flex min-w-0 items-center gap-4">
-                      <span className="relative hidden h-11 w-11 flex-shrink-0 items-center justify-center border border-[var(--v2-line)] bg-[var(--v2-bg-panel)] sm:flex">
+                    <span className="v2-timeline__title flex min-w-0 items-center gap-3 sm:gap-5">
+                      <span className="v2-org-mark">
                         <Image
                           src={item.image}
                           alt={item.institution}
-                          width={30}
-                          height={30}
-                          className="h-auto w-[26px] object-contain"
+                          width={140}
+                          height={48}
+                          className="object-contain"
                         />
                       </span>
                       <span className="min-w-0">

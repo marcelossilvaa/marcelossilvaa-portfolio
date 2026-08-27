@@ -1237,12 +1237,12 @@ html.v2-page ::selection {
    -------------------------------------------------------------------------- */
 
 /* Sem borda própria: o grid pai usa gap de 1px sobre a cor de linha, evitando
-   bordas duplicadas entre as células. */
+   bordas duplicadas entre as células. Cores das marcas ficam ativas por padrão. */
 .v2-logo-tile {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(1rem, 2.5vw, 1.75rem);
+  padding: clamp(1.15rem, 3vw, 2rem);
   background: var(--v2-bg-elev);
   transition: background-color 0.4s var(--v2-ease);
 }
@@ -1252,16 +1252,66 @@ html.v2-page ::selection {
 }
 
 .v2-logo-tile img {
-  filter: grayscale(1) brightness(2.4) contrast(0.7);
-  opacity: 0.55;
+  opacity: 0.92;
   transition:
-    filter 0.45s var(--v2-ease),
-    opacity 0.45s var(--v2-ease);
+    opacity 0.35s var(--v2-ease),
+    transform 0.45s var(--v2-ease);
 }
 
 .v2-logo-tile:hover img {
-  filter: grayscale(0) brightness(1) contrast(1);
   opacity: 1;
+  transform: scale(1.04);
+}
+
+/* Placa clara para logos de empresa/instituição (muitos são escuros ou coloridos). */
+.v2-org-mark {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 7.75rem;
+  height: 3.65rem;
+  padding: 0.55rem 0.7rem;
+  background: #f2f2ef;
+  border: 1px solid var(--v2-line-strong);
+}
+
+.v2-org-mark img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100%;
+  max-height: 2.35rem;
+  object-fit: contain;
+}
+
+.v2-edu-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 5.5rem;
+  padding: 1rem 1.15rem;
+  background: #f2f2ef;
+  border: 1px solid var(--v2-line-strong);
+}
+
+.v2-edu-logo img {
+  width: auto !important;
+  height: auto !important;
+  max-width: min(100%, 12.5rem);
+  max-height: 3.5rem;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .v2-edu-logo {
+    min-height: 6.5rem;
+  }
+
+  .v2-edu-logo img {
+    max-width: 13.5rem;
+    max-height: 4rem;
+  }
 }
 
 .v2-img-hud {

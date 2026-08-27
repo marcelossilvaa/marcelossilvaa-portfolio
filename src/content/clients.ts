@@ -20,12 +20,12 @@ export type ClientLogoItem = {
 
 /** Primeira linha (grid desktop): Azul → Nespresso → Votorantim → FTD; segunda: Vitamin Energy, Auri, BJJ Fanatics, Primal Queen. */
 export const clientLogos: ClientLogoItem[] = [
-  { id: 'azul', name: 'Azul', logo: AzulLogo, maxHeight: 44, maxWidth: 120 },
-  { id: 'nespresso', name: 'Nespresso', logo: NespressoWordmark, scale: 1.28, maxHeight: 46, maxWidth: 160 },
-  { id: 'votorantim', name: 'Votorantim Cimentos', logo: VotorantimLogo, maxHeight: 42, maxWidth: 130 },
-  { id: 'ftd', name: 'FTD', logo: FtdLogo, maxHeight: 40, maxWidth: 110 },
-  { id: 'vitamin-energy', name: 'Vitamin Energy', logo: VitaminEnergyLogo, scale: 1.05, maxHeight: 40, maxWidth: 140 },
-  { id: 'auri', name: 'Auri', logo: AuriLogo, maxHeight: 34, maxWidth: 90 },
-  { id: 'bjj-fanatics', name: 'BJJ Fanatics', logo: BjjFanatics, maxHeight: 38, maxWidth: 130 },
-  { id: 'primal-queen', name: 'Primal Queen', logo: PrimalQueenLogo, scale: 1.08, maxHeight: 40, maxWidth: 130 },
+  { id: 'azul', name: 'Azul', logo: AzulLogo, maxHeight: 52, maxWidth: 132 },
+  { id: 'nespresso', name: 'Nespresso', logo: NespressoWordmark, scale: 1.22, maxHeight: 52, maxWidth: 168 },
+  { id: 'votorantim', name: 'Votorantim Cimentos', logo: VotorantimLogo, maxHeight: 50, maxWidth: 142 },
+  { id: 'ftd', name: 'FTD', logo: FtdLogo, maxHeight: 48, maxWidth: 122 },
+  { id: 'vitamin-energy', name: 'Vitamin Energy', logo: VitaminEnergyLogo, scale: 1.06, maxHeight: 48, maxWidth: 152 },
+  { id: 'auri', name: 'Auri', logo: AuriLogo, maxHeight: 42, maxWidth: 104 },
+  { id: 'bjj-fanatics', name: 'BJJ Fanatics', logo: BjjFanatics, maxHeight: 46, maxWidth: 142 },
+  { id: 'primal-queen', name: 'Primal Queen', logo: PrimalQueenLogo, scale: 1.1, maxHeight: 48, maxWidth: 142 },
 ];
