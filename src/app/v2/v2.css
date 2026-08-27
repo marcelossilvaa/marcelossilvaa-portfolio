@@ -1236,31 +1236,27 @@ html.v2-page ::selection {
    Utilidades de logo/imagem
    -------------------------------------------------------------------------- */
 
-/* Sem borda própria: o grid pai usa gap de 1px sobre a cor de linha, evitando
-   bordas duplicadas entre as células. Cores das marcas ficam ativas por padrão. */
+/* Células de marca: placa clara para contraste com logos escuros/coloridos. */
 .v2-logo-tile {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(1.15rem, 3vw, 2rem);
-  background: var(--v2-bg-elev);
+  padding: clamp(1.25rem, 3.2vw, 2.15rem);
+  background: #f3f3f0;
   transition: background-color 0.4s var(--v2-ease);
 }
 
 .v2-logo-tile:hover {
-  background: rgba(244, 244, 242, 0.045);
+  background: #ffffff;
 }
 
 .v2-logo-tile img {
-  opacity: 0.92;
-  transition:
-    opacity 0.35s var(--v2-ease),
-    transform 0.45s var(--v2-ease);
+  opacity: 1;
+  transition: transform 0.45s var(--v2-ease);
 }
 
 .v2-logo-tile:hover img {
-  opacity: 1;
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 /* Placa clara para logos de empresa/instituição (muitos são escuros ou coloridos). */

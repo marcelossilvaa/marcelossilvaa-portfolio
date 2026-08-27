@@ -45,17 +45,17 @@ export function BrandsSection({ locale, text }: BrandsSectionProps) {
         <div className="grid grid-cols-2 gap-px border border-[var(--v2-line)] bg-[var(--v2-line)] sm:grid-cols-4">
           {clientLogos.map((client, index) => (
             <Reveal key={client.id} delay={index * 0.04}>
-              <div className="v2-logo-tile h-full min-h-[128px]" title={client.name}>
+              <div className="v2-logo-tile h-full min-h-[140px]" title={client.name}>
                 {client.logo && (
                   <Image
                     src={client.logo}
                     alt={client.name}
-                    width={180}
-                    height={72}
+                    width={200}
+                    height={80}
                     className="object-contain"
                     style={{
-                      maxHeight: client.maxHeight ?? 52,
-                      maxWidth: client.maxWidth ?? 150,
+                      maxHeight: client.maxHeight ?? 56,
+                      maxWidth: client.maxWidth ?? 160,
                       width: 'auto',
                       height: 'auto',
                       transform: client.scale ? `scale(${client.scale})` : undefined,
