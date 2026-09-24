@@ -1236,27 +1236,86 @@ html.v2-page ::selection {
    Utilidades de logo/imagem
    -------------------------------------------------------------------------- */
 
-/* Células de marca: placa clara para contraste com logos escuros/coloridos. */
+/* Grid de marcas: minmax(0,1fr) evita overflow das células no mobile. */
+.v2-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--v2-line);
+  border-radius: 0.75rem;
+  background: var(--v2-line);
+}
+
+@media (min-width: 640px) {
+  .v2-logo-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Células de marca: fundo do sistema; silhueta clara → cor no hover. */
 .v2-logo-tile {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(0.9rem, 2.4vw, 1.5rem);
-  background: #f3f3f0;
+  min-width: 0;
+  overflow: hidden;
+  padding: clamp(0.75rem, 2.4vw, 1.5rem);
+  background: var(--v2-bg-elev);
   transition: background-color 0.4s var(--v2-ease);
 }
 
 .v2-logo-tile:hover {
-  background: #ffffff;
+  background: var(--v2-bg-panel);
 }
 
+/* Silhueta branca unifica logos claras e escuras no fundo dark. */
+.v2-logo-tile__img,
 .v2-logo-tile img {
-  opacity: 1;
-  transition: transform 0.45s var(--v2-ease);
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 2.6rem !important;
+  object-fit: contain;
+  opacity: 0.62;
+  filter: brightness(0) invert(1);
+  transform: none;
+  transform-origin: center;
+  transition:
+    filter 0.45s var(--v2-ease),
+    opacity 0.35s var(--v2-ease),
+    transform 0.45s var(--v2-ease);
+}
+
+@media (min-width: 640px) {
+  .v2-logo-tile__img,
+  .v2-logo-tile img {
+    max-height: 3.25rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .v2-logo-tile__img,
+  .v2-logo-tile img {
+    max-width: min(100%, var(--logo-max-w, 10rem)) !important;
+    max-height: min(4rem, var(--logo-max-h, 3.5rem)) !important;
+    transform: scale(var(--logo-scale, 1));
+  }
+
+  .v2-logo-tile:hover img {
+    transform: scale(calc(var(--logo-scale, 1) * 1.05));
+  }
 }
 
 .v2-logo-tile:hover img {
-  transform: scale(1.05);
+  opacity: 1;
+  filter: none;
+}
+
+@media (max-width: 1023px) {
+  .v2-logo-tile:hover img {
+    transform: scale(1.04);
+  }
 }
 
 /* Placa clara para logos de empresa/instituição (muitos são escuros ou coloridos). */

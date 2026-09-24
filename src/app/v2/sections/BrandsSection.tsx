@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import type { CSSProperties } from 'react';
 import { clientLogos } from '@/content/clients';
 import { getV2SectionIndex } from '@/content/v2Content';
 import type { Locale } from '@/i18n/LocaleProvider';
@@ -42,24 +43,27 @@ export function BrandsSection({ locale, text }: BrandsSectionProps) {
       </Reveal>
 
       <div className="v2-wrap mt-10">
-        <div className="grid grid-cols-2 gap-px border border-[var(--v2-line)] bg-[var(--v2-line)] sm:grid-cols-4">
+        <div className="v2-logo-grid">
           {clientLogos.map((client, index) => (
-            <Reveal key={client.id} delay={index * 0.04}>
-              <div className="v2-logo-tile h-full min-h-[140px]" title={client.name}>
+            <Reveal key={client.id} className="min-w-0 h-full" delay={index * 0.04}>
+              <div
+                className="v2-logo-tile h-full min-h-[120px] sm:min-h-[140px]"
+                title={client.name}
+                style={
+                  {
+                    '--logo-max-h': `${client.maxHeight ?? 56}px`,
+                    '--logo-max-w': `${client.maxWidth ?? 160}px`,
+                    '--logo-scale': String(client.scale ?? 1),
+                  } as CSSProperties
+                }
+              >
                 {client.logo && (
                   <Image
                     src={client.logo}
                     alt={client.name}
                     width={200}
                     height={80}
-                    className="object-contain"
-                    style={{
-                      maxHeight: client.maxHeight ?? 56,
-                      maxWidth: client.maxWidth ?? 160,
-                      width: 'auto',
-                      height: 'auto',
-                      transform: client.scale ? `scale(${client.scale})` : undefined,
-                    }}
+                    className="v2-logo-tile__img object-contain"
                   />
                 )}
               </div>
