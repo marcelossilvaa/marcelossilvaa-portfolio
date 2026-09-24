@@ -334,7 +334,7 @@ export function getV2ProjectKinds(locale: Locale): Record<string, string> {
   return {
     '8': isEn ? 'Commerce + App' : 'Commerce + App',
     '9': isEn ? 'SaaS Full Stack' : 'SaaS Full Stack',
-    '10': isEn ? 'SaaS + CRO LP' : 'SaaS + LP CRO',
+    '10': isEn ? 'CRO Landing + SEO' : 'LP CRO + SEO',
     '11': isEn ? 'Automation SaaS' : 'Automação SaaS',
     '5': isEn ? 'Headless CMS' : 'CMS headless',
     '0': isEn ? 'Storefront' : 'Storefront',

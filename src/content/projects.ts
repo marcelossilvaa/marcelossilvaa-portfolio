@@ -84,28 +84,27 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
     },
     {
       id: '10',
-      title: 'Model GRID',
+      title: 'ModelGrid',
       subTitle: isEnglish
-        ? 'Full-stack grid bot with SEO-first landing and CRO hooks'
-        : 'Bot de grid full stack com LP SEO-first e ganchos de CRO',
+        ? 'High-conversion solar LP with SEO and full-stack delivery'
+        : 'LP solar de alta conversão com SEO e entrega full stack',
       challenge: isEnglish
-        ? 'Launch a crypto grid-trading product where the landing page had to rank, explain value fast and convert technical users.'
-        : 'Lançar um produto de grid trading onde a landing precisava ranquear, explicar valor rápido e converter usuários técnicos.',
+        ? 'Turn a local solar business into a digital acquisition channel — rank for high-intent searches and convert visitors into quote requests.'
+        : 'Transformar um negócio local de energia solar em canal de aquisição digital — ranquear buscas de alta intenção e converter visitas em pedidos de orçamento.',
       strategy: isEnglish
-        ? 'Combined a conversion-focused LP (technical SEO, clear CTAs, social proof blocks) with a full-stack control panel — auth, settings, calculators and price alerts.'
-        : 'Combinei uma LP orientada a conversão (SEO técnico, CTAs claros, blocos de prova) com painel full stack — auth, configurações, calculadoras e alertas de preço.',
+        ? 'Built an SEO-first, CRO-oriented landing with clear CTAs, social proof, savings simulator hooks and performance-focused Next.js delivery.'
+        : 'Construí uma landing SEO-first e orientada a CRO, com CTAs claros, prova social, ganchos de simulador de economia e entrega Next.js focada em performance.',
       impact: isEnglish
-        ? 'Higher-intent traffic meets a product that explains, converts and retains — analytics wired to funnel steps from first visit to activation.'
-        : 'Tráfego de maior intenção encontra um produto que explica, converte e retém — analytics ligados ao funil da primeira visita à ativação.',
+        ? 'A conversion-ready surface for Vitória da Conquista & region — technical SEO, funnel clarity and a stack ready to iterate experiments.'
+        : 'Uma superfície pronta para converter em Vitória da Conquista e região — SEO técnico, clareza de funil e stack pronta para iterar experimentos.',
       featured: true,
       repoLink: '',
-      demoLink: 'https://model-grid.vercel.app/',
+      demoLink: 'https://www.modelgrid.com.br/',
       image: ModelGrid,
       technologies: [
         { name: 'Next.js', image: Nextjs },
         { name: 'React', image: React },
         { name: 'TypeScript', image: TypeScript },
-        { name: 'Node.js', image: Nodejs },
         { name: 'Tailwind', image: Tailwind },
       ],
     },
