@@ -21,6 +21,7 @@ import CotacaoAutomation from '../../public/assets/projectsImage/cotacao-automat
 import SandroPrata from '../../public/assets/projectsImage/SandroPrates.png';
 import UrkaApp from '../../public/assets/projectsImage/UrkaApp.png';
 import BjjFanatics from '../../public/assets/Bjj-fanatics.png';
+import PrimalQueen from '../../public/assets/projectsImage/primal-queen.png';
 import PayloadLogo from '../../public/assets/payload-logo.png';
 import type { Locale } from '@/i18n/LocaleProvider';
 
@@ -139,17 +140,17 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
       id: '8',
       title: 'BJJ Fanatics',
       subTitle: isEnglish
-        ? 'Global Shopify ecommerce + mobile streaming app'
-        : 'Ecommerce global Shopify + app mobile de streaming',
+        ? 'Global Shopify ecommerce + CRO consulting and A/B tests'
+        : 'Ecommerce global Shopify + consultoria CRO e testes A/B',
       challenge: isEnglish
-        ? 'Scale a high-traffic ecommerce operation while supporting a streaming app experience for digital courses.'
-        : 'Escalar uma operação de ecommerce com alto tráfego mantendo uma experiência sólida no app de streaming de cursos.',
+        ? 'Scale a high-traffic ecommerce and streaming app while improving conversion with disciplined experimentation.'
+        : 'Escalar um ecommerce e app de streaming de alto tráfego enquanto melhora conversão com experimentação disciplinada.',
       strategy: isEnglish
-        ? 'Developed storefront features in Shopify Liquid and app modules with React, Tailwind, and TypeScript, including mobile workflows with Android Studio and Xcode, backed by Node.js services integrated with Firebase.'
-        : 'Atuei no storefront em Shopify Liquid e no app com React, Tailwind e TypeScript, incluindo fluxos mobile com Android Studio e Xcode, com serviços backend em Node.js integrados ao Firebase.',
+        ? 'Built storefront and app surfaces (Shopify Liquid, React, TypeScript) and led CRO consulting — A/B tests and experiment ops with Shoplift on the commercial funnel.'
+        : 'Atuei no storefront e no app (Shopify Liquid, React, TypeScript) e na consultoria de CRO — testes A/B e operação de experimentos com Shoplift no funil comercial.',
       impact: isEnglish
-        ? 'Improved delivery velocity across web and mobile app surfaces, ensuring reliable publishing and streaming experiences while scaling features continuously.'
-        : 'Aumentei a velocidade de entrega entre web e app mobile, garantindo experiências confiáveis de compra e streaming com evolução contínua de funcionalidades.',
+        ? 'Faster product delivery across web/mobile plus a conversion practice backed by live A/B evidence, not guesswork.'
+        : 'Entrega mais rápida entre web/mobile e uma prática de conversão sustentada por evidência de testes A/B, não por achismo.',
       featured: true,
       repoLink: '',
       demoLink: 'https://bjjfanatics.com/',
@@ -159,13 +160,38 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
       technologies: [
         { name: 'Shopify', image: Shopify },
         { name: 'Liquid', image: Liquid },
+        { name: 'Shoplift', image: Shopify },
         { name: 'React', image: React },
         { name: 'Tailwind', image: Tailwind },
         { name: 'TypeScript', image: TypeScript },
-        { name: 'Android Studio', image: TypeScript },
-        { name: 'Xcode', image: TypeScript },
         { name: 'Node.js', image: Nodejs },
         { name: 'Firebase', image: Firebase },
+      ],
+    },
+    {
+      id: '13',
+      title: 'Primal Queen',
+      subTitle: isEnglish
+        ? 'Shopify CRO consulting — development and A/B experimentation'
+        : 'Consultoria CRO em Shopify — desenvolvimento e experimentação A/B',
+      challenge: isEnglish
+        ? 'A high-intent DTC storefront needed faster iteration on offers, messaging and funnel steps without slowing the commercial calendar.'
+        : 'Uma storefront DTC de alta intenção precisava iterar ofertas, messaging e etapas de funil sem travar o calendário comercial.',
+      strategy: isEnglish
+        ? 'Provided development and CRO consulting: hypothesis-driven A/B tests and experiment tooling with Integrately, aligned to conversion metrics on Shopify.'
+        : 'Atuei em consultoria de desenvolvimento e CRO: testes A/B orientados por hipótese e ferramentas de experimentação com Integrately, alinhados a métricas de conversão no Shopify.',
+      impact: isEnglish
+        ? 'A clearer experimentation loop — ship, measure, decide — connecting storefront changes to conversion signals.'
+        : 'Um ciclo de experimentação mais claro — publicar, medir, decidir — conectando mudanças de storefront a sinais de conversão.',
+      featured: true,
+      repoLink: '',
+      demoLink: 'https://primalqueen.com/',
+      image: PrimalQueen,
+      technologies: [
+        { name: 'Shopify', image: Shopify },
+        { name: 'Liquid', image: Liquid },
+        { name: 'Integrately', image: Shopify },
+        { name: 'CRO', image: TypeScript },
       ],
     },
     {
