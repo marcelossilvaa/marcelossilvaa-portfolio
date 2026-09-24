@@ -16,6 +16,7 @@ import PostgreSQL from '../../public/assets/Postgres.png';
 import OplabDash from '../../public/assets/projectsImage/oplab-dash.png';
 import SaasSolar from '../../public/assets/projectsImage/saas-solar.png';
 import ModelGrid from '../../public/assets/projectsImage/model-grid.png';
+import ModelGridCrm from '../../public/assets/projectsImage/modelgrid-crm.png';
 import CotacaoAutomation from '../../public/assets/projectsImage/cotacao-automation.png';
 import SandroPrata from '../../public/assets/projectsImage/SandroPrates.png';
 import UrkaApp from '../../public/assets/projectsImage/UrkaApp.png';
@@ -29,28 +30,54 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
   return [
     {
       id: '9',
-      title: 'Helix.Solar',
+      title: 'Solar',
       subTitle: isEnglish
-        ? 'Full-stack SaaS CRM for solar energy companies'
-        : 'SaaS full stack de CRM para empresas de energia solar',
+        ? 'Full-stack SaaS for solar ops — quote to installation'
+        : 'SaaS full stack para operação solar — do orçamento à instalação',
       challenge: isEnglish
-        ? 'Solar operators needed a single product to manage leads, proposals, installations and support — not scattered spreadsheets.'
-        : 'Operadores solares precisavam de um produto único para leads, propostas, instalações e atendimento — não planilhas espalhadas.',
+        ? 'Solar operators needed one place for projects, quotes, work orders, inventory and finance — not scattered tools.'
+        : 'Operadores solares precisavam de um lugar só para projetos, orçamentos, OS, estoque e financeiro — sem ferramentas espalhadas.',
       strategy: isEnglish
-        ? 'Built end-to-end with Next.js, Node.js and PostgreSQL: auth, CRM pipelines, dashboards and AI-assisted workflows wired to business metrics from day one.'
-        : 'Construí ponta a ponta com Next.js, Node.js e PostgreSQL: auth, pipelines de CRM, dashboards e fluxos com IA ligados a métricas de negócio desde o dia um.',
+        ? 'Built end-to-end with Next.js, TypeScript and PostgreSQL: free-tier board, operational modules and a conversion-oriented marketing surface on Vercel.'
+        : 'Construí ponta a ponta com Next.js, TypeScript e PostgreSQL: quadro gratuito, módulos operacionais e superfície de marketing orientada a conversão na Vercel.',
       impact: isEnglish
-        ? 'A shippable SaaS operators can run daily — with conversion-oriented landing pages and a codebase ready to scale features and experiments.'
-        : 'Um SaaS publicável que o time opera no dia a dia — com landing orientada a conversão e base pronta para escalar features e experimentos.',
+        ? 'A shippable SaaS teams can start free and grow into — with funnel clarity from first visit to activation.'
+        : 'Um SaaS publicável que o time começa grátis e escala — com clareza de funil da primeira visita à ativação.',
       featured: true,
       repoLink: '',
-      demoLink: 'https://saas-solar.vercel.app/',
+      demoLink: 'https://saas-solar-one.vercel.app/',
       image: SaasSolar,
       technologies: [
         { name: 'Next.js', image: Nextjs },
         { name: 'React', image: React },
         { name: 'TypeScript', image: TypeScript },
         { name: 'Node.js', image: Nodejs },
+        { name: 'PostgreSQL', image: PostgreSQL },
+        { name: 'Tailwind', image: Tailwind },
+      ],
+    },
+    {
+      id: '12',
+      title: 'ModelGrid CRM',
+      subTitle: isEnglish
+        ? 'Full-stack admin CRM for solar sales and site content'
+        : 'CRM administrativo full stack para vendas solares e conteúdo do site',
+      challenge: isEnglish
+        ? 'The commercial team needed proposals, quotes, leads and website CMS in one operational panel — without leaving the sales workflow.'
+        : 'O time comercial precisava de propostas, cotações, leads e CMS do site em um painel operacional — sem sair do fluxo de vendas.',
+      strategy: isEnglish
+        ? 'Delivered a Next.js + TypeScript + PostgreSQL CRM on Vercel: overview dashboards, quote pipelines, multi-branch profiles and editable site content modules.'
+        : 'Entreguei um CRM em Next.js + TypeScript + PostgreSQL na Vercel: visão geral, pipelines de cotação, perfis/filiais e módulos editáveis do conteúdo do site.',
+      impact: isEnglish
+        ? 'Sales and content operations in one full-stack product — metrics, shortcuts and daily workflows wired to the business.'
+        : 'Operação comercial e de conteúdo em um produto full stack — métricas, atalhos e rotinas diárias ligadas ao negócio.',
+      featured: true,
+      repoLink: '',
+      image: ModelGridCrm,
+      technologies: [
+        { name: 'Next.js', image: Nextjs },
+        { name: 'React', image: React },
+        { name: 'TypeScript', image: TypeScript },
         { name: 'PostgreSQL', image: PostgreSQL },
         { name: 'Tailwind', image: Tailwind },
       ],
