@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { getEducationData } from '@/content/education';
+import { getEducationCredentials, getEducationData } from '@/content/education';
 import { getV2SectionIndex } from '@/content/v2Content';
 import type { Locale } from '@/i18n/LocaleProvider';
 import type { V2TranslationSchema } from '@/i18n/v2Translations';
@@ -15,6 +15,7 @@ type EducationSectionProps = {
 
 export function EducationSection({ locale, text }: EducationSectionProps) {
   const education = getEducationData(locale);
+  const credentials = getEducationCredentials(locale);
 
   return (
     <section id="education" className="v2-section">
@@ -59,6 +60,19 @@ export function EducationSection({ locale, text }: EducationSectionProps) {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.16}>
+          <div className="mt-6 border-t border-[var(--v2-line)] pt-5">
+            <p className="v2-mono mb-3 text-[var(--v2-dim)]">{text.education.credentialsLabel}</p>
+            <div className="flex flex-wrap gap-1.5">
+              {credentials.map((credential) => (
+                <span key={credential} className="v2-tag v2-tag--quiet">
+                  {credential}
+                </span>
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

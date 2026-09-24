@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { LinkedinLogo } from '@phosphor-icons/react';
 import { AnimatePresence, motion, useScroll } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import type { V2SectionMeta } from '@/content/v2Content';
@@ -9,6 +10,7 @@ import type { Locale } from '@/i18n/LocaleProvider';
 import { useActiveSection, useScrollLock, useScrollToSection } from '../lib/useV2Motion';
 
 const EASE = [0.16, 1, 0.3, 1] as const;
+const LINKEDIN_URL = 'https://www.linkedin.com/in/marcelossilva1/';
 
 type HudFrameProps = {
   sections: V2SectionMeta[];
@@ -67,7 +69,6 @@ export function HudFrame({ sections, text, locale }: HudFrameProps) {
 
   const activeMeta = sections.find((section) => section.id === active) ?? sections[0];
   const alternateHref = locale === 'pt' ? '/us' : '/';
-  const classicHref = locale === 'pt' ? '/classic' : '/classic/us';
 
   return (
     <>
@@ -86,11 +87,19 @@ export function HudFrame({ sections, text, locale }: HudFrameProps) {
 
           <div className="flex items-center gap-2 sm:gap-3">
             <LocalClock label={text.hud.localTime} />
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="v2-ghost-btn v2-ghost-btn--signal"
+              aria-label="LinkedIn"
+            >
+              <LinkedinLogo size={16} weight="fill" aria-hidden="true" />
+              <span className="hidden sm:inline">LinkedIn</span>
+              <span aria-hidden="true">↗</span>
+            </a>
             <Link href={alternateHref} className="v2-ghost-btn" aria-label={text.hud.switchLocale}>
               {locale === 'pt' ? 'EN' : 'PT'}
-            </Link>
-            <Link href={classicHref} className="v2-ghost-btn hidden md:inline-flex">
-              {text.hud.backToClassic}
             </Link>
             <button
               type="button"

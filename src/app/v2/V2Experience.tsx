@@ -58,8 +58,8 @@ export default function V2Experience({ locale }: V2ExperienceProps) {
 
         <main className="v2-content">
           <HeroSection locale={locale} text={text} bootDone={bootDone} />
-          <SignalSection locale={locale} text={text} />
           <BrandsSection locale={locale} text={text} />
+          <SignalSection locale={locale} text={text} />
           <SystemSection locale={locale} text={text} />
           <ExperienceSection locale={locale} text={text} />
           <EducationSection locale={locale} text={text} />

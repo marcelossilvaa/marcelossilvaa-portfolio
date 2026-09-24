@@ -55,6 +55,7 @@ export type V2TranslationSchema = {
     title: string;
     lead: string;
     nodeLabel: string;
+    credentialsLabel: string;
   };
   brands: {
     eyebrow: string;
@@ -101,6 +102,7 @@ export type V2TranslationSchema = {
     cta: string;
     weekdays: string[];
     today: string;
+    openSlots: string;
     monthNames: string[];
   };
   contact: {
@@ -145,17 +147,17 @@ const pt: V2TranslationSchema = {
     statement: 'Eu transformo ideias em produtos digitais que',
     statementHighlight: 'convertem de verdade',
     support:
-      'Dev full stack com visão analítica, estratégica e técnica: entrego SaaS ponta a ponta, storefronts de alto tráfego e sistemas de CRO com experimentação, métricas e automação assistida por IA.',
+      'Dev full stack com visão analítica, estratégica e técnica: entrego SaaS ponta a ponta, storefronts de alto tráfego, sistemas de CRO e consultoria de e-commerce, com experimentação, métricas e automação assistida por IA.',
     ctaPrimary: 'Falar no WhatsApp',
     ctaSecondary: 'Ver projetos',
     availability: 'Disponível para novos projetos',
   },
   signal: {
     eyebrow: 'Sinal',
-    title: 'Código, produto e conversão no mesmo sistema',
+    title: 'Produto, dados e conversão no mesmo sistema',
     lead:
-      'De SaaS full stack a e-commerce de escala: cada entrega conecta arquitetura, métrica e experimentação — porque performance e conversão são decisões de negócio.',
-    quote: 'Construa produtos em que dados e código falem a mesma língua.',
+      'De SaaS full stack a e-commerce de escala: cada entrega conecta arquitetura, métrica e experimentação, porque performance e conversão são decisões de negócio.',
+    quote: 'Construa produtos em que dados e decisões falem a mesma língua.',
     archiveLabel: 'Arquivo visual',
     sequenceLabel: 'Sequência automática / 3.4s',
     frames: 'quadros em rotação',
@@ -164,7 +166,7 @@ const pt: V2TranslationSchema = {
     eyebrow: 'Sistema',
     title: 'Três frentes, uma visão de produto',
     lead:
-      'Full stack, commerce e CRO não são silos — são camadas do mesmo sistema. Arquiteto, construo, instrumento e testo até a decisão ficar óbvia.',
+      'Full stack, commerce e CRO não são silos: são camadas do mesmo sistema. Arquiteto, construo, instrumento e testo até a decisão ficar óbvia.',
     pipelineLabel: 'Fluxo de trabalho',
   },
   experience: {
@@ -181,18 +183,19 @@ const pt: V2TranslationSchema = {
     eyebrow: 'Formação',
     title: 'Base técnica',
     lead:
-      'Bacharelado em Ciência da Computação somado a formações intensivas de front-end e residência em software orientada a negócio.',
+      'Bacharelado em Ciência da Computação iniciado na UFS, somado a formação intensiva de front-end e residência em software orientada a negócio.',
     nodeLabel: 'Nó',
+    credentialsLabel: 'Certificações',
   },
   brands: {
     eyebrow: 'Marcas',
-    title: 'Onde o código foi para produção',
-    lead: 'Marcas e operações que passaram por entregas full stack, CRO, commerce e automação.',
+    title: 'Marcas com quem já trabalhei',
+    lead: 'Marcas e operações que passaram por entregas de desenvolvimento, CRO, commerce ou automação.',
   },
   work: {
     eyebrow: 'Projetos',
     title: 'Índice de projetos',
-    lead: 'Selecione uma linha para abrir o visor com desafio, estratégia e impacto — SaaS, commerce e CRO no mesmo índice.',
+    lead: 'Selecione uma linha para abrir o visor com desafio, estratégia e impacto. SaaS, commerce e CRO no mesmo índice.',
     tableProject: 'Projeto',
     tableStack: 'Stack',
     tableYear: 'Tipo',
@@ -219,7 +222,7 @@ const pt: V2TranslationSchema = {
   services: {
     eyebrow: 'Serviços',
     title: 'Como eu entro no seu time',
-    lead: 'Três frentes de atuação — SaaS, CRO e commerce — sempre amarradas a uma métrica que o negócio já acompanha.',
+    lead: 'Quatro frentes de atuação: SaaS, CRO, commerce e consultoria de e-commerce. Todas amarradas a uma métrica que o negócio já acompanha.',
   },
   availability: {
     eyebrow: 'Agenda',
@@ -231,6 +234,7 @@ const pt: V2TranslationSchema = {
     cta: 'Agendar uma conversa',
     weekdays: ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SÁB'],
     today: 'hoje',
+    openSlots: 'horários livres',
     monthNames: [
       'Janeiro',
       'Fevereiro',
@@ -251,7 +255,7 @@ const pt: V2TranslationSchema = {
     titleLine1: 'VAMOS CONSTRUIR',
     titleLine2: 'O PRÓXIMO PASSO.',
     lead:
-      'Tem um SaaS para lançar, um funil furado ou um storefront travado? Vamos transformar isso em um próximo passo claro — com código e métrica alinhados.',
+      'Tem um SaaS para lançar, um funil furado ou um storefront travado? Vamos transformar isso em um próximo passo claro, com execução e métrica alinhadas.',
     email: 'Email',
     whatsapp: 'WhatsApp',
     linkedin: 'LinkedIn',
@@ -289,17 +293,17 @@ const en: V2TranslationSchema = {
     statement: 'I turn ideas into digital products that',
     statementHighlight: 'actually convert',
     support:
-      'Full-stack developer with analytical, strategic and technical vision: I ship end-to-end SaaS, high-traffic storefronts and CRO systems with experimentation, metrics and AI-assisted automation.',
+      'Full-stack developer with analytical, strategic and technical vision: I ship end-to-end SaaS, high-traffic storefronts, CRO systems and e-commerce consulting, with experimentation, metrics and AI-assisted automation.',
     ctaPrimary: 'Chat on WhatsApp',
     ctaSecondary: 'See projects',
     availability: 'Available for new projects',
   },
   signal: {
     eyebrow: 'Signal',
-    title: 'Code, product and conversion in one system',
+    title: 'Product, data and conversion in one system',
     lead:
-      'From full-stack SaaS to enterprise e-commerce: every delivery connects architecture, metrics and experimentation — because performance and conversion are business decisions.',
-    quote: 'Build products where data and code speak the same language.',
+      'From full-stack SaaS to enterprise e-commerce: every delivery connects architecture, metrics and experimentation, because performance and conversion are business decisions.',
+    quote: 'Build products where data and decisions speak the same language.',
     archiveLabel: 'Visual archive',
     sequenceLabel: 'Auto sequence / 3.4s',
     frames: 'rotating frames',
@@ -308,7 +312,7 @@ const en: V2TranslationSchema = {
     eyebrow: 'System',
     title: 'Three fronts, one product vision',
     lead:
-      'Full stack, commerce and CRO are not silos — they are layers of the same system. I architect, build, instrument and test until the decision becomes obvious.',
+      'Full stack, commerce and CRO are not silos: they are layers of the same system. I architect, build, instrument and test until the decision becomes obvious.',
     pipelineLabel: 'Workflow',
   },
   experience: {
@@ -325,18 +329,19 @@ const en: V2TranslationSchema = {
     eyebrow: 'Education',
     title: 'Technical foundation',
     lead:
-      "A Computer Science bachelor's degree plus intensive front-end tracks and a business-oriented software residency.",
+      "Computer Science bachelor's started at UFS, plus an intensive front-end track and a business-oriented software residency.",
     nodeLabel: 'Node',
+    credentialsLabel: 'Certifications',
   },
   brands: {
     eyebrow: 'Brands',
-    title: 'Where the code went live',
-    lead: 'Brands and operations touched by full-stack, CRO, commerce and automation delivery.',
+    title: "Brands I've worked with",
+    lead: 'Brands and operations touched by development, CRO, commerce or automation delivery.',
   },
   work: {
     eyebrow: 'Work',
     title: 'Project index',
-    lead: 'Select a row to open the frame viewer with challenge, strategy and impact — SaaS, commerce and CRO in one index.',
+    lead: 'Select a row to open the frame viewer with challenge, strategy and impact. SaaS, commerce and CRO in one index.',
     tableProject: 'Project',
     tableStack: 'Stack',
     tableYear: 'Type',
@@ -363,7 +368,7 @@ const en: V2TranslationSchema = {
   services: {
     eyebrow: 'Services',
     title: 'How I plug into your team',
-    lead: 'Three engagement tracks — SaaS, CRO and commerce — always tied to a metric the business already watches.',
+    lead: 'Four engagement tracks: SaaS, CRO, commerce and e-commerce consulting. All tied to a metric the business already watches.',
   },
   availability: {
     eyebrow: 'Availability',
@@ -375,6 +380,7 @@ const en: V2TranslationSchema = {
     cta: 'Schedule a conversation',
     weekdays: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
     today: 'today',
+    openSlots: 'open slots',
     monthNames: [
       'January',
       'February',
@@ -395,7 +401,7 @@ const en: V2TranslationSchema = {
     titleLine1: "LET'S BUILD",
     titleLine2: "WHAT'S NEXT.",
     lead:
-      'Launching a SaaS, fixing a leaking funnel or unblocking a storefront? Let’s turn it into a clear next move — with code and metrics aligned.',
+      'Launching a SaaS, fixing a leaking funnel or unblocking a storefront? Let’s turn it into a clear next move, with execution and metrics aligned.',
     email: 'Email',
     whatsapp: 'WhatsApp',
     linkedin: 'LinkedIn',

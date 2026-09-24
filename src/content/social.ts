@@ -33,7 +33,7 @@ export function getContactLinks(locale: Locale): ContactItem[] {
       id: 3,
       label: locale === 'en' ? 'Email' : 'Email',
       value: 'marcelo_810@hotmail.com',
-      href: `mailto:marcelo_810@hotmail.com?subject=${encodeURIComponent(locale === 'en' ? 'Portfolio — contact' : 'Contato pelo portfólio')}`,
+      href: `mailto:marcelo_810@hotmail.com?subject=${encodeURIComponent(locale === 'en' ? 'Portfolio contact' : 'Contato pelo portfólio')}`,
     },
   ];
 }

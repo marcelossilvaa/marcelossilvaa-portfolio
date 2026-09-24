@@ -74,27 +74,31 @@ export function HeroSection({ locale, text, bootDone }: HeroSectionProps) {
       </motion.div>
 
       <div className="v2-wrap">
-        <div className="pt-8 md:pt-12">
+        <div className="relative pt-8 md:pt-12">
           <KineticWordmark text="MARCELO" delay={baseDelay + 0.18} />
-          <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
+          <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
             <KineticWordmark text="S SILVA" delay={baseDelay + 0.34} />
 
-            <motion.div
-              className="relative hidden h-[clamp(4rem,7vw,7.5rem)] w-[clamp(4rem,7vw,7.5rem)] flex-shrink-0 overflow-hidden border border-[var(--v2-line-strong)] sm:block"
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
+            <motion.figure
+              className="v2-hero__portrait"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: baseDelay + 0.6, ease: EASE }}
             >
               <Image
                 src={ProfilePhoto}
                 alt="Marcelo Santana Silva"
                 fill
-                sizes="120px"
-                className="v2-img-hud object-cover"
+                sizes="(min-width: 1024px) 320px, 160px"
+                className="v2-img-hud object-cover object-top"
                 priority
               />
               <span className="v2-frame-stack__scan" />
-            </motion.div>
+              <figcaption className="v2-hero__portrait-caption v2-mono">
+                <span className="text-[var(--v2-fg)]">Marcelo S. Silva</span>
+                <span className="text-[var(--v2-signal)]">Full stack · CRO</span>
+              </figcaption>
+            </motion.figure>
           </div>
         </div>
 
@@ -129,12 +133,34 @@ export function HeroSection({ locale, text, bootDone }: HeroSectionProps) {
             </div>
           </motion.div>
 
-          <Stagger className="flex flex-wrap content-start gap-1.5" amount={0.05}>
-            {tags.map((tag) => (
-              <motion.span key={tag} variants={staggerChild} className="v2-tag">
-                {tag}
-              </motion.span>
-            ))}
+          <Stagger className="flex flex-col gap-6" amount={0.05}>
+            <div className="flex flex-wrap gap-2">
+              {tags.core.map((tag) => (
+                <motion.span key={tag} variants={staggerChild} className="v2-tag v2-tag--signal v2-tag--lg">
+                  {tag}
+                </motion.span>
+              ))}
+            </div>
+
+            <div className="grid gap-x-6 gap-y-5 border-t border-[var(--v2-line)] pt-5 xl:grid-cols-2">
+              {tags.groups.map((group, groupIndex) => (
+                <div key={group.label} className="flex flex-col gap-2.5">
+                  <span className="v2-mono flex items-center gap-2 text-[var(--v2-dim)]">
+                    <span className="tabular-nums text-[var(--v2-signal)]">
+                      {String(groupIndex + 1).padStart(2, '0')}
+                    </span>
+                    {group.label}
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {group.tags.map((tag) => (
+                      <motion.span key={tag} variants={staggerChild} className="v2-tag">
+                        {tag}
+                      </motion.span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </Stagger>
         </div>
 

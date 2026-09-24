@@ -33,17 +33,17 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
       id: '9',
       title: 'Solar',
       subTitle: isEnglish
-        ? 'Full-stack SaaS for solar ops — quote to installation'
-        : 'SaaS full stack para operação solar — do orçamento à instalação',
+        ? 'Full-stack SaaS for solar ops, from quote to installation'
+        : 'SaaS full stack para operação solar, do orçamento à instalação',
       challenge: isEnglish
-        ? 'Solar operators needed one place for projects, quotes, work orders, inventory and finance — not scattered tools.'
-        : 'Operadores solares precisavam de um lugar só para projetos, orçamentos, OS, estoque e financeiro — sem ferramentas espalhadas.',
+        ? 'Solar operators needed one place for projects, quotes, work orders, inventory and finance instead of scattered tools.'
+        : 'Operadores solares precisavam de um lugar só para projetos, orçamentos, OS, estoque e financeiro, sem ferramentas espalhadas.',
       strategy: isEnglish
         ? 'Built end-to-end with Next.js, TypeScript and PostgreSQL: free-tier board, operational modules and a conversion-oriented marketing surface on Vercel.'
         : 'Construí ponta a ponta com Next.js, TypeScript e PostgreSQL: quadro gratuito, módulos operacionais e superfície de marketing orientada a conversão na Vercel.',
       impact: isEnglish
-        ? 'A shippable SaaS teams can start free and grow into — with funnel clarity from first visit to activation.'
-        : 'Um SaaS publicável que o time começa grátis e escala — com clareza de funil da primeira visita à ativação.',
+        ? 'A shippable SaaS teams can start free and grow into, with funnel clarity from first visit to activation.'
+        : 'Um SaaS publicável que o time começa grátis e escala, com clareza de funil da primeira visita à ativação.',
       featured: true,
       repoLink: '',
       demoLink: 'https://saas-solar-one.vercel.app/',
@@ -64,14 +64,14 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
         ? 'Full-stack admin CRM for solar sales and site content'
         : 'CRM administrativo full stack para vendas solares e conteúdo do site',
       challenge: isEnglish
-        ? 'The commercial team needed proposals, quotes, leads and website CMS in one operational panel — without leaving the sales workflow.'
-        : 'O time comercial precisava de propostas, cotações, leads e CMS do site em um painel operacional — sem sair do fluxo de vendas.',
+        ? 'The commercial team needed proposals, quotes, leads and website CMS in one operational panel, without leaving the sales workflow.'
+        : 'O time comercial precisava de propostas, cotações, leads e CMS do site em um painel operacional, sem sair do fluxo de vendas.',
       strategy: isEnglish
         ? 'Delivered a Next.js + TypeScript + PostgreSQL CRM on Vercel: overview dashboards, quote pipelines, multi-branch profiles and editable site content modules.'
         : 'Entreguei um CRM em Next.js + TypeScript + PostgreSQL na Vercel: visão geral, pipelines de cotação, perfis/filiais e módulos editáveis do conteúdo do site.',
       impact: isEnglish
-        ? 'Sales and content operations in one full-stack product — metrics, shortcuts and daily workflows wired to the business.'
-        : 'Operação comercial e de conteúdo em um produto full stack — métricas, atalhos e rotinas diárias ligadas ao negócio.',
+        ? 'Sales and content operations in one full-stack product, with metrics, shortcuts and daily workflows wired to the business.'
+        : 'Operação comercial e de conteúdo em um produto full stack, com métricas, atalhos e rotinas diárias ligadas ao negócio.',
       featured: true,
       repoLink: '',
       image: ModelGridCrm,
@@ -90,11 +90,11 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
         ? 'Private full-stack platform for B3 market, portfolio and options'
         : 'Plataforma full stack particular para mercado B3, carteira e opções',
       challenge: isEnglish
-        ? 'Give traders a single dark-mode cockpit for rankings, volume, portfolio, options chains and watchlists — dense data without losing clarity.'
-        : 'Dar aos traders um cockpit dark-mode único para rankings, volume, carteira, cadeia de opções e favoritos — dados densos sem perder clareza.',
+        ? 'Give traders a single dark-mode cockpit for rankings, volume, portfolio, options chains and watchlists: dense data without losing clarity.'
+        : 'Dar aos traders um cockpit dark-mode único para rankings, volume, carteira, cadeia de opções e favoritos: dados densos sem perder clareza.',
       strategy: isEnglish
-        ? 'Built a full-stack dashboard with Next.js and TypeScript: Mercado snapshots, Carteira, Opções (PUT/CALL + chain), Delta screener, news/calendar and Favoritos with sparklines — performant tables and live API status.'
-        : 'Construí um dashboard full stack com Next.js e TypeScript: visão de Mercado, Carteira, Opções (PUT/CALL + chain), screener Delta, notícias/calendário e Favoritos com sparklines — tabelas performáticas e status de API ao vivo.',
+        ? 'Built a full-stack dashboard with Next.js and TypeScript: Mercado snapshots, Carteira, Opções (PUT/CALL + chain), Delta screener, news/calendar and Favoritos with sparklines, plus performant tables and live API status.'
+        : 'Construí um dashboard full stack com Next.js e TypeScript: visão de Mercado, Carteira, Opções (PUT/CALL + chain), screener Delta, notícias/calendário e Favoritos com sparklines, além de tabelas performáticas e status de API ao vivo.',
       impact: isEnglish
         ? 'A private product operators can use daily: market scan, options analysis and watchlist in one responsive interface.'
         : 'Um produto particular para uso diário: leitura de mercado, análise de opções e watchlist em uma interface responsiva.',
@@ -116,14 +116,14 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
         ? 'High-conversion solar LP with SEO and full-stack delivery'
         : 'LP solar de alta conversão com SEO e entrega full stack',
       challenge: isEnglish
-        ? 'Turn a local solar business into a digital acquisition channel — rank for high-intent searches and convert visitors into quote requests.'
-        : 'Transformar um negócio local de energia solar em canal de aquisição digital — ranquear buscas de alta intenção e converter visitas em pedidos de orçamento.',
+        ? 'Turn a local solar business into a digital acquisition channel: rank for high-intent searches and convert visitors into quote requests.'
+        : 'Transformar um negócio local de energia solar em canal de aquisição digital: ranquear buscas de alta intenção e converter visitas em pedidos de orçamento.',
       strategy: isEnglish
         ? 'Built an SEO-first, CRO-oriented landing with clear CTAs, social proof, savings simulator hooks and performance-focused Next.js delivery.'
         : 'Construí uma landing SEO-first e orientada a CRO, com CTAs claros, prova social, ganchos de simulador de economia e entrega Next.js focada em performance.',
       impact: isEnglish
-        ? 'A conversion-ready surface for Vitória da Conquista & region — technical SEO, funnel clarity and a stack ready to iterate experiments.'
-        : 'Uma superfície pronta para converter em Vitória da Conquista e região — SEO técnico, clareza de funil e stack pronta para iterar experimentos.',
+        ? 'A conversion-ready surface for Vitória da Conquista & region, with technical SEO, funnel clarity and a stack ready to iterate experiments.'
+        : 'Uma superfície pronta para converter em Vitória da Conquista e região, com SEO técnico, clareza de funil e stack pronta para iterar experimentos.',
       featured: true,
       repoLink: '',
       demoLink: 'https://www.modelgrid.com.br/',
@@ -139,14 +139,14 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
       id: '8',
       title: 'BJJ Fanatics',
       subTitle: isEnglish
-        ? 'Global Shopify ecommerce + CRO consulting and A/B tests'
-        : 'Ecommerce global Shopify + consultoria CRO e testes A/B',
+        ? 'Global Shopify ecommerce & CRO consulting and A/B tests'
+        : 'Ecommerce global Shopify & consultoria CRO e testes A/B',
       challenge: isEnglish
         ? 'Scale a high-traffic ecommerce and streaming app while improving conversion with disciplined experimentation.'
         : 'Escalar um ecommerce e app de streaming de alto tráfego enquanto melhora conversão com experimentação disciplinada.',
       strategy: isEnglish
-        ? 'Built storefront and app surfaces (Shopify Liquid, React, TypeScript) and led CRO consulting — A/B tests and experiment ops with Shoplift on the commercial funnel.'
-        : 'Atuei no storefront e no app (Shopify Liquid, React, TypeScript) e na consultoria de CRO — testes A/B e operação de experimentos com Shoplift no funil comercial.',
+        ? 'Built storefront and app surfaces (Shopify Liquid, React, TypeScript) and led CRO consulting, running A/B tests and experiment ops with Shoplift on the commercial funnel.'
+        : 'Atuei no storefront e no app (Shopify Liquid, React, TypeScript) e na consultoria de CRO, com testes A/B e operação de experimentos com Shoplift no funil comercial.',
       impact: isEnglish
         ? 'Faster product delivery across web/mobile plus a conversion practice backed by live A/B evidence, not guesswork.'
         : 'Entrega mais rápida entre web/mobile e uma prática de conversão sustentada por evidência de testes A/B, não por achismo.',
@@ -171,17 +171,17 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
       id: '13',
       title: 'Primal Queen',
       subTitle: isEnglish
-        ? 'Shopify CRO consulting — development and A/B experimentation'
-        : 'Consultoria CRO em Shopify — desenvolvimento e experimentação A/B',
+        ? 'Shopify CRO consulting: development and A/B experimentation'
+        : 'Consultoria CRO em Shopify: desenvolvimento e experimentação A/B',
       challenge: isEnglish
         ? 'A high-intent DTC storefront needed faster iteration on offers, messaging and funnel steps without slowing the commercial calendar.'
         : 'Uma storefront DTC de alta intenção precisava iterar ofertas, messaging e etapas de funil sem travar o calendário comercial.',
       strategy: isEnglish
-        ? 'Provided development and CRO consulting: hypothesis-driven A/B tests and experiment tooling with Integrately, aligned to conversion metrics on Shopify.'
-        : 'Atuei em consultoria de desenvolvimento e CRO: testes A/B orientados por hipótese e ferramentas de experimentação com Integrately, alinhados a métricas de conversão no Shopify.',
+        ? 'Provided development and CRO consulting: hypothesis-driven A/B tests run with Intelligems, aligned to conversion metrics on Shopify.'
+        : 'Atuei em consultoria de desenvolvimento e CRO: testes A/B orientados por hipótese rodando no Intelligems, alinhados a métricas de conversão no Shopify.',
       impact: isEnglish
-        ? 'A clearer experimentation loop — ship, measure, decide — connecting storefront changes to conversion signals.'
-        : 'Um ciclo de experimentação mais claro — publicar, medir, decidir — conectando mudanças de storefront a sinais de conversão.',
+        ? 'A clearer experimentation loop (ship, measure, decide) connecting storefront changes to conversion signals.'
+        : 'Um ciclo de experimentação mais claro (publicar, medir, decidir) conectando mudanças de storefront a sinais de conversão.',
       featured: true,
       repoLink: '',
       demoLink: 'https://primalqueen.com/',
@@ -189,7 +189,7 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
       technologies: [
         { name: 'Shopify', image: Shopify },
         { name: 'Liquid', image: Liquid },
-        { name: 'Integrately', image: Shopify },
+        { name: 'Intelligems', image: Shopify },
         { name: 'CRO', image: TypeScript },
       ],
     },
@@ -206,8 +206,8 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
         ? 'Built a full-stack automation product: authenticated dashboard, notification rules, channel integrations and monitoring pipelines designed for reliable daily operation.'
         : 'Construí um produto de automação full stack: painel autenticado, regras de notificação, integrações de canal e pipelines de monitoramento pensados para operação diária confiável.',
       impact: isEnglish
-        ? 'Faster reaction to market moves with a product surface teams can configure without touching code.'
-        : 'Reação mais rápida a movimentos de mercado com uma superfície que o time configura sem mexer em código.',
+        ? 'Faster reaction to market moves with a product surface teams can configure on their own, without depending on developers.'
+        : 'Reação mais rápida a movimentos de mercado com uma superfície que o time configura sozinho, sem depender de desenvolvimento.',
       featured: true,
       repoLink: '',
       demoLink: 'https://cotacao-automation.vercel.app/',

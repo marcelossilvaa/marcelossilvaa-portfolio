@@ -29,8 +29,8 @@ export function getV2Sections(locale: Locale): V2SectionMeta[] {
 
   return [
     { id: 'index', index: '00', label: isEn ? 'Index' : 'Índice' },
-    { id: 'signal', index: '01', label: isEn ? 'Signal' : 'Sinal' },
-    { id: 'brands', index: '02', label: isEn ? 'Brands' : 'Marcas' },
+    { id: 'brands', index: '01', label: isEn ? 'Brands' : 'Marcas' },
+    { id: 'signal', index: '02', label: isEn ? 'Signal' : 'Sinal' },
     { id: 'system', index: '03', label: isEn ? 'System' : 'Sistema' },
     { id: 'experience', index: '04', label: isEn ? 'Experience' : 'Experiência' },
     { id: 'education', index: '05', label: isEn ? 'Education' : 'Formação' },
@@ -66,40 +66,52 @@ export function getV2Keywords(locale: Locale): string[] {
   ];
 }
 
-/** Nuvem densa de capacidades exibida no hero — stack, SaaS, CRO e IA. */
-export function getV2TagCloud(locale: Locale): string[] {
+/** Capacidades do hero: um núcleo em destaque e grupos secundários por área. */
+export type V2TagCloud = {
+  core: string[];
+  groups: { label: string; tags: string[] }[];
+};
+
+export function getV2TagCloud(locale: Locale): V2TagCloud {
   const isEn = locale === 'en';
 
-  return [
-    'Full Stack',
-    'SaaS',
-    'CRO',
-    isEn ? 'Conversion Rate Optimization' : 'Otimização de conversão',
-    isEn ? 'Landing Pages' : 'Landing pages',
-    isEn ? 'Funnel Analysis' : 'Análise de funil',
-    'A/B Testing',
-    'Adobe Target',
-    'Adobe Analytics',
-    'GA4',
-    'GTM',
-    'Next.js',
-    'React',
-    'TypeScript',
-    'Node.js',
-    'PostgreSQL',
-    'Shopify',
-    'Liquid',
-    'Payload CMS',
-    'Core Web Vitals',
-    isEn ? 'Technical SEO' : 'SEO técnico',
-    isEn ? 'Product Analytics' : 'Analytics de produto',
-    'n8n',
-    'Cursor',
-    'Claude Code',
-    isEn ? 'AI-assisted Delivery' : 'Entrega assistida por IA',
-    isEn ? 'Business Metrics' : 'Métricas de negócio',
-    isEn ? 'Strategic Experiments' : 'Experimentos estratégicos',
-  ];
+  return {
+    core: ['Full Stack', 'CRO', 'Shopify'],
+    groups: [
+      {
+        label: isEn ? 'Product & stack' : 'Produto & stack',
+        tags: ['SaaS', 'Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL'],
+      },
+      {
+        label: 'E-commerce',
+        tags: [
+          isEn ? 'E-commerce consulting' : 'Consultoria de e-commerce',
+          'Liquid',
+          'Headless',
+          'Payload CMS',
+          'Core Web Vitals',
+          isEn ? 'Technical SEO' : 'SEO técnico',
+        ],
+      },
+      {
+        label: isEn ? 'CRO & data' : 'CRO & dados',
+        tags: [
+          isEn ? 'Conversion optimization' : 'Otimização de conversão',
+          'A/B Testing',
+          'Landing pages',
+          isEn ? 'Funnel analysis' : 'Análise de funil',
+          'Adobe Target',
+          'Adobe Analytics',
+          'GA4',
+          'GTM',
+        ],
+      },
+      {
+        label: isEn ? 'AI & automation' : 'IA & automação',
+        tags: [isEn ? 'Applied AI' : 'IA aplicada', 'Cursor', 'Claude Code', 'n8n'],
+      },
+    ],
+  };
 }
 
 export type V2Stat = {
@@ -137,7 +149,7 @@ export function getV2SystemPillars(locale: Locale): V2SystemPillar[] {
         kicker: 'Full stack',
         title: 'SaaS & digital products end-to-end',
         description:
-          'From landing page and auth flows to dashboards, APIs and data models — I ship complete products with Next.js, Node.js and PostgreSQL, not just UI slices.',
+          'From landing page and auth flows to dashboards, APIs and data models: I ship complete products with Next.js, Node.js and PostgreSQL, not just UI slices.',
         tags: ['Next.js / React', 'Node.js / PostgreSQL', 'SaaS architecture'],
         outcomeLabel: 'Product outcome',
         outcome: 'Working software your team can operate, measure and evolve.',
@@ -157,7 +169,7 @@ export function getV2SystemPillars(locale: Locale): V2SystemPillar[] {
         kicker: 'CRO',
         title: 'Experimentation & conversion intelligence',
         description:
-          'A/B tests, personalization and funnel instrumentation with Adobe Target, GA4 and reporting automation — connecting code changes to revenue signals.',
+          'A/B tests, personalization and funnel instrumentation with Adobe Target, GA4 and reporting automation, connecting every change to revenue signals.',
         tags: ['A/B Testing', 'Adobe Target / GA4', 'Funnel & LP optimization'],
         outcomeLabel: 'Business outcome',
         outcome: 'Decisions backed by evidence, not opinion.',
@@ -171,7 +183,7 @@ export function getV2SystemPillars(locale: Locale): V2SystemPillar[] {
       kicker: 'Full stack',
       title: 'SaaS e produtos digitais ponta a ponta',
       description:
-        'Da landing page e autenticação aos dashboards, APIs e modelagem de dados — entrego produto completo com Next.js, Node.js e PostgreSQL, não só fatias de UI.',
+        'Da landing page e autenticação aos dashboards, APIs e modelagem de dados: entrego produto completo com Next.js, Node.js e PostgreSQL, não só fatias de UI.',
       tags: ['Next.js / React', 'Node.js / PostgreSQL', 'Arquitetura SaaS'],
       outcomeLabel: 'Resultado de produto',
       outcome: 'Software funcionando que o time consegue operar, medir e evoluir.',
@@ -191,7 +203,7 @@ export function getV2SystemPillars(locale: Locale): V2SystemPillar[] {
       kicker: 'CRO',
       title: 'Experimentação e inteligência de conversão',
       description:
-        'Testes A/B, personalização e instrumentação de funil com Adobe Target, GA4 e automação de reporte — conectando mudança de código a sinal de receita.',
+        'Testes A/B, personalização e instrumentação de funil com Adobe Target, GA4 e automação de reporte, conectando cada mudança a sinal de receita.',
       tags: ['Testes A/B', 'Adobe Target / GA4', 'Funil & otimização de LP'],
       outcomeLabel: 'Resultado de negócio',
       outcome: 'Decisão sustentada por evidência, não por opinião.',
@@ -248,7 +260,7 @@ export function getV2Toolkit(locale: Locale): V2ToolkitGroup[] {
         kicker: 'Conversion / CRO',
         title: 'Experimentation & analytics',
         summary: 'A/B testing · funnels · LPs',
-        capabilities: ['CRO', 'A/B Testing', 'Adobe Target', 'GA4', 'GTM', 'Funnel analysis'],
+        capabilities: ['CRO', 'A/B Testing', 'GA4', 'GTM', 'Funnel analysis', 'Adobe Target'],
       },
       {
         letter: 'C',
@@ -269,7 +281,7 @@ export function getV2Toolkit(locale: Locale): V2ToolkitGroup[] {
         kicker: 'Automation / AI',
         title: 'Applied AI & automation',
         summary: 'n8n · agents · AI delivery',
-        capabilities: ['n8n', 'Cursor', 'Claude Code', 'GitHub Copilot', 'Prompt engineering', 'AI code review'],
+        capabilities: ['n8n', 'Cursor', 'Claude Code', 'Prompt engineering', 'AI-assisted review', 'GitHub Copilot'],
       },
       {
         letter: 'F',
@@ -294,7 +306,7 @@ export function getV2Toolkit(locale: Locale): V2ToolkitGroup[] {
       kicker: 'Conversão / CRO',
       title: 'Experimentação e analytics',
       summary: 'testes A/B · funis · LPs',
-      capabilities: ['CRO', 'Testes A/B', 'Adobe Target', 'GA4', 'GTM', 'Análise de funil'],
+      capabilities: ['CRO', 'Testes A/B', 'GA4', 'GTM', 'Análise de funil', 'Adobe Target'],
     },
     {
       letter: 'C',
@@ -315,7 +327,7 @@ export function getV2Toolkit(locale: Locale): V2ToolkitGroup[] {
       kicker: 'Automação / IA',
       title: 'IA aplicada e automação',
       summary: 'n8n · agentes · entrega assistida',
-      capabilities: ['n8n', 'Cursor', 'Claude Code', 'GitHub Copilot', 'Prompt engineering', 'Code review com IA'],
+      capabilities: ['n8n', 'Cursor', 'Claude Code', 'Prompt engineering', 'Revisão técnica com IA', 'GitHub Copilot'],
     },
     {
       letter: 'F',
@@ -332,9 +344,9 @@ export function getV2ProjectKinds(locale: Locale): Record<string, string> {
   const isEn = locale === 'en';
 
   return {
-    '8': isEn ? 'Commerce + CRO' : 'Commerce + CRO',
+    '8': isEn ? 'Commerce & CRO' : 'Commerce & CRO',
     '9': isEn ? 'SaaS Full Stack' : 'SaaS Full Stack',
-    '10': isEn ? 'CRO Landing + SEO' : 'LP CRO + SEO',
+    '10': isEn ? 'CRO Landing & SEO' : 'LP CRO & SEO',
     '11': isEn ? 'Automation SaaS' : 'Automação SaaS',
     '12': isEn ? 'CRM Full Stack' : 'CRM Full Stack',
     '13': isEn ? 'CRO Consulting' : 'Consultoria CRO',
@@ -364,21 +376,28 @@ export function getV2Services(locale: Locale): V2Service[] {
         title: 'Full-stack SaaS & products',
         promise: 'Turn a business problem into a shippable product.',
         description:
-          'End-to-end delivery: discovery, architecture, front-end, APIs, data modeling and dashboards — with a product mindset and metrics wired from day one.',
+          'End-to-end delivery: discovery, architecture, front-end, APIs, data modeling and dashboards, with a product mindset and metrics wired from day one.',
       },
       {
         index: '02',
         title: 'CRO & conversion systems',
         promise: 'Make every release accountable to a metric.',
         description:
-          'Landing pages, funnels, A/B tests and personalization with Adobe Target, GA4 and Adobe Analytics — from hypothesis to readable impact.',
+          'Landing pages, funnels, A/B tests and personalization with Adobe Target, GA4 and Adobe Analytics, from hypothesis to readable impact.',
       },
       {
         index: '03',
         title: 'Commerce & storefront engineering',
         promise: 'Ship storefronts that convert under real traffic.',
         description:
-          'Shopify, Next.js and headless architectures with Core Web Vitals, experimentation hooks and a codebase your squad can keep evolving.',
+          'Shopify, Next.js and headless architectures with Core Web Vitals, experimentation hooks and a foundation your team can keep evolving.',
+      },
+      {
+        index: '04',
+        title: 'E-commerce consulting',
+        promise: 'A clear diagnosis of what is holding your store back, and a plan to unlock it.',
+        description:
+          'Store audit (Shopify or headless) covering funnel, checkout, performance, technical SEO and tracking. You get a roadmap prioritized by impact × effort, test hypotheses and hands-on follow-up with your team through execution.',
       },
     ];
   }
@@ -389,21 +408,28 @@ export function getV2Services(locale: Locale): V2Service[] {
       title: 'SaaS e produtos full stack',
       promise: 'Transformar um problema de negócio em produto publicável.',
       description:
-        'Entrega ponta a ponta: discovery, arquitetura, front-end, APIs, modelagem de dados e dashboards — com visão de produto e métricas ligadas desde o dia um.',
+        'Entrega ponta a ponta: discovery, arquitetura, front-end, APIs, modelagem de dados e dashboards, com visão de produto e métricas ligadas desde o dia um.',
     },
     {
       index: '02',
       title: 'CRO e sistemas de conversão',
       promise: 'Fazer cada release responder por uma métrica.',
       description:
-        'Landing pages, funis, testes A/B e personalização com Adobe Target, GA4 e Adobe Analytics — da hipótese ao impacto legível.',
+        'Landing pages, funis, testes A/B e personalização com Adobe Target, GA4 e Adobe Analytics, da hipótese ao impacto legível.',
     },
     {
       index: '03',
       title: 'Commerce e engenharia de storefront',
       promise: 'Publicar storefronts que convertem sob tráfego real.',
       description:
-        'Shopify, Next.js e arquiteturas headless com Core Web Vitals, ganchos de experimentação e um código que o squad consegue evoluir.',
+        'Shopify, Next.js e arquiteturas headless com Core Web Vitals, ganchos de experimentação e uma base que o time consegue evoluir.',
+    },
+    {
+      index: '04',
+      title: 'Consultoria de e-commerce',
+      promise: 'Um diagnóstico claro do que trava a sua loja e um plano para destravar.',
+      description:
+        'Auditoria da loja (Shopify ou headless) cobrindo funil, checkout, performance, SEO técnico e tracking. Você recebe um roadmap priorizado por impacto × esforço, hipóteses de teste e acompanhamento da execução junto ao seu time.',
     },
   ];
 }

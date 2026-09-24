@@ -26,7 +26,7 @@ export function ContactSection({ locale, text }: ContactSectionProps) {
       label: text.contact.email,
       value: 'marcelo_810@hotmail.com',
       href: `mailto:marcelo_810@hotmail.com?subject=${encodeURIComponent(
-        locale === 'en' ? 'Portfolio — contact' : 'Contato pelo portfólio'
+        locale === 'en' ? 'Portfolio contact' : 'Contato pelo portfólio'
       )}`,
     },
     {

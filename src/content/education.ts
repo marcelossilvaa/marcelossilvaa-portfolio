@@ -1,20 +1,21 @@
-import UniAmerica from '../../public/assets/uniamerica.png';
+import UfsLogo from '../../public/assets/logo_ufs.png';
 import Cepedi from '../../public/assets/cepedi.png';
 import AluraOracle from '../../public/assets/aluraoracle.png';
 import type { HistoryItem } from '@/types/portfolio';
 import type { Locale } from '@/i18n/LocaleProvider';
 
+/** Formações principais (cards). */
 export function getEducationData(locale: Locale): HistoryItem[] {
   if (locale === 'en') {
     return [
       {
         id: 2,
-        image: UniAmerica,
+        image: UfsLogo,
         title: "Bachelor's Degree in Computer Science",
-        date: '2021 - 2025 | completed',
-        institution: 'UniAmerica',
+        date: 'Started at UFS · completed in 2025',
+        institution: 'Universidade Federal de Sergipe',
         summary: [
-          'Solid foundation in software engineering, algorithms, data structures, and architecture for scalable front-end products.',
+          'Computer Science degree started at UFS, with a solid foundation in algorithms, data structures and software engineering for scalable products.',
         ],
       },
       {
@@ -41,12 +42,12 @@ export function getEducationData(locale: Locale): HistoryItem[] {
   return [
     {
       id: 2,
-      image: UniAmerica,
+      image: UfsLogo,
       title: 'Bacharelado em Ciência da Computação',
-      date: '2021 - 2025 | concluído',
-      institution: 'UniAmerica',
+      date: 'Início na UFS · concluído em 2025',
+      institution: 'Universidade Federal de Sergipe',
       summary: [
-        'Base sólida em engenharia de software, algoritmos, estruturas de dados e arquitetura para produtos front-end escaláveis.',
+        'Bacharelado iniciado na UFS, com base sólida em algoritmos, estruturas de dados e engenharia de software para produtos escaláveis.',
       ],
     },
     {
@@ -68,4 +69,13 @@ export function getEducationData(locale: Locale): HistoryItem[] {
       ],
     },
   ];
+}
+
+/** Certificações em faixa secundária (menos evidência que os cards). */
+export function getEducationCredentials(locale: Locale): string[] {
+  if (locale === 'en') {
+    return ['Adobe Target', 'GitHub Copilot'];
+  }
+
+  return ['Adobe Target', 'GitHub Copilot'];
 }

@@ -305,6 +305,24 @@ html.v2-page ::selection {
   background-color: var(--v2-signal-dim);
 }
 
+.v2-tag--quiet {
+  color: var(--v2-dim);
+  border-color: rgba(244, 244, 242, 0.08);
+  background: transparent;
+  letter-spacing: 0.1em;
+}
+
+.v2-tag--quiet:hover {
+  color: var(--v2-muted);
+  border-color: var(--v2-line);
+  background: transparent;
+}
+
+.v2-tag--lg {
+  padding: 0.45rem 0.8rem;
+  font-size: 0.72rem;
+}
+
 /* --------------------------------------------------------------------------
    Boot sequence
    -------------------------------------------------------------------------- */
@@ -547,6 +565,18 @@ html.v2-page ::selection {
   border-color: var(--v2-signal);
 }
 
+.v2-ghost-btn--signal {
+  color: var(--v2-signal);
+  border-color: rgba(215, 255, 62, 0.35);
+  background: var(--v2-signal-dim);
+}
+
+.v2-ghost-btn--signal:hover {
+  color: #08090b;
+  background: var(--v2-signal);
+  border-color: var(--v2-signal);
+}
+
 /* v2.css carrega depois das utilities do Tailwind, então uma declaração de
    `display` aqui venceria `hidden`/`md:flex` por ordem. Declarar o display
    dentro de :where() zera a especificidade e devolve a palavra final aos
@@ -681,6 +711,50 @@ html.v2-page ::selection {
 .v2-wordmark__space {
   display: inline-block;
   width: 0.22em;
+}
+
+/* Retrato do hero: inline ao lado de "S SILVA" no mobile; no desktop ancora à
+   direita com a altura das duas linhas do wordmark (2 × line-height 0.82). */
+.v2-hero__portrait {
+  position: relative;
+  flex-shrink: 0;
+  width: clamp(5.5rem, 24vw, 9rem);
+  aspect-ratio: 4 / 5;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--v2-line-strong);
+  background: var(--v2-bg-elev);
+}
+
+.v2-hero__portrait-caption {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 4;
+  display: none;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 2.5rem 0.85rem 0.75rem;
+  background: linear-gradient(to top, rgba(8, 9, 11, 0.92), rgba(8, 9, 11, 0));
+  pointer-events: none;
+}
+
+.v2-hero__portrait:hover .v2-img-hud {
+  filter: grayscale(0) contrast(1);
+}
+
+@media (min-width: 1024px) {
+  .v2-hero__portrait {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: calc(clamp(4rem, 17.5vw, 15rem) * 1.6);
+  }
+
+  .v2-hero__portrait-caption {
+    display: flex;
+  }
 }
 
 .v2-hero__stat-value {
@@ -1152,13 +1226,43 @@ html.v2-page ::selection {
   font-family: var(--font-v2-mono), monospace;
   font-size: 0.75rem;
   color: var(--v2-muted);
+  text-decoration: none;
   transition:
     background-color 0.3s var(--v2-ease),
     color 0.3s var(--v2-ease);
 }
 
+a.v2-calendar__cell[data-open='true'] {
+  cursor: pointer;
+}
+
+.v2-calendar__tag {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.25rem;
+  min-width: 0.9rem;
+  height: 0.9rem;
+  padding: 0 0.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--v2-signal);
+  color: #08090b;
+  font-family: var(--font-v2-mono), monospace;
+  font-size: 0.55rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.v2-calendar__cell[data-today='true'] .v2-calendar__tag {
+  background: #08090b;
+  color: var(--v2-signal);
+}
+
 .v2-calendar__cell[data-empty='true'] {
   background: rgba(14, 16, 20, 0.4);
+  pointer-events: none;
 }
 
 .v2-calendar__cell[data-open='true'] {
@@ -1174,6 +1278,11 @@ html.v2-page ::selection {
   background: var(--v2-signal);
   color: #08090b;
   font-weight: 700;
+}
+
+a.v2-calendar__cell[data-today='true']:hover {
+  background: var(--v2-signal);
+  color: #08090b;
 }
 
 /* --------------------------------------------------------------------------
@@ -1318,7 +1427,7 @@ html.v2-page ::selection {
   }
 }
 
-/* Placa clara para logos de empresa/instituição (muitos são escuros ou coloridos). */
+/* Placa para logos de empresa/instituição (muitos são escuros ou coloridos). */
 .v2-org-mark {
   display: flex;
   flex-shrink: 0;
@@ -1327,8 +1436,10 @@ html.v2-page ::selection {
   width: 7.75rem;
   height: 3.65rem;
   padding: 0.55rem 0.7rem;
-  background: #f2f2ef;
-  border: 1px solid var(--v2-line-strong);
+  overflow: hidden;
+  border: 1px solid rgba(244, 244, 242, 0.12);
+  border-radius: 0.55rem;
+  background: #b8b8b2;
 }
 
 .v2-org-mark img {
@@ -1346,8 +1457,10 @@ html.v2-page ::selection {
   width: 100%;
   min-height: 5.5rem;
   padding: 1rem 1.15rem;
-  background: #f2f2ef;
-  border: 1px solid var(--v2-line-strong);
+  overflow: hidden;
+  border: 1px solid rgba(244, 244, 242, 0.12);
+  border-radius: 0.65rem;
+  background: #b8b8b2;
 }
 
 .v2-edu-logo img {

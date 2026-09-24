@@ -117,7 +117,7 @@ export const translations: Record<Locale, TranslationSchema> = {
       afterProjectsCta: 'Ir para contato',
     },
     footer: {
-      cta: 'Obrigado por visitar o portfólio — novos projetos e parcerias são sempre bem-vindos.',
+      cta: 'Obrigado por visitar o portfólio. Novos projetos e parcerias são sempre bem-vindos.',
       developedBy: 'Desenvolvido por Marcelo S Silva',
       navTitle: 'Navegação',
       socialLabel: 'Redes sociais',
@@ -207,7 +207,7 @@ export const translations: Record<Locale, TranslationSchema> = {
       afterProjectsCta: 'Go to contact',
     },
     footer: {
-      cta: 'Thanks for visiting — new projects and partnerships are always welcome.',
+      cta: 'Thanks for visiting. New projects and partnerships are always welcome.',
       developedBy: 'Developed by Marcelo S Silva',
       navTitle: 'Navigation',
       socialLabel: 'Social',

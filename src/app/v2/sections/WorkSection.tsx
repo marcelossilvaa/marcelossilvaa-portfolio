@@ -108,7 +108,7 @@ export function WorkSection({ locale, text }: WorkSectionProps) {
                   )}
                 </span>
 
-                <span className="v2-mono hidden truncate md:block">{kinds[project.id] ?? '—'}</span>
+                <span className="v2-mono hidden truncate md:block">{kinds[project.id] ?? '-'}</span>
 
                 <span className="v2-mono text-right" aria-hidden="true">
                   ↗

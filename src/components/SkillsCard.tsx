@@ -27,26 +27,26 @@ export default function SkillsCard({ data }: SkillsCardProps) {
     ? [
         { label: 'Cursor', logo: CursorLogo },
         { label: 'Claude Code', logo: ClaudeLogo },
-        { label: 'GitHub Copilot', logo: CopilotLogo },
         { label: 'Antigravity', logo: AntigravityLogo },
         { label: 'n8n', logo: N8nLogo },
-        { label: 'AI-assisted code review', Icon: GitPullRequest },
+        { label: 'AI-assisted review', Icon: GitPullRequest },
         { label: 'Prompt engineering', Icon: ChatTeardropText },
+        { label: 'GitHub Copilot', logo: CopilotLogo },
       ]
     : [
         { label: 'Cursor', logo: CursorLogo },
         { label: 'Claude Code', logo: ClaudeLogo },
-        { label: 'GitHub Copilot', logo: CopilotLogo },
         { label: 'Antigravity', logo: AntigravityLogo },
         { label: 'n8n', logo: N8nLogo },
-        { label: 'Code review assistido por IA', Icon: GitPullRequest },
+        { label: 'Revisão técnica com IA', Icon: GitPullRequest },
         { label: 'Prompt engineering', Icon: ChatTeardropText },
+        { label: 'GitHub Copilot', logo: CopilotLogo },
       ];
 
   const croCapabilities: { label: string; Icon?: ElementType; logo?: StaticImageData }[] = [
     { label: 'GA4', logo: Ga4Logo },
-    { label: 'Adobe Target', Icon: Target },
     { label: 'Adobe Analytics', Icon: ChartBar },
+    { label: 'Adobe Target', Icon: Target },
   ];
 
   useEffect(() => {

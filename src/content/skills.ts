@@ -55,7 +55,7 @@ export function getSkillsData(locale: Locale): SkillItem[] {
         level: 'Advanced',
         experience: '4 years',
         description: 'I structure collaborative versioning workflows with safe delivery practices.',
-        highlights: ['GitFlow', 'Code review', 'CI pipelines'],
+        highlights: ['GitFlow', 'Peer review', 'CI pipelines'],
       },
       {
         id: 5,
@@ -189,7 +189,7 @@ export function getSkillsData(locale: Locale): SkillItem[] {
       level: 'Avançado',
       experience: '4 anos',
       description: 'Organizo fluxos de versionamento para times com foco em colaboração e segurança de entrega.',
-      highlights: ['GitFlow', 'Code review', 'CI pipelines'],
+      highlights: ['GitFlow', 'Peer review', 'CI pipelines'],
     },
     {
       id: 5,
