@@ -1,0 +1,32 @@
+import Banner from '@/app/LandingPage/Banner';
+import Header from '@/app/LandingPage/Header';
+import ClientLogos from '@/app/LandingPage/ClientLogos';
+import AboutMe from '@/app/LandingPage/AboutMe';
+import Skills from '@/app/LandingPage/Skills';
+import AcademicEducation from '@/app/LandingPage/AcademicEducation';
+import Professional from '@/app/LandingPage/Professional';
+import Process from '@/app/LandingPage/Process';
+import Projects from '@/app/LandingPage/Projects';
+import Contact from '@/app/LandingPage/Contact';
+import Footer from '@/app/LandingPage/Footer';
+import ScrollProgress from '@/components/ScrollProgress';
+
+/** Landing clássica preservada em /classic (e /classic/us). */
+export default function ClassicHome() {
+  return (
+    <main className="flex flex-col items-center justify-between">
+      <ScrollProgress />
+      <Header />
+      <Banner />
+      <ClientLogos />
+      <AboutMe />
+      <Skills />
+      <Professional />
+      <AcademicEducation />
+      <Process />
+      <Projects />
+      <Contact />
+      <Footer />
+    </main>
+  );
+}

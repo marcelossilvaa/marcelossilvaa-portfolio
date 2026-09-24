@@ -49,7 +49,7 @@ export type ProjectItem = {
   impact: string;
   featured?: boolean;
   repoLink: string;
-  demoLink: string;
+  demoLink?: string;
   appStoreLink?: string;
   playStoreLink?: string;
   technologies: ProjectTechnology[];

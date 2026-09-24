@@ -1,6 +1,6 @@
 import inkPen from '../../public/assets/inkPen.jpg';
 import Vasta from '../../public/assets/vasta.png';
-import Webjump from '../../public/assets/webjump_white_endosso.webp';
+import Webjump from '../../public/assets/logo_webjump.webp';
 import type { HistoryItem } from '@/types/portfolio';
 import type { Locale } from '@/i18n/LocaleProvider';
 

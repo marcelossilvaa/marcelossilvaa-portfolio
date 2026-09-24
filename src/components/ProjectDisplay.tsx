@@ -62,16 +62,18 @@ const ProjectCard = ({
             {truncateText(item.impact)}
           </p>
           <div className="flex flex-wrap gap-2">
-            <a
-              href={item.demoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${text.project.demo} ${item.title}`}
-            >
-              <button className="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-800 text-slate-100 border border-slate-700 whitespace-nowrap px-7 py-2.5 rounded-xl text-base font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(124,58,237,0.6)]">
-                {text.project.demo}
-              </button>
-            </a>
+            {item.demoLink && (
+              <a
+                href={item.demoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${text.project.demo} ${item.title}`}
+              >
+                <button className="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-800 text-slate-100 border border-slate-700 whitespace-nowrap px-7 py-2.5 rounded-xl text-base font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(124,58,237,0.6)]">
+                  {text.project.demo}
+                </button>
+              </a>
+            )}
             {item.appStoreLink && (
               <a href={item.appStoreLink} target="_blank" rel="noopener noreferrer" aria-label={`App Store ${item.title}`}>
                 <button className="inline-flex items-center gap-1.5 rounded-full border border-accent-primary bg-surface px-3 py-1 text-sm font-semibold text-text-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-primary/12 hover:shadow-[0_0_16px_rgba(124,58,237,0.35)] dark:border-accent-primary/70 dark:bg-surface-soft/80 dark:text-slate-100 dark:hover:bg-accent-primary/25">

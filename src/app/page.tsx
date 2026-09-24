@@ -1,31 +1,49 @@
-import Banner from '@/app/LandingPage/Banner';
-import Header from '@/app/LandingPage/Header';
-import ClientLogos from '@/app/LandingPage/ClientLogos';
-import AboutMe from '@/app/LandingPage/AboutMe';
-import Skills from '@/app/LandingPage/Skills';
-import AcademicEducation from '@/app/LandingPage/AcademicEducation';
-import Professional from '@/app/LandingPage/Professional';
-import Process from '@/app/LandingPage/Process';
-import Projects from '@/app/LandingPage/Projects';
-import Contact from '@/app/LandingPage/Contact';
-import Footer from '@/app/LandingPage/Footer';
-import ScrollProgress from '@/components/ScrollProgress';
+import type { Metadata } from 'next';
+import { Anton, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
+import V2Experience from './v2/V2Experience';
+import './v2/v2.css';
+
+const displayFont = Anton({
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
+  variable: '--font-v2-display',
+});
+
+const sansFont = Space_Grotesk({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-v2-sans',
+});
+
+const monoFont = JetBrains_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-v2-mono',
+});
+
+export const metadata: Metadata = {
+  title: 'Marcelo S Silva · Full stack, SaaS e CRO',
+  description:
+    'Dev full stack com visão analítica, estratégica e técnica: SaaS ponta a ponta, e-commerce de alto tráfego e sistemas de CRO.',
+  openGraph: {
+    title: 'Marcelo S Silva · Full stack, SaaS e CRO',
+    description:
+      'Portfólio 2026: produtos full stack, commerce e experimentação de conversão.',
+    type: 'website',
+  },
+  alternates: {
+    languages: {
+      'pt-BR': '/',
+      en: '/us',
+    },
+  },
+};
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between">
-      <ScrollProgress />
-      <Header />
-      <Banner />
-      <ClientLogos />
-      <AboutMe />
-      <Skills />
-      <Professional />
-      <AcademicEducation />
-      <Process />
-      <Projects />
-      <Contact />
-      <Footer />
-    </main>
+    <div className={`${displayFont.variable} ${sansFont.variable} ${monoFont.variable}`}>
+      <V2Experience locale="pt" />
+    </div>
   );
 }

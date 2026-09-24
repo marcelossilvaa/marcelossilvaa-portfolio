@@ -10,21 +10,21 @@ const relaway = Raleway({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
-    default: 'Marcelo S Silva · Front-end e-commerce, performance e conversão',
+    default: 'Marcelo S Silva · Full stack, SaaS e CRO',
     template: '%s · Marcelo S Silva',
   },
   description:
-    'Desenvolvedor front-end focado em e-commerce: Next.js, Shopify, performance web e experimentos de conversão. Projetos, cases e contato.',
+    'Dev full stack com visão analítica, estratégica e técnica: SaaS ponta a ponta, e-commerce de alto tráfego e sistemas de CRO.',
   openGraph: {
-    title: 'Marcelo S Silva · Front-end e-commerce e performance',
+    title: 'Marcelo S Silva · Full stack, SaaS e CRO',
     description:
-      'Portfólio com cases de e-commerce, arquitetura front-end e foco em resultado de negócio. Fale no WhatsApp ou veja os projetos.',
+      'Portfólio 2026 com produtos full stack, commerce e experimentação de conversão.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Marcelo S Silva · Front-end e-commerce',
-    description: 'Next.js, Shopify, performance e conversão para lojas e produtos digitais.',
+    title: 'Marcelo S Silva · Full stack, SaaS e CRO',
+    description: 'Next.js, SaaS, Shopify, performance e conversão para produtos digitais.',
   },
   verification: {
     google: 'kQDLyJ9I0syTc1U2mu0BW8bFuSsjzk6QB092QbI0Ogk',
