@@ -66,7 +66,8 @@ export function HudFrame({ sections, text, locale }: HudFrameProps) {
   }, [indexOpen]);
 
   const activeMeta = sections.find((section) => section.id === active) ?? sections[0];
-  const alternateHref = locale === 'pt' ? '/v2/us' : '/v2';
+  const alternateHref = locale === 'pt' ? '/us' : '/';
+  const classicHref = locale === 'pt' ? '/classic' : '/classic/us';
 
   return (
     <>
@@ -74,7 +75,7 @@ export function HudFrame({ sections, text, locale }: HudFrameProps) {
         <div className="v2-hud__topbar">
           <div className="flex min-w-0 items-center gap-3">
             <Link
-              href="/v2"
+              href={locale === 'pt' ? '/' : '/us'}
               className="v2-mono flex-shrink-0 text-[var(--v2-fg)] transition-colors hover:text-[var(--v2-signal)]"
             >
               MS
@@ -88,7 +89,7 @@ export function HudFrame({ sections, text, locale }: HudFrameProps) {
             <Link href={alternateHref} className="v2-ghost-btn" aria-label={text.hud.switchLocale}>
               {locale === 'pt' ? 'EN' : 'PT'}
             </Link>
-            <Link href="/" className="v2-ghost-btn hidden md:inline-flex">
+            <Link href={classicHref} className="v2-ghost-btn hidden md:inline-flex">
               {text.hud.backToClassic}
             </Link>
             <button
