@@ -31,7 +31,7 @@ export default function Header() {
   return (
     <header className="auto-transition z-20 flex justify-center w-full fixed bg-surface/85 backdrop-blur-md border-b border-border-soft">
       <div className="flex h-[8vh] justify-between items-center text-[15px] text-text-primary max-w-6xl w-full px-4 md:w-[95%] md:px-0">
-        <Link href="/#banner" className="flex flex-row gap-1 items-center z-10">
+        <Link href="/classic#banner" className="flex flex-row gap-1 items-center z-10">
           <Desktop size={28} className="text-text-primary" weight="bold" />
           <h1 className="font-bold tracking-tight">Marcelo S Silva</h1>
         </Link>

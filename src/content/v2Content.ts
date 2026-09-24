@@ -114,7 +114,7 @@ export function getV2Stats(locale: Locale): V2Stat[] {
   return [
     { value: 4, suffix: '+', label: isEn ? 'years shipping product' : 'anos entregando produto' },
     { value: 8, suffix: '', label: isEn ? 'brands in production' : 'marcas em produção' },
-    { value: 13, suffix: '', label: isEn ? 'projects in this index' : 'projetos neste índice' },
+    { value: 14, suffix: '', label: isEn ? 'projects in this index' : 'projetos neste índice' },
     { value: 5, suffix: '', label: isEn ? 'SaaS / full-stack builds' : 'SaaS / builds full stack' },
   ];
 }
@@ -332,11 +332,12 @@ export function getV2ProjectKinds(locale: Locale): Record<string, string> {
   const isEn = locale === 'en';
 
   return {
-    '8': isEn ? 'Commerce + App' : 'Commerce + App',
+    '8': isEn ? 'Commerce + CRO' : 'Commerce + CRO',
     '9': isEn ? 'SaaS Full Stack' : 'SaaS Full Stack',
     '10': isEn ? 'CRO Landing + SEO' : 'LP CRO + SEO',
     '11': isEn ? 'Automation SaaS' : 'Automação SaaS',
     '12': isEn ? 'CRM Full Stack' : 'CRM Full Stack',
+    '13': isEn ? 'CRO Consulting' : 'Consultoria CRO',
     '5': isEn ? 'Headless CMS' : 'CMS headless',
     '0': isEn ? 'Storefront' : 'Storefront',
     '1': isEn ? 'Catalog' : 'Catálogo',
