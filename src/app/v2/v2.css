@@ -1241,7 +1241,7 @@ html.v2-page ::selection {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(1.25rem, 3.2vw, 2.15rem);
+  padding: clamp(0.9rem, 2.4vw, 1.5rem);
   background: #f3f3f0;
   transition: background-color 0.4s var(--v2-ease);
 }

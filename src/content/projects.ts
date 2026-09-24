@@ -157,7 +157,7 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
       impact: isEnglish
         ? 'Faster reaction to market moves with a product surface teams can configure without touching code.'
         : 'Reação mais rápida a movimentos de mercado com uma superfície que o time configura sem mexer em código.',
-      featured: false,
+      featured: true,
       repoLink: '',
       demoLink: 'https://cotacao-automation.vercel.app/',
       image: CotacaoAutomation,

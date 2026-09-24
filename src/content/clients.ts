@@ -23,9 +23,9 @@ export const clientLogos: ClientLogoItem[] = [
   { id: 'azul', name: 'Azul', logo: AzulLogo, maxHeight: 56, maxWidth: 150 },
   { id: 'nespresso', name: 'Nespresso', logo: NespressoWordmark, scale: 1.15, maxHeight: 54, maxWidth: 176 },
   { id: 'votorantim', name: 'Votorantim Cimentos', logo: VotorantimLogo, maxHeight: 54, maxWidth: 156 },
-  { id: 'ftd', name: 'FTD', logo: FtdLogo, scale: 1.2, maxHeight: 72, maxWidth: 168 },
+  { id: 'ftd', name: 'FTD', logo: FtdLogo, scale: 1.35, maxHeight: 84, maxWidth: 190 },
   { id: 'vitamin-energy', name: 'Vitamin Energy', logo: VitaminEnergyLogo, maxHeight: 54, maxWidth: 160 },
   { id: 'auri', name: 'Auri', logo: AuriLogo, scale: 1.12, maxHeight: 52, maxWidth: 140 },
-  { id: 'bjj-fanatics', name: 'BJJ Fanatics', logo: BjjFanatics, scale: 1.25, maxHeight: 64, maxWidth: 190 },
+  { id: 'bjj-fanatics', name: 'BJJ Fanatics', logo: BjjFanatics, scale: 1.4, maxHeight: 72, maxWidth: 220 },
   { id: 'primal-queen', name: 'Primal Queen', logo: PrimalQueenLogo, maxHeight: 54, maxWidth: 156 },
 ];
