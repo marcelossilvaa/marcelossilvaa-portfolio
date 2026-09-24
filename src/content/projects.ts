@@ -87,20 +87,19 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
       id: '6',
       title: 'StatTrade',
       subTitle: isEnglish
-        ? 'Full-stack trading analytics platform for B3 options'
-        : 'Plataforma full stack de analytics para opções na B3',
+        ? 'Private full-stack platform for B3 market, portfolio and options'
+        : 'Plataforma full stack particular para mercado B3, carteira e opções',
       challenge: isEnglish
-        ? 'Traders needed dense market data views without sacrificing responsiveness or readability on critical screens.'
-        : 'Traders precisavam de visualizações densas de mercado sem sacrificar responsividade ou legibilidade em telas críticas.',
+        ? 'Give traders a single dark-mode cockpit for rankings, volume, portfolio, options chains and watchlists — dense data without losing clarity.'
+        : 'Dar aos traders um cockpit dark-mode único para rankings, volume, carteira, cadeia de opções e favoritos — dados densos sem perder clareza.',
       strategy: isEnglish
-        ? 'Structured dashboard modules with performant rendering, clear hierarchy and full-stack delivery — front-end, APIs and data views designed for daily use.'
-        : 'Estruturei módulos de dashboard com renderização performática, hierarquia clara e entrega full stack — front-end, APIs e visões de dados pensadas para uso diário.',
+        ? 'Built a full-stack dashboard with Next.js and TypeScript: Mercado snapshots, Carteira, Opções (PUT/CALL + chain), Delta screener, news/calendar and Favoritos with sparklines — performant tables and live API status.'
+        : 'Construí um dashboard full stack com Next.js e TypeScript: visão de Mercado, Carteira, Opções (PUT/CALL + chain), screener Delta, notícias/calendário e Favoritos com sparklines — tabelas performáticas e status de API ao vivo.',
       impact: isEnglish
-        ? 'More readable analytics flow, reduced friction in portfolio tracking and a product surface ready for new market modules.'
-        : 'Leitura analítica mais fluida, menor fricção no acompanhamento de carteira e uma superfície de produto pronta para novos módulos.',
+        ? 'A private product operators can use daily: market scan, options analysis and watchlist in one responsive interface.'
+        : 'Um produto particular para uso diário: leitura de mercado, análise de opções e watchlist em uma interface responsiva.',
       featured: true,
       repoLink: '',
-      demoLink: 'https://oplab-dash.vercel.app/',
       image: OplabDash,
       technologies: [
         { name: 'Next.js', image: Nextjs },

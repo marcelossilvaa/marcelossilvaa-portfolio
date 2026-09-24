@@ -344,7 +344,7 @@ export function getV2ProjectKinds(locale: Locale): Record<string, string> {
     '2': isEn ? 'Front-end' : 'Front-end',
     '3': isEn ? 'Institutional' : 'Institucional',
     '4': isEn ? 'Product site' : 'Site de produto',
-    '6': isEn ? 'Trading SaaS' : 'SaaS Trading',
+    '6': isEn ? 'Trading SaaS (private)' : 'SaaS Trading (particular)',
     '7': isEn ? 'Portfolio' : 'Portfólio',
   };
 }
