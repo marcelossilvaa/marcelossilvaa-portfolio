@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { getV2Pipeline, getV2SectionIndex, getV2SystemPillars } from '@/content/v2Content';
 import type { Locale } from '@/i18n/LocaleProvider';
 import type { V2TranslationSchema } from '@/i18n/v2Translations';
+import { MobileFold } from '../components/MobileFold';
 import { Reveal, Stagger, staggerChild } from '../components/Reveal';
 import { SectionHeader } from '../components/SectionHeader';
 
@@ -26,7 +27,34 @@ export function SystemSection({ locale, text }: SystemSectionProps) {
           lead={text.system.lead}
         />
 
-        <div className="grid gap-px border border-[var(--v2-line)] bg-[var(--v2-line)] lg:grid-cols-3">
+        {/* Mobile: accordion (1º aberto). Desktop: grid de 3 pilares. */}
+        <div className="md:hidden">
+          {pillars.map((pillar, index) => (
+            <MobileFold
+              key={pillar.index}
+              className="v2-fold--card"
+              defaultOpen={index === 0}
+              summary={`${pillar.kicker} · ${pillar.title}`}
+            >
+              <article className="flex flex-col gap-4">
+                <p className="text-[0.95rem] leading-relaxed text-[var(--v2-muted)]">{pillar.description}</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {pillar.tags.map((tag) => (
+                    <span key={tag} className="v2-tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="border-t border-[var(--v2-line)] pt-4">
+                  <p className="v2-eyebrow mb-2">{pillar.outcomeLabel}</p>
+                  <p className="text-[0.95rem] text-[var(--v2-fg)]">{pillar.outcome}</p>
+                </div>
+              </article>
+            </MobileFold>
+          ))}
+        </div>
+
+        <div className="hidden gap-px border border-[var(--v2-line)] bg-[var(--v2-line)] md:grid lg:grid-cols-3">
           {pillars.map((pillar, index) => (
             <Reveal key={pillar.index} delay={index * 0.1}>
               <article className="flex h-full flex-col gap-6 bg-[var(--v2-bg-elev)] p-6 md:p-10">
@@ -56,28 +84,30 @@ export function SystemSection({ locale, text }: SystemSectionProps) {
           ))}
         </div>
 
-        <div className="mt-12">
-          <Reveal>
-            <p className="v2-eyebrow mb-5">{text.system.pipelineLabel}</p>
-          </Reveal>
+        <div className="mt-8 md:mt-12">
+          <MobileFold summary={text.mobile.pipeline}>
+            <Reveal>
+              <p className="v2-eyebrow mb-5">{text.system.pipelineLabel}</p>
+            </Reveal>
 
-          <Stagger className="flex flex-wrap items-center gap-x-2 gap-y-3">
-            {pipeline.map((step, index) => (
-              <motion.span key={step} variants={staggerChild} className="flex items-center gap-2">
-                <span className="v2-tag">
-                  <span className="tabular-nums text-[var(--v2-signal)]">
-                    {String(index + 1).padStart(2, '0')}
+            <Stagger className="flex flex-wrap items-center gap-x-2 gap-y-3">
+              {pipeline.map((step, index) => (
+                <motion.span key={step} variants={staggerChild} className="flex items-center gap-2">
+                  <span className="v2-tag">
+                    <span className="tabular-nums text-[var(--v2-signal)]">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    {step}
                   </span>
-                  {step}
-                </span>
-                {index < pipeline.length - 1 && (
-                  <span className="v2-mono text-[var(--v2-dim)]" aria-hidden="true">
-                    →
-                  </span>
-                )}
-              </motion.span>
-            ))}
-          </Stagger>
+                  {index < pipeline.length - 1 && (
+                    <span className="v2-mono text-[var(--v2-dim)]" aria-hidden="true">
+                      →
+                    </span>
+                  )}
+                </motion.span>
+              ))}
+            </Stagger>
+          </MobileFold>
         </div>
       </div>
     </section>

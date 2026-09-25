@@ -170,7 +170,7 @@ export function AvailabilitySection({ locale, text }: AvailabilitySectionProps) 
             </div>
           </Reveal>
 
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} className="hidden md:block">
             <div className="v2-panel p-5 md:p-7">
               <div className="mb-5 flex items-center justify-between gap-4">
                 <p className="v2-mono text-[var(--v2-fg)]">

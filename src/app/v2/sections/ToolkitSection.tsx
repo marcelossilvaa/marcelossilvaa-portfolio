@@ -3,6 +3,7 @@
 import { getV2SectionIndex, getV2Toolkit } from '@/content/v2Content';
 import type { Locale } from '@/i18n/LocaleProvider';
 import type { V2TranslationSchema } from '@/i18n/v2Translations';
+import { MobileFold } from '../components/MobileFold';
 import { Reveal } from '../components/Reveal';
 import { SectionHeader } from '../components/SectionHeader';
 
@@ -24,7 +25,27 @@ export function ToolkitSection({ locale, text }: ToolkitSectionProps) {
           lead={text.toolkit.lead}
         />
 
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        {/* Mobile: lista compacta em accordion. Desktop: grid de cards. */}
+        <div className="md:hidden">
+          {groups.map((group) => (
+            <MobileFold
+              key={group.letter}
+              className="v2-fold--card"
+              summary={`${group.letter} · ${group.title}`}
+            >
+              <p className="v2-mono mb-3 text-[var(--v2-muted)]">{group.summary}</p>
+              <div className="flex flex-wrap gap-1.5">
+                {group.capabilities.map((capability) => (
+                  <span key={capability} className="v2-tag">
+                    {capability}
+                  </span>
+                ))}
+              </div>
+            </MobileFold>
+          ))}
+        </div>
+
+        <div className="hidden gap-4 sm:grid-cols-2 md:grid xl:grid-cols-3">
           {groups.map((group, index) => (
             <Reveal key={group.letter} delay={Math.min(index * 0.06, 0.3)}>
               <article className="v2-toolkit__card h-full">

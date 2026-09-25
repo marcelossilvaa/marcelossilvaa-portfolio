@@ -3,6 +3,7 @@
 import { getV2SectionIndex, getV2Services } from '@/content/v2Content';
 import type { Locale } from '@/i18n/LocaleProvider';
 import type { V2TranslationSchema } from '@/i18n/v2Translations';
+import { MobileFold } from '../components/MobileFold';
 import { Reveal } from '../components/Reveal';
 import { SectionHeader } from '../components/SectionHeader';
 
@@ -24,7 +25,21 @@ export function ServicesSection({ locale, text }: ServicesSectionProps) {
           lead={text.services.lead}
         />
 
-        <div className="border-b border-[var(--v2-line)]">
+        <div className="md:hidden">
+          {services.map((service, index) => (
+            <MobileFold
+              key={service.index}
+              className="v2-fold--card"
+              defaultOpen={index === 0}
+              summary={`${service.index} · ${service.title}`}
+            >
+              <p className="mb-3 text-[1.02rem] text-[var(--v2-fg)]">{service.promise}</p>
+              <p className="text-[0.95rem] leading-relaxed text-[var(--v2-muted)]">{service.description}</p>
+            </MobileFold>
+          ))}
+        </div>
+
+        <div className="hidden border-b border-[var(--v2-line)] md:block">
           {services.map((service, index) => (
             <Reveal key={service.index} delay={index * 0.08}>
               <article className="v2-service group">

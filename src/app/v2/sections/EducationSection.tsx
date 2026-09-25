@@ -5,6 +5,7 @@ import { getEducationCredentials, getEducationData } from '@/content/education';
 import { getV2SectionIndex } from '@/content/v2Content';
 import type { Locale } from '@/i18n/LocaleProvider';
 import type { V2TranslationSchema } from '@/i18n/v2Translations';
+import { MobileFold } from '../components/MobileFold';
 import { Reveal } from '../components/Reveal';
 import { SectionHeader } from '../components/SectionHeader';
 
@@ -30,7 +31,7 @@ export function EducationSection({ locale, text }: EducationSectionProps) {
         <div className="grid gap-px border border-[var(--v2-line)] bg-[var(--v2-line)] md:grid-cols-3">
           {education.map((item, index) => (
             <Reveal key={item.id} delay={index * 0.08}>
-              <article className="v2-bracket flex h-full flex-col gap-5 bg-[var(--v2-bg-elev)] p-5 md:gap-6 md:p-7">
+              <article className="v2-bracket flex h-full flex-col gap-4 bg-[var(--v2-bg-elev)] p-4 md:gap-6 md:p-7">
                 <div className="v2-edu-logo">
                   <Image
                     src={item.image}
@@ -49,11 +50,12 @@ export function EducationSection({ locale, text }: EducationSectionProps) {
                 </div>
 
                 <div>
-                  <h3 className="v2-heading text-[1.15rem] leading-snug md:text-[1.3rem]">{item.title}</h3>
+                  <h3 className="v2-heading text-[1.1rem] leading-snug md:text-[1.3rem]">{item.title}</h3>
                   <p className="v2-mono mt-2 text-[var(--v2-muted)]">{item.institution}</p>
                 </div>
 
-                <p className="mt-auto text-[0.9rem] leading-relaxed text-[var(--v2-muted)]">
+                {/* Resumo longo só no desktop — no mobile título + instituição bastam. */}
+                <p className="mt-auto hidden text-[0.9rem] leading-relaxed text-[var(--v2-muted)] md:block">
                   {(item.summary ?? []).join(' ')}
                 </p>
               </article>
@@ -61,17 +63,19 @@ export function EducationSection({ locale, text }: EducationSectionProps) {
           ))}
         </div>
 
-        <Reveal delay={0.16}>
-          <div className="mt-6 border-t border-[var(--v2-line)] pt-5">
-            <p className="v2-mono mb-3 text-[var(--v2-dim)]">{text.education.credentialsLabel}</p>
-            <div className="flex flex-wrap gap-1.5">
-              {credentials.map((credential) => (
-                <span key={credential} className="v2-tag v2-tag--quiet">
-                  {credential}
-                </span>
-              ))}
+        <Reveal delay={0.16} className="mt-4 md:mt-6">
+          <MobileFold summary={text.mobile.credentials}>
+            <div className="border-t border-[var(--v2-line)] pt-5">
+              <p className="v2-mono mb-3 text-[var(--v2-dim)]">{text.education.credentialsLabel}</p>
+              <div className="flex flex-wrap gap-1.5">
+                {credentials.map((credential) => (
+                  <span key={credential} className="v2-tag v2-tag--quiet">
+                    {credential}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          </MobileFold>
         </Reveal>
       </div>
     </section>

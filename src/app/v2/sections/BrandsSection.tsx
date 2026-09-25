@@ -27,7 +27,8 @@ export function BrandsSection({ locale, text }: BrandsSectionProps) {
         />
       </div>
 
-      <Reveal>
+      {/* Marquee só no desktop — no mobile o grid de logos já comunica as marcas. */}
+      <Reveal className="hidden md:block">
         <div className="border-y border-[var(--v2-line)] py-4">
           <Marquee
             durationSeconds={44}
@@ -42,12 +43,12 @@ export function BrandsSection({ locale, text }: BrandsSectionProps) {
         </div>
       </Reveal>
 
-      <div className="v2-wrap mt-10">
+      <div className="v2-wrap mt-6 md:mt-10">
         <div className="v2-logo-grid">
           {clientLogos.map((client, index) => (
             <Reveal key={client.id} className="min-w-0 h-full" delay={index * 0.04}>
               <div
-                className="v2-logo-tile h-full min-h-[120px] sm:min-h-[140px]"
+                className="v2-logo-tile h-full min-h-[96px] sm:min-h-[140px]"
                 title={client.name}
                 style={
                   {

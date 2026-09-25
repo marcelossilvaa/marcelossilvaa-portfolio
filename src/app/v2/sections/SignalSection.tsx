@@ -34,19 +34,19 @@ export function SignalSection({ locale, text }: SignalSectionProps) {
           lead={text.signal.lead}
         />
 
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:items-center lg:gap-16">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:items-center lg:gap-16">
           <Reveal>
-            <blockquote className="v2-heading border-l border-[var(--v2-signal)] pl-5 text-[clamp(1.3rem,3.6vw,2.6rem)] md:pl-6">
+            <blockquote className="v2-heading border-l border-[var(--v2-signal)] pl-5 text-[clamp(1.2rem,3.6vw,2.6rem)] md:pl-6">
               “{text.signal.quote}”
             </blockquote>
 
-            <div className="mt-10 grid gap-px border border-[var(--v2-line)] bg-[var(--v2-line)] sm:grid-cols-3">
+            <div className="mt-8 grid gap-px border border-[var(--v2-line)] bg-[var(--v2-line)] sm:grid-cols-3 md:mt-10">
               {[
                 { k: 'Next.js / Node.js', v: locale === 'en' ? 'SaaS full stack' : 'SaaS full stack' },
                 { k: 'Shopify / Liquid', v: locale === 'en' ? 'commerce' : 'commerce' },
                 { k: 'Adobe Target / GA4', v: locale === 'en' ? 'CRO & experiments' : 'CRO & experimentos' },
               ].map((item) => (
-                <div key={item.k} className="bg-[var(--v2-bg-elev)] p-5">
+                <div key={item.k} className="bg-[var(--v2-bg-elev)] p-4 md:p-5">
                   <p className="v2-mono text-[var(--v2-signal)]">{item.v}</p>
                   <p className="mt-2 text-sm text-[var(--v2-fg)]">{item.k}</p>
                 </div>
@@ -54,7 +54,8 @@ export function SignalSection({ locale, text }: SignalSectionProps) {
             </div>
           </Reveal>
 
-          <Reveal delay={0.12}>
+          {/* Arquivo visual só no desktop — no mobile o índice de projetos cobre isso. */}
+          <Reveal delay={0.12} className="hidden lg:block">
             <ArchiveFrames
               frames={frames}
               archiveLabel={text.signal.archiveLabel}

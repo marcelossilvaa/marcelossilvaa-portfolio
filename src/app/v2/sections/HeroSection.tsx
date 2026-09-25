@@ -142,7 +142,8 @@ export function HeroSection({ locale, text, bootDone }: HeroSectionProps) {
               ))}
             </div>
 
-            <div className="grid gap-x-6 gap-y-5 border-t border-[var(--v2-line)] pt-5 xl:grid-cols-2">
+            {/* Grupos secundários só no desktop — no mobile o núcleo + stats bastam. */}
+            <div className="hidden gap-x-6 gap-y-5 border-t border-[var(--v2-line)] pt-5 md:grid xl:grid-cols-2">
               {tags.groups.map((group, groupIndex) => (
                 <div key={group.label} className="flex flex-col gap-2.5">
                   <span className="v2-mono flex items-center gap-2 text-[var(--v2-dim)]">

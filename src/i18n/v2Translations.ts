@@ -118,6 +118,16 @@ export type V2TranslationSchema = {
     backToTop: string;
     builtWith: string;
   };
+  mobile: {
+    showMoreProjects: string;
+    showLessProjects: string;
+    moreDetails: string;
+    stackDetails: string;
+    pipeline: string;
+    credentials: string;
+    showCalendar: string;
+    servicesDetails: string;
+  };
 };
 
 const pt: V2TranslationSchema = {
@@ -264,6 +274,16 @@ const pt: V2TranslationSchema = {
     backToTop: 'Voltar ao topo',
     builtWith: 'Construído com Next.js, TypeScript e Tailwind',
   },
+  mobile: {
+    showMoreProjects: 'Ver todos os projetos',
+    showLessProjects: 'Mostrar menos',
+    moreDetails: 'Ver detalhes',
+    stackDetails: 'Ver stack',
+    pipeline: 'Ver fluxo de trabalho',
+    credentials: 'Ver credenciais',
+    showCalendar: 'Ver agenda completa',
+    servicesDetails: 'Como eu entro',
+  },
 };
 
 const en: V2TranslationSchema = {
@@ -409,6 +429,16 @@ const en: V2TranslationSchema = {
     instagram: 'Instagram',
     backToTop: 'Back to top',
     builtWith: 'Built with Next.js, TypeScript and Tailwind',
+  },
+  mobile: {
+    showMoreProjects: 'See all projects',
+    showLessProjects: 'Show less',
+    moreDetails: 'See details',
+    stackDetails: 'See stack',
+    pipeline: 'See workflow',
+    credentials: 'See credentials',
+    showCalendar: 'See full calendar',
+    servicesDetails: 'How I plug in',
   },
 };
 

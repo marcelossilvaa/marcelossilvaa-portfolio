@@ -204,7 +204,22 @@ html.v2-page ::selection {
 .v2-section {
   position: relative;
   border-top: 1px solid var(--v2-line);
-  padding-block: clamp(4.5rem, 11vw, 9.5rem);
+  padding-block: clamp(2.75rem, 8vw, 9.5rem);
+}
+
+@media (max-width: 767px) {
+  .v2-section {
+    padding-block: 2.75rem;
+  }
+
+  .v2-hero {
+    padding-bottom: 2.75rem;
+  }
+
+  /* Leads longos somem do fluxo visual no mobile — título basta. */
+  .v2-section-header__lead {
+    display: none;
+  }
 }
 
 .v2-wrap {
@@ -1489,6 +1504,164 @@ a.v2-calendar__cell[data-today='true']:hover {
 
 .v2-img-hud:hover {
   filter: grayscale(0) contrast(1);
+}
+
+/* --------------------------------------------------------------------------
+   Mobile fold — accordion nativo só abaixo de md
+   -------------------------------------------------------------------------- */
+
+.v2-fold {
+  border-top: 1px solid var(--v2-line);
+}
+
+.v2-fold__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1rem;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-v2-mono), ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--v2-muted);
+  user-select: none;
+}
+
+.v2-fold__summary::-webkit-details-marker {
+  display: none;
+}
+
+.v2-fold__summary:hover {
+  color: var(--v2-signal);
+}
+
+.v2-fold__chevron {
+  position: relative;
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid var(--v2-line-strong);
+}
+
+.v2-fold__chevron::before,
+.v2-fold__chevron::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+}
+
+.v2-fold__chevron::before {
+  width: 9px;
+  height: 1px;
+}
+
+.v2-fold__chevron::after {
+  width: 1px;
+  height: 9px;
+  transition: transform 0.35s var(--v2-ease);
+}
+
+.v2-fold[open] .v2-fold__chevron {
+  border-color: var(--v2-signal);
+  color: var(--v2-signal);
+}
+
+.v2-fold[open] .v2-fold__chevron::after {
+  transform: translate(-50%, -50%) scaleY(0);
+}
+
+.v2-fold__body {
+  padding-bottom: 1.25rem;
+}
+
+.v2-fold--card {
+  border: 1px solid var(--v2-line);
+  background: var(--v2-bg-elev);
+  padding-inline: 1rem;
+}
+
+.v2-fold--card + .v2-fold--card {
+  margin-top: 0.65rem;
+}
+
+.v2-fold--card .v2-fold__summary {
+  border: 0;
+  padding-block: 1.1rem;
+  color: var(--v2-fg);
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: var(--font-v2-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.v2-fold--card .v2-fold__body {
+  padding-bottom: 1.15rem;
+  border-top: 1px solid var(--v2-line);
+  padding-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .v2-fold,
+  .v2-fold--card {
+    border: 0;
+    background: transparent;
+    padding-inline: 0;
+  }
+
+  .v2-fold--card + .v2-fold--card {
+    margin-top: 0;
+  }
+
+  .v2-fold__summary {
+    display: none;
+  }
+
+  .v2-fold__body {
+    display: block !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+}
+
+.v2-mobile-more {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--v2-line-strong);
+  background: transparent;
+  color: var(--v2-fg);
+  font-family: var(--font-v2-mono), ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    border-color 0.35s var(--v2-ease),
+    color 0.35s var(--v2-ease),
+    background-color 0.35s var(--v2-ease);
+}
+
+.v2-mobile-more:hover {
+  border-color: var(--v2-signal);
+  color: var(--v2-signal);
+  background: var(--v2-signal-dim);
+}
+
+@media (min-width: 768px) {
+  .v2-mobile-more {
+    display: none;
+  }
 }
 
 /* --------------------------------------------------------------------------
