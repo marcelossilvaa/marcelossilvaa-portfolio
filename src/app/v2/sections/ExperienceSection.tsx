@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getProfessionalData } from '@/content/experience';
 import { getV2SectionIndex } from '@/content/v2Content';
 import type { Locale } from '@/i18n/LocaleProvider';
@@ -19,7 +19,14 @@ type ExperienceSectionProps = {
 
 export function ExperienceSection({ locale, text }: ExperienceSectionProps) {
   const experiences = getProfessionalData(locale).slice().reverse();
-  const [openId, setOpenId] = useState<number | null>(experiences[0]?.id ?? null);
+  const [openId, setOpenId] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (window.matchMedia('(min-width: 768px)').matches) {
+      setOpenId((current) => current ?? experiences[0]?.id ?? null);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <section id="experience" className="v2-section">

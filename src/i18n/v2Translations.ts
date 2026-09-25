@@ -127,6 +127,8 @@ export type V2TranslationSchema = {
     credentials: string;
     showCalendar: string;
     servicesDetails: string;
+    swipe: string;
+    tapToOpen: string;
   };
 };
 
@@ -283,6 +285,8 @@ const pt: V2TranslationSchema = {
     credentials: 'Ver credenciais',
     showCalendar: 'Ver agenda completa',
     servicesDetails: 'Como eu entro',
+    swipe: 'deslize',
+    tapToOpen: 'Toque para abrir o case',
   },
 };
 
@@ -439,6 +443,8 @@ const en: V2TranslationSchema = {
     credentials: 'See credentials',
     showCalendar: 'See full calendar',
     servicesDetails: 'How I plug in',
+    swipe: 'swipe',
+    tapToOpen: 'Tap to open the case',
   },
 };
 

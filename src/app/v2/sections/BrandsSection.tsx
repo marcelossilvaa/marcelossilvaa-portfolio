@@ -43,7 +43,30 @@ export function BrandsSection({ locale, text }: BrandsSectionProps) {
         </div>
       </Reveal>
 
-      <div className="v2-wrap mt-6 md:mt-10">
+      {/* Mobile: duas esteiras de logos em sentidos opostos no lugar do grid. */}
+      <Reveal className="flex flex-col gap-2 border-y border-[var(--v2-line)] py-4 md:hidden">
+        {[clientLogos.slice(0, Math.ceil(clientLogos.length / 2)), clientLogos.slice(Math.ceil(clientLogos.length / 2))].map(
+          (row, rowIndex) => (
+            <Marquee
+              key={rowIndex}
+              durationSeconds={20}
+              reverse={rowIndex === 1}
+              separator={<span className="v2-signal-text text-xs">◆</span>}
+              items={row.map((client) => (
+                <span key={client.id} className="v2-logo-strip" title={client.name}>
+                  {client.logo ? (
+                    <Image src={client.logo} alt={client.name} width={160} height={64} />
+                  ) : (
+                    <span className="v2-heading">{client.name}</span>
+                  )}
+                </span>
+              ))}
+            />
+          )
+        )}
+      </Reveal>
+
+      <div className="v2-wrap mt-10 hidden md:block">
         <div className="v2-logo-grid">
           {clientLogos.map((client, index) => (
             <Reveal key={client.id} className="min-w-0 h-full" delay={index * 0.04}>

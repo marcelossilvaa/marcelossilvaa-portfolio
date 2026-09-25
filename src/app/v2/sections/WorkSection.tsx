@@ -8,6 +8,7 @@ import { getV2ProjectKinds, getV2SectionIndex } from '@/content/v2Content';
 import type { Locale } from '@/i18n/LocaleProvider';
 import type { V2TranslationSchema } from '@/i18n/v2Translations';
 import { FrameViewer } from '../components/FrameViewer';
+import { MobileRail } from '../components/MobileRail';
 import { Reveal } from '../components/Reveal';
 import { SectionHeader } from '../components/SectionHeader';
 
@@ -23,10 +24,6 @@ export function WorkSection({ locale, text }: WorkSectionProps) {
   const kinds = getV2ProjectKinds(locale);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [hovered, setHovered] = useState<number | null>(null);
-  const [mobileExpanded, setMobileExpanded] = useState(false);
-
-  const MOBILE_PREVIEW = 5;
-  const mobileVisibleCount = mobileExpanded ? projects.length : Math.min(MOBILE_PREVIEW, projects.length);
 
   // MotionValues em vez de estado: a prévia segue o cursor sem re-renderizar
   // as nove linhas do índice a cada mousemove.
@@ -73,16 +70,53 @@ export function WorkSection({ locale, text }: WorkSectionProps) {
           <span className="v2-eyebrow text-right">{text.work.open}</span>
         </div>
 
-        <div onMouseLeave={() => setHovered(null)}>
-          {projects.map((project, index) => {
-            const hideOnMobile = index >= mobileVisibleCount;
-
-            return (
-              <Reveal
+        <div className="md:hidden">
+          <MobileRail hint={text.mobile.swipe}>
+            {projects.map((project, index) => (
+              <button
                 key={project.id}
-                delay={Math.min(index * 0.04, 0.24)}
-                className={hideOnMobile ? 'hidden md:block' : undefined}
+                type="button"
+                className="v2-pcard"
+                onClick={() => setActiveIndex(index)}
+                aria-label={`${text.work.open} ${project.title}`}
               >
+                <span className="v2-pcard__media block">
+                  <Image
+                    src={project.image}
+                    alt=""
+                    fill
+                    sizes="84vw"
+                    className="object-cover object-top"
+                  />
+                  <span className="v2-pcard__badge v2-mono">
+                    {String(index + 1).padStart(2, '0')} · {kinds[project.id] ?? project.technologies[0]?.name}
+                  </span>
+                </span>
+                <span className="v2-pcard__body">
+                  <span className="v2-heading flex items-center gap-2 text-[1.3rem]">
+                    <span className="truncate">{project.title}</span>
+                    {project.featured && <span className="v2-mono text-[var(--v2-signal)]">◆</span>}
+                  </span>
+                  <span className="line-clamp-2 text-[0.88rem] leading-snug text-[var(--v2-muted)]">
+                    {project.subTitle}
+                  </span>
+                  <span className="mt-auto flex flex-wrap gap-1.5 pt-2">
+                    {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                      <span key={`${tech.name}-${techIndex}`} className="v2-tag">
+                        {tech.name}
+                      </span>
+                    ))}
+                  </span>
+                </span>
+              </button>
+            ))}
+          </MobileRail>
+        </div>
+
+        <div className="hidden md:block" onMouseLeave={() => setHovered(null)}>
+          {projects.map((project, index) => {
+            return (
+              <Reveal key={project.id} delay={Math.min(index * 0.04, 0.24)}>
                 <button
                   type="button"
                   className="v2-work__row"
@@ -129,19 +163,6 @@ export function WorkSection({ locale, text }: WorkSectionProps) {
             );
           })}
         </div>
-
-        {projects.length > MOBILE_PREVIEW && (
-          <button
-            type="button"
-            className="v2-mobile-more"
-            onClick={() => setMobileExpanded((prev) => !prev)}
-            aria-expanded={mobileExpanded}
-          >
-            {mobileExpanded
-              ? text.mobile.showLessProjects
-              : `${text.mobile.showMoreProjects} (+${projects.length - MOBILE_PREVIEW})`}
-          </button>
-        )}
       </div>
 
       {/* Prévia flutuante seguindo o cursor — só em telas com hover real. */}

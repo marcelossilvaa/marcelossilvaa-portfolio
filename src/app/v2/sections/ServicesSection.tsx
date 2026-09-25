@@ -26,11 +26,10 @@ export function ServicesSection({ locale, text }: ServicesSectionProps) {
         />
 
         <div className="md:hidden">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <MobileFold
               key={service.index}
               className="v2-fold--card"
-              defaultOpen={index === 0}
               summary={`${service.index} · ${service.title}`}
             >
               <p className="mb-3 text-[1.02rem] text-[var(--v2-fg)]">{service.promise}</p>

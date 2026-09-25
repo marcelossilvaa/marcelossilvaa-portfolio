@@ -1630,6 +1630,131 @@ a.v2-calendar__cell[data-today='true']:hover {
   }
 }
 
+/* Trilho horizontal (mobile): swipe com snap, próximo card à mostra. */
+.v2-rail-m__track {
+  display: flex;
+  gap: 0.75rem;
+  margin-inline: calc(clamp(1.25rem, 4vw, 4rem) * -1);
+  padding-inline: clamp(1.25rem, 4vw, 4rem);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: clamp(1.25rem, 4vw, 4rem);
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.v2-rail-m__track::-webkit-scrollbar {
+  display: none;
+}
+
+.v2-rail-m__slide {
+  flex: 0 0 84%;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.v2-rail-m__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.v2-rail-m__bar {
+  position: relative;
+  flex: 1;
+  height: 1px;
+  background: var(--v2-line-strong);
+  overflow: hidden;
+}
+
+.v2-rail-m__bar i {
+  position: absolute;
+  inset: 0;
+  background: var(--v2-signal);
+  transform-origin: left;
+  transition: transform 0.45s var(--v2-ease);
+}
+
+/* Card de projeto no trilho: imagem grande + legenda. */
+.v2-pcard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--v2-line);
+  border-radius: 0.75rem;
+  background: var(--v2-bg-elev);
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 0.35s var(--v2-ease);
+}
+
+.v2-pcard:active {
+  border-color: var(--v2-signal);
+}
+
+.v2-pcard__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-bottom: 1px solid var(--v2-line);
+}
+
+.v2-pcard__badge {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  z-index: 2;
+  padding: 0.3rem 0.5rem;
+  background: rgba(8, 9, 11, 0.78);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--v2-line-strong);
+}
+
+.v2-pcard__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.95rem 1rem 1.05rem;
+}
+
+/* Card compacto de texto (pilares, formação) no trilho. */
+.v2-mcard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  height: 100%;
+  padding: 1.15rem;
+  border: 1px solid var(--v2-line);
+  border-radius: 0.75rem;
+  background: linear-gradient(160deg, var(--v2-bg-panel), var(--v2-bg-elev));
+}
+
+/* Logos em esteira no mobile (substitui o grid de 8 células). */
+.v2-logo-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8.5rem;
+  height: 4rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.6rem;
+  background: #f3f3f0;
+}
+
+.v2-logo-strip img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 2.4rem !important;
+  object-fit: contain;
+}
+
 .v2-mobile-more {
   display: flex;
   width: 100%;

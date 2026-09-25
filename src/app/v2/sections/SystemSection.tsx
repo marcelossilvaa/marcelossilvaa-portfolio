@@ -5,6 +5,7 @@ import { getV2Pipeline, getV2SectionIndex, getV2SystemPillars } from '@/content/
 import type { Locale } from '@/i18n/LocaleProvider';
 import type { V2TranslationSchema } from '@/i18n/v2Translations';
 import { MobileFold } from '../components/MobileFold';
+import { MobileRail } from '../components/MobileRail';
 import { Reveal, Stagger, staggerChild } from '../components/Reveal';
 import { SectionHeader } from '../components/SectionHeader';
 
@@ -27,31 +28,34 @@ export function SystemSection({ locale, text }: SystemSectionProps) {
           lead={text.system.lead}
         />
 
-        {/* Mobile: accordion (1º aberto). Desktop: grid de 3 pilares. */}
         <div className="md:hidden">
-          {pillars.map((pillar, index) => (
-            <MobileFold
-              key={pillar.index}
-              className="v2-fold--card"
-              defaultOpen={index === 0}
-              summary={`${pillar.kicker} · ${pillar.title}`}
-            >
-              <article className="flex flex-col gap-4">
-                <p className="text-[0.95rem] leading-relaxed text-[var(--v2-muted)]">{pillar.description}</p>
+          <MobileRail hint={text.mobile.swipe}>
+            {pillars.map((pillar) => (
+              <article key={pillar.index} className="v2-mcard">
+                <div className="flex items-baseline justify-between gap-4">
+                  <span className="v2-display text-[2.6rem] leading-none text-[var(--v2-signal)]">
+                    {pillar.index}
+                  </span>
+                  <span className="v2-mono text-[var(--v2-dim)]">{pillar.kicker}</span>
+                </div>
+                <h3 className="v2-heading text-[1.35rem]">{pillar.title}</h3>
+                <p className="line-clamp-3 text-[0.9rem] leading-relaxed text-[var(--v2-muted)]">
+                  {pillar.description}
+                </p>
                 <div className="flex flex-wrap gap-1.5">
-                  {pillar.tags.map((tag) => (
+                  {pillar.tags.slice(0, 4).map((tag) => (
                     <span key={tag} className="v2-tag">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <div className="border-t border-[var(--v2-line)] pt-4">
-                  <p className="v2-eyebrow mb-2">{pillar.outcomeLabel}</p>
-                  <p className="text-[0.95rem] text-[var(--v2-fg)]">{pillar.outcome}</p>
+                <div className="mt-auto border-t border-[var(--v2-line)] pt-3">
+                  <p className="v2-eyebrow mb-1.5">{pillar.outcomeLabel}</p>
+                  <p className="text-[0.9rem] text-[var(--v2-fg)]">{pillar.outcome}</p>
                 </div>
               </article>
-            </MobileFold>
-          ))}
+            ))}
+          </MobileRail>
         </div>
 
         <div className="hidden gap-px border border-[var(--v2-line)] bg-[var(--v2-line)] md:grid lg:grid-cols-3">
