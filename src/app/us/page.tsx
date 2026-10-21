@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Anton, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
+import { getPageMetadata, getPersonJsonLd } from '@/content/seo';
 import V2Experience from '../v2/V2Experience';
 import '../v2/v2.css';
 
@@ -22,27 +23,15 @@ const monoFont = JetBrains_Mono({
   variable: '--font-v2-mono',
 });
 
-export const metadata: Metadata = {
-  title: 'Marcelo S Silva · Full stack, SaaS & CRO',
-  description:
-    'Full-stack developer with analytical, strategic and technical vision: end-to-end SaaS, high-traffic commerce and CRO systems.',
-  openGraph: {
-    title: 'Marcelo S Silva · Full stack, SaaS & CRO',
-    description:
-      '2026 portfolio: full-stack products, commerce and conversion experimentation.',
-    type: 'website',
-  },
-  alternates: {
-    languages: {
-      'pt-BR': '/',
-      en: '/us',
-    },
-  },
-};
+export const metadata: Metadata = getPageMetadata('en');
 
 export default function EnglishHome() {
   return (
     <div className={`${displayFont.variable} ${sansFont.variable} ${monoFont.variable}`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getPersonJsonLd('en')) }}
+      />
       <V2Experience locale="en" />
     </div>
   );

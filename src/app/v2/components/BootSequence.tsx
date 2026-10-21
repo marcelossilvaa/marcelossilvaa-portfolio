@@ -6,7 +6,7 @@ import type { V2TranslationSchema } from '@/i18n/v2Translations';
 import { usePrefersReducedMotion, useScrollLock } from '../lib/useV2Motion';
 
 const STORAGE_KEY = 'v2-boot-seen';
-const TOTAL_MS = 3200;
+const TOTAL_MS = 900;
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 type BootSequenceProps = {
@@ -101,7 +101,7 @@ export function BootSequence({ text, onFinish }: BootSequenceProps) {
               className="v2-boot__monogram"
               initial={{ opacity: 0, letterSpacing: '0.4em' }}
               animate={{ opacity: 1, letterSpacing: '-0.04em' }}
-              transition={{ duration: 1.6, ease: EASE }}
+              transition={{ duration: 0.6, ease: EASE }}
             >
               MS
             </motion.span>

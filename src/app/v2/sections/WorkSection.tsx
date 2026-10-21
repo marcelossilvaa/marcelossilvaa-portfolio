@@ -83,7 +83,7 @@ export function WorkSection({ locale, text }: WorkSectionProps) {
                 <span className="v2-pcard__media block">
                   <Image
                     src={project.image}
-                    alt=""
+                    alt={project.title}
                     fill
                     sizes="84vw"
                     className="object-cover object-top"
@@ -179,7 +179,7 @@ export function WorkSection({ locale, text }: WorkSectionProps) {
             <div className="relative aspect-[16/10] w-full">
               <Image
                 src={projects[hovered].image}
-                alt=""
+                alt={projects[hovered].title}
                 fill
                 sizes="260px"
                 className="object-cover object-top"

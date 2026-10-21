@@ -156,10 +156,10 @@ const pt: V2TranslationSchema = {
   },
   hero: {
     edition: 'Portfólio / 2026',
-    statement: 'Eu transformo ideias em produtos digitais que',
-    statementHighlight: 'convertem de verdade',
+    statement: 'Testes A/B e personalização que viram',
+    statementHighlight: 'receita',
     support:
-      'Dev full stack com visão analítica, estratégica e técnica: entrego SaaS ponta a ponta, storefronts de alto tráfego, sistemas de CRO e consultoria de e-commerce, com experimentação, métricas e automação assistida por IA.',
+      'Desenvolvedor de CRO e experimentação com base full stack: escrevo o código da variante, configuro a segmentação e leio o resultado no Adobe Analytics e no GA4. Também entrego SaaS ponta a ponta, storefronts Shopify de alto tráfego e consultoria de e-commerce, com automação assistida por IA.',
     ctaPrimary: 'Falar no WhatsApp',
     ctaSecondary: 'Ver projetos',
     availability: 'Disponível para novos projetos',
@@ -314,10 +314,10 @@ const en: V2TranslationSchema = {
   },
   hero: {
     edition: 'Portfolio / 2026',
-    statement: 'I turn ideas into digital products that',
-    statementHighlight: 'actually convert',
+    statement: 'A/B tests and personalization that turn into',
+    statementHighlight: 'revenue',
     support:
-      'Full-stack developer with analytical, strategic and technical vision: I ship end-to-end SaaS, high-traffic storefronts, CRO systems and e-commerce consulting, with experimentation, metrics and AI-assisted automation.',
+      'CRO and experimentation developer with a full-stack background: I code the variant, set up the targeting and read the results in Adobe Analytics and GA4. I also ship end-to-end SaaS, high-traffic Shopify storefronts and e-commerce consulting, with AI-assisted automation.',
     ctaPrimary: 'Chat on WhatsApp',
     ctaSecondary: 'See projects',
     availability: 'Available for new projects',

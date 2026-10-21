@@ -6,7 +6,6 @@ import Liquid from '../../public/icons/liquid.svg';
 import TypeScript from '../../public/icons/typescript.svg';
 import Firebase from '../../public/icons/firebase.svg';
 import AGVeiculos from '../../public/assets/projectsImage/ag-veiculos.png';
-import AluraGeek from '../../public/assets/projectsImage/AluraGeek.png';
 import GDXConsultoria from '../../public/assets/projectsImage/GDXConsultoria.png';
 import inkPenSite from '../../public/assets/projectsImage/inkPenSite.png';
 import type { ProjectItem } from '@/types/portfolio';
@@ -29,6 +28,64 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
   const isEnglish = locale === 'en';
 
   return [
+    {
+      id: '8',
+      title: 'BJJ Fanatics',
+      subTitle: isEnglish
+        ? 'Global Shopify ecommerce & CRO consulting and A/B tests'
+        : 'Ecommerce global Shopify & consultoria CRO e testes A/B',
+      challenge: isEnglish
+        ? 'Scale a high-traffic ecommerce and streaming app while improving conversion with disciplined experimentation.'
+        : 'Escalar um ecommerce e app de streaming de alto tráfego enquanto melhora conversão com experimentação disciplinada.',
+      strategy: isEnglish
+        ? 'Built storefront and app surfaces (Shopify Liquid, React, TypeScript) and led CRO consulting, running A/B tests and experiment ops with Shoplift on the commercial funnel.'
+        : 'Atuei no storefront e no app (Shopify Liquid, React, TypeScript) e na consultoria de CRO, com testes A/B e operação de experimentos com Shoplift no funil comercial.',
+      impact: isEnglish
+        ? 'Faster product delivery across web/mobile plus a conversion practice backed by live A/B evidence, not guesswork.'
+        : 'Entrega mais rápida entre web/mobile e uma prática de conversão sustentada por evidência de testes A/B, não por achismo.',
+      featured: true,
+      repoLink: '',
+      demoLink: 'https://bjjfanatics.com/',
+      appStoreLink: 'https://apps.apple.com/us/app/bjj-fanatics/id1530956257',
+      playStoreLink: 'https://play.google.com/store/apps/details?id=com.infinixsoft.bjj&hl=pt',
+      image: BjjFanatics,
+      technologies: [
+        { name: 'Shopify', image: Shopify },
+        { name: 'Liquid', image: Liquid },
+        { name: 'Shoplift', image: Shopify },
+        { name: 'React', image: React },
+        { name: 'Tailwind', image: Tailwind },
+        { name: 'TypeScript', image: TypeScript },
+        { name: 'Node.js', image: Nodejs },
+        { name: 'Firebase', image: Firebase },
+      ],
+    },
+    {
+      id: '13',
+      title: 'Primal Queen',
+      subTitle: isEnglish
+        ? 'Shopify CRO consulting: development and A/B experimentation'
+        : 'Consultoria CRO em Shopify: desenvolvimento e experimentação A/B',
+      challenge: isEnglish
+        ? 'A high-intent DTC storefront needed faster iteration on offers, messaging and funnel steps without slowing the commercial calendar.'
+        : 'Uma storefront DTC de alta intenção precisava iterar ofertas, messaging e etapas de funil sem travar o calendário comercial.',
+      strategy: isEnglish
+        ? 'Provided development and CRO consulting: hypothesis-driven A/B tests run with Intelligems, aligned to conversion metrics on Shopify.'
+        : 'Atuei em consultoria de desenvolvimento e CRO: testes A/B orientados por hipótese rodando no Intelligems, alinhados a métricas de conversão no Shopify.',
+      impact: isEnglish
+        ? 'A clearer experimentation loop (ship, measure, decide) connecting storefront changes to conversion signals.'
+        : 'Um ciclo de experimentação mais claro (publicar, medir, decidir) conectando mudanças de storefront a sinais de conversão.',
+      featured: true,
+      repoLink: '',
+      demoLink: 'https://primalqueen.com/',
+      image: PrimalQueen,
+      technologies: [
+        { name: 'Shopify', image: Shopify },
+        { name: 'Liquid', image: Liquid },
+        { name: 'Intelligems', image: Shopify },
+        { name: 'CRO', image: TypeScript },
+      ],
+    },
     {
       id: '9',
       title: 'Solar',
@@ -136,64 +193,6 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
       ],
     },
     {
-      id: '8',
-      title: 'BJJ Fanatics',
-      subTitle: isEnglish
-        ? 'Global Shopify ecommerce & CRO consulting and A/B tests'
-        : 'Ecommerce global Shopify & consultoria CRO e testes A/B',
-      challenge: isEnglish
-        ? 'Scale a high-traffic ecommerce and streaming app while improving conversion with disciplined experimentation.'
-        : 'Escalar um ecommerce e app de streaming de alto tráfego enquanto melhora conversão com experimentação disciplinada.',
-      strategy: isEnglish
-        ? 'Built storefront and app surfaces (Shopify Liquid, React, TypeScript) and led CRO consulting, running A/B tests and experiment ops with Shoplift on the commercial funnel.'
-        : 'Atuei no storefront e no app (Shopify Liquid, React, TypeScript) e na consultoria de CRO, com testes A/B e operação de experimentos com Shoplift no funil comercial.',
-      impact: isEnglish
-        ? 'Faster product delivery across web/mobile plus a conversion practice backed by live A/B evidence, not guesswork.'
-        : 'Entrega mais rápida entre web/mobile e uma prática de conversão sustentada por evidência de testes A/B, não por achismo.',
-      featured: true,
-      repoLink: '',
-      demoLink: 'https://bjjfanatics.com/',
-      appStoreLink: 'https://apps.apple.com/us/app/bjj-fanatics/id1530956257',
-      playStoreLink: 'https://play.google.com/store/apps/details?id=com.infinixsoft.bjj&hl=pt',
-      image: BjjFanatics,
-      technologies: [
-        { name: 'Shopify', image: Shopify },
-        { name: 'Liquid', image: Liquid },
-        { name: 'Shoplift', image: Shopify },
-        { name: 'React', image: React },
-        { name: 'Tailwind', image: Tailwind },
-        { name: 'TypeScript', image: TypeScript },
-        { name: 'Node.js', image: Nodejs },
-        { name: 'Firebase', image: Firebase },
-      ],
-    },
-    {
-      id: '13',
-      title: 'Primal Queen',
-      subTitle: isEnglish
-        ? 'Shopify CRO consulting: development and A/B experimentation'
-        : 'Consultoria CRO em Shopify: desenvolvimento e experimentação A/B',
-      challenge: isEnglish
-        ? 'A high-intent DTC storefront needed faster iteration on offers, messaging and funnel steps without slowing the commercial calendar.'
-        : 'Uma storefront DTC de alta intenção precisava iterar ofertas, messaging e etapas de funil sem travar o calendário comercial.',
-      strategy: isEnglish
-        ? 'Provided development and CRO consulting: hypothesis-driven A/B tests run with Intelligems, aligned to conversion metrics on Shopify.'
-        : 'Atuei em consultoria de desenvolvimento e CRO: testes A/B orientados por hipótese rodando no Intelligems, alinhados a métricas de conversão no Shopify.',
-      impact: isEnglish
-        ? 'A clearer experimentation loop (ship, measure, decide) connecting storefront changes to conversion signals.'
-        : 'Um ciclo de experimentação mais claro (publicar, medir, decidir) conectando mudanças de storefront a sinais de conversão.',
-      featured: true,
-      repoLink: '',
-      demoLink: 'https://primalqueen.com/',
-      image: PrimalQueen,
-      technologies: [
-        { name: 'Shopify', image: Shopify },
-        { name: 'Liquid', image: Liquid },
-        { name: 'Intelligems', image: Shopify },
-        { name: 'CRO', image: TypeScript },
-      ],
-    },
-    {
       id: '11',
       title: isEnglish ? 'Quote Automation' : 'Cotação Automation',
       subTitle: isEnglish
@@ -286,27 +285,6 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
       technologies: [
         { name: 'Shopify', image: Shopify },
         { name: 'Next.js', image: Nextjs },
-        { name: 'Tailwind', image: Tailwind },
-      ],
-    },
-    {
-      id: '2',
-      title: 'Alura Geek',
-      subTitle: isEnglish ? 'Ecommerce simulation' : 'Simulação de ecommerce',
-      challenge: isEnglish
-        ? 'Build an educational e-commerce simulation with consistent component behavior.'
-        : 'Criar uma simulação de e-commerce educacional com consistência de componentes.',
-      strategy: isEnglish
-        ? 'Applied reusable React components and utility-first styling to keep the UI predictable and easy to evolve.'
-        : 'Apliquei componentes reutilizáveis em React e estilo utility-first para manter a UI previsível e fácil de evoluir.',
-      impact: isEnglish
-        ? 'Cleaner structure for feature evolution and better onboarding for contributors.'
-        : 'Estrutura mais limpa para evolução de features e melhor onboarding de quem contribui no projeto.',
-      repoLink: '',
-      demoLink: 'https://alura-geek-ruby.vercel.app/',
-      image: AluraGeek,
-      technologies: [
-        { name: 'React', image: React },
         { name: 'Tailwind', image: Tailwind },
       ],
     },

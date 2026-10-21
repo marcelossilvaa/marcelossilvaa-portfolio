@@ -75,9 +75,17 @@ export function HeroSection({ locale, text, bootDone }: HeroSectionProps) {
 
       <div className="v2-wrap">
         <div className="relative pt-8 md:pt-12">
-          <KineticWordmark text="MARCELO" delay={baseDelay + 0.18} />
+          <KineticWordmark
+            text="MARCELO"
+            delay={baseDelay + 0.18}
+            srText={
+              locale === 'en'
+                ? 'Marcelo Santana Silva, CRO & Experimentation Developer'
+                : 'Marcelo Santana Silva, desenvolvedor de CRO e experimentação'
+            }
+          />
           <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
-            <KineticWordmark text="S SILVA" delay={baseDelay + 0.34} />
+            <KineticWordmark text="S SILVA" delay={baseDelay + 0.34} as="div" />
 
             <motion.figure
               className="v2-hero__portrait"
@@ -96,7 +104,7 @@ export function HeroSection({ locale, text, bootDone }: HeroSectionProps) {
               <span className="v2-frame-stack__scan" />
               <figcaption className="v2-hero__portrait-caption v2-mono">
                 <span className="text-[var(--v2-fg)]">Marcelo S. Silva</span>
-                <span className="text-[var(--v2-signal)]">Full stack · CRO</span>
+                <span className="text-[var(--v2-signal)]">CRO · Full stack</span>
               </figcaption>
             </motion.figure>
           </div>

@@ -50,9 +50,11 @@ export function getV2Keywords(locale: Locale): string[] {
   const isEn = locale === 'en';
 
   return [
-    'FULL STACK',
     'CRO',
+    isEn ? 'EXPERIMENTATION' : 'EXPERIMENTAÇÃO',
+    isEn ? 'PERSONALIZATION' : 'PERSONALIZAÇÃO',
     isEn ? 'CONVERSION' : 'CONVERSÃO',
+    'FULL STACK',
     'SAAS',
     'E-COMMERCE',
     'NEXT.JS',
@@ -76,7 +78,7 @@ export function getV2TagCloud(locale: Locale): V2TagCloud {
   const isEn = locale === 'en';
 
   return {
-    core: ['Full Stack', 'CRO', 'Shopify'],
+    core: ['CRO', isEn ? 'A/B Testing' : 'Testes A/B', 'Full Stack'],
     groups: [
       {
         label: isEn ? 'Product & stack' : 'Produto & stack',
@@ -124,9 +126,9 @@ export function getV2Stats(locale: Locale): V2Stat[] {
   const isEn = locale === 'en';
 
   return [
-    { value: 4, suffix: '+', label: isEn ? 'years shipping product' : 'anos entregando produto' },
+    { value: 3, suffix: '+', label: isEn ? 'years shipping product' : 'anos entregando produto' },
     { value: 8, suffix: '', label: isEn ? 'brands in production' : 'marcas em produção' },
-    { value: 14, suffix: '', label: isEn ? 'projects in this index' : 'projetos neste índice' },
+    { value: 13, suffix: '', label: isEn ? 'projects in this index' : 'projetos neste índice' },
     { value: 5, suffix: '', label: isEn ? 'SaaS / full-stack builds' : 'SaaS / builds full stack' },
   ];
 }

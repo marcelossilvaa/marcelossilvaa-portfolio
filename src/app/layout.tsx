@@ -10,21 +10,23 @@ const relaway = Raleway({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
-    default: 'Marcelo S Silva · Full stack, SaaS e CRO',
+    default: 'Marcelo Santana Silva · CRO & Experimentation Developer',
     template: '%s · Marcelo S Silva',
   },
+  metadataBase: new URL('https://marcelossilvaa-portfolio.vercel.app'),
   description:
-    'Dev full stack com visão analítica, estratégica e técnica: SaaS ponta a ponta, e-commerce de alto tráfego e sistemas de CRO.',
+    'Desenvolvedor de CRO e experimentação: testes A/B e personalização com Adobe Target, Adobe Analytics e GA4, com base full stack.',
   openGraph: {
-    title: 'Marcelo S Silva · Full stack, SaaS e CRO',
-    description:
-      'Portfólio 2026 com produtos full stack, commerce e experimentação de conversão.',
+    title: 'Marcelo Santana Silva · CRO & Experimentation Developer',
+    description: 'Testes A/B e personalização que viram receita. Portfólio de CRO, commerce e full stack.',
     type: 'website',
+    images: [{ url: '/og.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Marcelo S Silva · Full stack, SaaS e CRO',
-    description: 'Next.js, SaaS, Shopify, performance e conversão para produtos digitais.',
+    title: 'Marcelo Santana Silva · CRO & Experimentation Developer',
+    description: 'Testes A/B e personalização que viram receita.',
+    images: ['/og.png'],
   },
   verification: {
     google: 'kQDLyJ9I0syTc1U2mu0BW8bFuSsjzk6QB092QbI0Ogk',
