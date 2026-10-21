@@ -12,16 +12,16 @@ const OG_IMAGE = {
 
 const copy = {
   pt: {
-    title: 'Marcelo Santana Silva · CRO & Experimentation Developer',
+    title: 'Marcelo Santana Silva · CRO, Experimentation & Growth Engineering',
     description:
-      'Desenvolvedor de CRO e experimentação: testes A/B e personalização com Adobe Target, Adobe Analytics e GA4, com base full stack (React, Next.js, Shopify).',
+      'CRO & Experimentation Developer com atuação em Growth Engineering: testes A/B e personalização com Adobe Target, Adobe Analytics e GA4, com base full stack (React, Next.js, TypeScript).',
     ogDescription: 'Testes A/B e personalização que viram receita. Portfólio de CRO, commerce e full stack.',
     jobTitle: 'CRO & Experimentation Developer',
   },
   en: {
-    title: 'Marcelo Santana Silva · CRO & Experimentation Developer',
+    title: 'Marcelo Santana Silva · CRO, Experimentation & Growth Engineering',
     description:
-      'CRO and experimentation developer: A/B testing and personalization with Adobe Target, Adobe Analytics and GA4, with a full-stack background (React, Next.js, Shopify).',
+      'CRO & Experimentation Developer working in Growth Engineering: A/B testing and personalization with Adobe Target, Adobe Analytics and GA4, with a full-stack background (React, Next.js, TypeScript).',
     ogDescription: 'A/B tests and personalization that turn into revenue. CRO, commerce and full-stack portfolio.',
     jobTitle: 'CRO & Experimentation Developer',
   },
@@ -79,6 +79,7 @@ export function getPersonJsonLd(locale: Locale) {
     },
     knowsAbout: [
       'Conversion Rate Optimization',
+      'Growth Engineering',
       'A/B Testing',
       'Personalization',
       'Adobe Target',

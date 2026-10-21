@@ -53,6 +53,7 @@ export function getV2Keywords(locale: Locale): string[] {
     'CRO',
     isEn ? 'EXPERIMENTATION' : 'EXPERIMENTAÇÃO',
     isEn ? 'PERSONALIZATION' : 'PERSONALIZAÇÃO',
+    'GROWTH ENGINEERING',
     isEn ? 'CONVERSION' : 'CONVERSÃO',
     'FULL STACK',
     'SAAS',
@@ -78,7 +79,7 @@ export function getV2TagCloud(locale: Locale): V2TagCloud {
   const isEn = locale === 'en';
 
   return {
-    core: ['CRO', isEn ? 'A/B Testing' : 'Testes A/B', 'Full Stack'],
+    core: ['CRO', isEn ? 'A/B Testing' : 'Testes A/B', 'Growth Engineering', 'Full Stack'],
     groups: [
       {
         label: isEn ? 'Product & stack' : 'Produto & stack',

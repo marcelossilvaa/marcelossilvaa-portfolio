@@ -80,8 +80,8 @@ export function HeroSection({ locale, text, bootDone }: HeroSectionProps) {
             delay={baseDelay + 0.18}
             srText={
               locale === 'en'
-                ? 'Marcelo Santana Silva, CRO & Experimentation Developer'
-                : 'Marcelo Santana Silva, desenvolvedor de CRO e experimentação'
+                ? 'Marcelo Santana Silva, CRO & Experimentation Developer, Growth Engineering'
+                : 'Marcelo Santana Silva, CRO & Experimentation Developer, Growth Engineering'
             }
           />
           <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
@@ -104,7 +104,7 @@ export function HeroSection({ locale, text, bootDone }: HeroSectionProps) {
               <span className="v2-frame-stack__scan" />
               <figcaption className="v2-hero__portrait-caption v2-mono">
                 <span className="text-[var(--v2-fg)]">Marcelo S. Silva</span>
-                <span className="text-[var(--v2-signal)]">CRO · Full stack</span>
+                <span className="text-[var(--v2-signal)]">CRO · Growth · Full stack</span>
               </figcaption>
             </motion.figure>
           </div>

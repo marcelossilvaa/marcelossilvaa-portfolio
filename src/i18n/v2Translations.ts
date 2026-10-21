@@ -159,7 +159,7 @@ const pt: V2TranslationSchema = {
     statement: 'Testes A/B e personalização que viram',
     statementHighlight: 'receita',
     support:
-      'Desenvolvedor de CRO e experimentação com base full stack: escrevo o código da variante, configuro a segmentação e leio o resultado no Adobe Analytics e no GA4. Também entrego SaaS ponta a ponta, storefronts Shopify de alto tráfego e consultoria de e-commerce, com automação assistida por IA.',
+      'CRO & Experimentation Developer com atuação em Growth Engineering e base full stack: escrevo o código da variante, configuro a segmentação e leio o resultado no Adobe Analytics e no GA4. Também entrego SaaS ponta a ponta, storefronts Shopify de alto tráfego e consultoria de e-commerce, com automação assistida por IA.',
     ctaPrimary: 'Falar no WhatsApp',
     ctaSecondary: 'Ver projetos',
     availability: 'Disponível para novos projetos',
@@ -317,7 +317,7 @@ const en: V2TranslationSchema = {
     statement: 'A/B tests and personalization that turn into',
     statementHighlight: 'revenue',
     support:
-      'CRO and experimentation developer with a full-stack background: I code the variant, set up the targeting and read the results in Adobe Analytics and GA4. I also ship end-to-end SaaS, high-traffic Shopify storefronts and e-commerce consulting, with AI-assisted automation.',
+      'CRO & Experimentation Developer working in Growth Engineering, with a full-stack background: I code the variant, set up the targeting and read the results in Adobe Analytics and GA4. I also ship end-to-end SaaS, high-traffic Shopify storefronts and e-commerce consulting, with AI-assisted automation.',
     ctaPrimary: 'Chat on WhatsApp',
     ctaSecondary: 'See projects',
     availability: 'Available for new projects',
