@@ -5,14 +5,12 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import { ThemeProvider } from '@/components/theme/ThemeProvider';
 import { LocaleProvider } from '@/i18n/LocaleProvider';
+import { TAB_TITLE } from '@/content/seo';
 
 const relaway = Raleway({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: {
-    default: 'Marcelo Santana Silva · CRO, Experimentation & Growth Engineering',
-    template: '%s · Marcelo S Silva',
-  },
+  title: TAB_TITLE,
   metadataBase: new URL('https://marcelossilvaa-portfolio.vercel.app'),
   description:
     'Palpite fica no slide. O teste sobe. Variantes, segmentação e a leitura no Adobe Analytics e no GA4, em SaaS e Shopify.',

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { Locale } from '@/i18n/LocaleProvider';
 
 export const SITE_URL = 'https://marcelossilvaa-portfolio.vercel.app';
+export const TAB_TITLE = 'MS - CRO, Experimentation & Growth Engineering';
 
 const OG_IMAGE = {
   url: '/og.png',
@@ -31,7 +32,7 @@ export function getPageMetadata(locale: Locale): Metadata {
   const c = copy[locale];
   return {
     metadataBase: new URL(SITE_URL),
-    title: c.title,
+    title: TAB_TITLE,
     description: c.description,
     openGraph: {
       title: c.title,

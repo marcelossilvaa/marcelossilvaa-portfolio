@@ -24,7 +24,6 @@ export type V2TranslationSchema = {
     support: string;
     ctaPrimary: string;
     ctaSecondary: string;
-    availability: string;
   };
   signal: {
     eyebrow: string;
@@ -162,7 +161,6 @@ const pt: V2TranslationSchema = {
       'Escrevo a variante, escolho quem vê cada versão e trago o veredito do Adobe Analytics e do GA4. SaaS, Shopify e o funil inteiro passam por esse crivo.',
     ctaPrimary: 'Falar no WhatsApp',
     ctaSecondary: 'Ver projetos',
-    availability: 'Disponível para novos projetos',
   },
   signal: {
     eyebrow: 'Sinal',
@@ -320,7 +318,6 @@ const en: V2TranslationSchema = {
       'I write the variant, choose who sees each version and bring back the verdict from Adobe Analytics and GA4. SaaS, Shopify and the whole funnel go through that filter.',
     ctaPrimary: 'Chat on WhatsApp',
     ctaSecondary: 'See projects',
-    availability: 'Available for new projects',
   },
   signal: {
     eyebrow: 'Signal',

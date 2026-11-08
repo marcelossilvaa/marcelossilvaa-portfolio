@@ -30,7 +30,7 @@ export function HeroSection({ locale, text, bootDone }: HeroSectionProps) {
   return (
     <section id="index" className="v2-hero">
       <div className="v2-wrap">
-        <div className="mb-8 flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
+        <div className="mb-8">
           <motion.div
             className="flex items-center gap-3"
             initial={{ opacity: 0, y: 12 }}
@@ -43,16 +43,6 @@ export function HeroSection({ locale, text, bootDone }: HeroSectionProps) {
               text={locale === 'en' ? 'Vitória da Conquista, Brazil' : 'Vitória da Conquista, Brasil'}
               className="v2-mono text-[var(--v2-muted)]"
             />
-          </motion.div>
-
-          <motion.div
-            className="v2-tag v2-tag--signal"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: baseDelay + 0.08, ease: EASE }}
-          >
-            <span className="v2-pulse" />
-            {text.hero.availability}
           </motion.div>
         </div>
       </div>
