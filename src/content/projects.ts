@@ -13,7 +13,7 @@ import OutsetArquitetura from '../../public/assets/projectsImage/OutetArquiterur
 import Nodejs from '../../public/assets/node.svg';
 import PostgreSQL from '../../public/assets/Postgres.png';
 import OplabDash from '../../public/assets/projectsImage/oplab-dash.png';
-import SaasSolar from '../../public/assets/projectsImage/saas-solar.png';
+import Sanvello from '../../public/assets/projectsImage/sanvello.png';
 import ModelGrid from '../../public/assets/projectsImage/model-grid.png';
 import ModelGridCrm from '../../public/assets/projectsImage/modelgrid-crm.png';
 import CotacaoAutomation from '../../public/assets/projectsImage/cotacao-automation.png';
@@ -88,7 +88,7 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
     },
     {
       id: '9',
-      title: 'Solar',
+      title: 'Sanvello',
       subTitle: isEnglish
         ? 'Full-stack SaaS for solar ops, from quote to installation'
         : 'SaaS full stack para operação solar, do orçamento à instalação',
@@ -103,8 +103,8 @@ export function getProjectsData(locale: Locale): ProjectItem[] {
         : 'Um SaaS publicável que o time começa grátis e escala, com clareza de funil da primeira visita à ativação.',
       featured: true,
       repoLink: '',
-      demoLink: 'https://saas-solar-one.vercel.app/',
-      image: SaasSolar,
+      demoLink: 'https://www.sanvello.com.br/',
+      image: Sanvello,
       technologies: [
         { name: 'Next.js', image: Nextjs },
         { name: 'React', image: React },

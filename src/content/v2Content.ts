@@ -88,10 +88,10 @@ export function getV2TagCloud(locale: Locale): V2TagCloud {
       {
         label: 'E-commerce',
         tags: [
+          'Shopify',
           isEn ? 'E-commerce consulting' : 'Consultoria de e-commerce',
           'Liquid',
           'Headless',
-          'Payload CMS',
           'Core Web Vitals',
           isEn ? 'Technical SEO' : 'SEO técnico',
         ],
@@ -127,7 +127,7 @@ export function getV2Stats(locale: Locale): V2Stat[] {
   const isEn = locale === 'en';
 
   return [
-    { value: 3, suffix: '+', label: isEn ? 'years shipping product' : 'anos entregando produto' },
+    { value: 4, suffix: '', label: isEn ? 'years shipping product' : 'anos entregando produto' },
     { value: 8, suffix: '', label: isEn ? 'brands in production' : 'marcas em produção' },
     { value: 13, suffix: '', label: isEn ? 'projects in this index' : 'projetos neste índice' },
     { value: 5, suffix: '', label: isEn ? 'SaaS / full-stack builds' : 'SaaS / builds full stack' },
