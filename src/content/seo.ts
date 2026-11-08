@@ -14,15 +14,15 @@ const copy = {
   pt: {
     title: 'Marcelo Santana Silva · CRO, Experimentation & Growth Engineering',
     description:
-      'CRO & Experimentation Developer com atuação em Growth Engineering: testes A/B e personalização com Adobe Target, Adobe Analytics e GA4, com base full stack (React, Next.js, TypeScript).',
-    ogDescription: 'Testes A/B e personalização que viram receita. Portfólio de CRO, commerce e full stack.',
+      'Palpite fica no slide. O teste sobe. Variantes, segmentação e a leitura no Adobe Analytics e no GA4, em SaaS e Shopify.',
+    ogDescription: 'Palpite fica no slide. O teste sobe.',
     jobTitle: 'CRO & Experimentation Developer',
   },
   en: {
     title: 'Marcelo Santana Silva · CRO, Experimentation & Growth Engineering',
     description:
-      'CRO & Experimentation Developer working in Growth Engineering: A/B testing and personalization with Adobe Target, Adobe Analytics and GA4, with a full-stack background (React, Next.js, TypeScript).',
-    ogDescription: 'A/B tests and personalization that turn into revenue. CRO, commerce and full-stack portfolio.',
+      'The hunch stays in the slide. The test ships. Variants, targeting and the read in Adobe Analytics and GA4, across SaaS and Shopify.',
+    ogDescription: 'The hunch stays in the slide. The test ships.',
     jobTitle: 'CRO & Experimentation Developer',
   },
 };

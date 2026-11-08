@@ -15,17 +15,17 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://marcelossilvaa-portfolio.vercel.app'),
   description:
-    'Desenvolvedor de CRO e experimentação: testes A/B e personalização com Adobe Target, Adobe Analytics e GA4, com base full stack.',
+    'Palpite fica no slide. O teste sobe. Variantes, segmentação e a leitura no Adobe Analytics e no GA4, em SaaS e Shopify.',
   openGraph: {
     title: 'Marcelo Santana Silva · CRO, Experimentation & Growth Engineering',
-    description: 'Testes A/B e personalização que viram receita. Portfólio de CRO, growth engineering e full stack.',
+    description: 'Palpite fica no slide. O teste sobe.',
     type: 'website',
     images: [{ url: '/og.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Marcelo Santana Silva · CRO, Experimentation & Growth Engineering',
-    description: 'Testes A/B e personalização que viram receita.',
+    description: 'Palpite fica no slide. O teste sobe.',
     images: ['/og.png'],
   },
   verification: {
